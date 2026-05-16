@@ -1,0 +1,79 @@
+name: IcePee
+nextSceneId: 2
+selectedScene: 1
+canvasWidth: 1280
+canvasHeight: 720
+scalingMode: fitwidth
+textureStrategy: resize
+luaDir: .
+terrainEditor:
+  brushMode: 0
+  brushShape: 0
+  brushFalloff: 0
+  brushSize: 4
+  brushStrength: 0.04
+  flattenHeight: 0.5
+  heightMapResolution: 512
+  blendMapResolution: 512
+  normalizeBlendPaint: true
+  heightMapStartAtMiddle: true
+tabs:
+  - type: codeeditor
+    filepath: IcePee.h
+  - type: codeeditor
+    filepath: IcePee.cpp
+  - type: scene
+    filepath: New Scene.scene
+scenes:
+  - filepath: New Scene.scene
+    showAllJoints: false
+    showAllBones: false
+    showAllBodies: false
+    hideCameraView: false
+    hideLightIcons: false
+    hideSoundIcons: false
+    hideContainerGuides: false
+    showOrigin: true
+    showGrid3D: true
+    hideSelectionOutline: false
+    showGrid2D: false
+    gridSpacing2D: 50
+    gridSpacing3D: 1
+    snapToGrid: false
+    snapRotation: false
+    rotationSnapDegrees: 15
+    editorCamera:
+      type: camera_perspective
+      target: [3.3676217, 0.041190002, -1.122524]
+      up: [0, 1, 0]
+      yfov: 0.75
+      aspect: .nan
+      nearClip: 0.2
+      farClip: 200
+      position: [5.810993, 3.5146146, 3.5911524]
+  - filepath: New Scene 2.scene
+    showAllJoints: false
+    showAllBones: false
+    showAllBodies: false
+    hideCameraView: false
+    hideLightIcons: false
+    hideSoundIcons: false
+    hideContainerGuides: false
+    showOrigin: true
+    showGrid3D: true
+    hideSelectionOutline: false
+    showGrid2D: false
+    gridSpacing2D: 50
+    gridSpacing3D: 1
+    snapToGrid: false
+    snapRotation: false
+    rotationSnapDegrees: 15
+    editorCamera:
+      type: camera_ui
+      target: [-50, -50, 0]
+      up: [0, 1, 0]
+      yfov: 0.75
+      aspect: 1.4694589
+      nearClip: -10000
+      farClip: 10000
+      position: [-50, -50, 1]
