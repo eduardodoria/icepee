@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include "ScriptBase.h"
 #include "Engine.h"
 #include "math/Quaternion.h"
@@ -32,6 +33,12 @@ public:
     float particlesMaxSpeed = 0.0f;
     float particlesConeAngle = 0.0f;
     bool particlesConeCached = false;
+
+    doriax::Entity waterEntity = NULL_ENTITY;
+    float waterMaxScaleY = 0.0f;
+
+    std::vector<doriax::Entity> iceEntities;
+    bool iceEntitiesCached = false;
 
     IcePee(doriax::Scene* scene, doriax::Entity entity);
     ~IcePee();

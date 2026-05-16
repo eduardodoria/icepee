@@ -44,13 +44,13 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_perspective
-      target: [3.3676217, 0.041190002, -1.122524]
+      target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: .nan
       nearClip: 0.2
       farClip: 200
-      position: [5.810993, 3.5146146, 3.5911524]
+      position: [2.3173177, 1.7040787, 1.0871387]
   - filepath: New Scene 2.scene
     showAllJoints: false
     showAllBones: false
