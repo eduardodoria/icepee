@@ -1,5 +1,5 @@
 name: IcePee
-nextSceneId: 2
+nextSceneId: 6
 selectedScene: 1
 canvasWidth: 1280
 canvasHeight: 720
@@ -22,6 +22,10 @@ tabs:
     filepath: IcePee.h
   - type: codeeditor
     filepath: IcePee.cpp
+  - type: scene
+    filepath: models/New Scene 5.scene
+  - type: scene
+    filepath: assets/New Scene 6.scene
   - type: scene
     filepath: New Scene.scene
 scenes:
@@ -77,3 +81,4 @@ scenes:
       nearClip: -10000
       farClip: 10000
       position: [-50, -50, 1]
+      zoom: 1
