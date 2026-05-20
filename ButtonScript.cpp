@@ -1,6 +1,7 @@
 #include "ButtonScript.h"
 
 #include "ButtonComponent.h"
+#include "Engine.h"
 #include "Log.h"
 
 using namespace doriax;
@@ -20,5 +21,6 @@ void ButtonScript::onButtonPress() {
     if (!isActive) return;
 
     Log::print("Button '%s' pressed", getName().c_str());
+    Engine::removeScene(scene);
 }
 

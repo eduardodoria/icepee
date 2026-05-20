@@ -1,6 +1,6 @@
 name: IcePee
 nextSceneId: 6
-selectedScene: 1
+selectedScene: 2
 canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
@@ -27,7 +27,7 @@ tabs:
   - type: scene
     filepath: assets/New Scene 6.scene
   - type: scene
-    filepath: New Scene.scene
+    filepath: UI Scene.scene
 scenes:
   - filepath: New Scene.scene
     showAllJoints: false
@@ -51,11 +51,11 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.6367265
+      aspect: 1.7367725
       nearClip: 0.2
       farClip: 200
       position: [2.3173177, 1.7040787, 1.0871387]
-  - filepath: UI Scene 2.scene
+  - filepath: UI Scene.scene
     showAllJoints: false
     showAllBones: false
     showAllBodies: false
@@ -74,11 +74,11 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-50, -50, 0]
+      target: [-29.827335, -285.4091, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.6367265
       nearClip: -10000
       farClip: 10000
-      position: [-50, -50, 1]
-      zoom: 1
+      position: [-29.827335, -285.4091, 1]
+      zoom: 1.4641001

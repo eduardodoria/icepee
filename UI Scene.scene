@@ -18,6 +18,7 @@ maxValues:
 shaderKeys:
   - 21474836482
   - 21474836488
+  - 21474836489
 cppScripts:
   - path: ButtonScript.cpp
     headerPath: ButtonScript.h
@@ -44,9 +45,9 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [302, 102.99999, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [302, 102.99999, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0024390244, 0, 0, 0], [0, -0.003992016, 0, 0], [0, 0, -0.0001, 0], [-0.1414634, 0.38922158, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.001040386, 0, 0, 0], [0, -0.0018069136, 0, 0], [0, 0, -0.0001, 0], [-0.65477145, 0.29817832, 0.0001, 1]]
         visible: true
-        distanceToCamera: 383.81506
+        distanceToCamera: 510.8542
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -169,9 +170,9 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [262, 259.99994, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [262, 259.99994, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0024390244, 0, 0, 0], [0, -0.003992016, 0, 0], [0, 0, -0.0001, 0], [-0.2390244, -0.23752475, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.001040386, 0, 0, 0], [0, -0.0018069136, 0, 0], [0, 0, -0.0001, 0], [-0.69638693, 0.014492989, 0.0001, 1]]
         visible: true
-        distanceToCamera: 439.8238
+        distanceToCamera: 618.57513
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -270,7 +271,7 @@ entities:
         usingAnchors: false
         panel: 0
         containerBoxIndex: -1
-        scissor: [312, 141.00006, 150, 50]
+        scissor: [199.32199, 349.3276, 102.45202, 34.15067]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -317,9 +318,9 @@ entities:
             localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [50, 15, 0, 1]]
             modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [312, 274.99994, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-            modelViewProjectionMatrix: [[0.0024390244, 0, 0, 0], [0, -0.003992016, 0, 0], [0, 0, -0.0001, 0], [-0.11707318, -0.297405, 0.0001, 1]]
+            modelViewProjectionMatrix: [[0.001040386, 0, 0, 0], [0, -0.0018069136, 0, 0], [0, 0, -0.0001, 0], [-0.6443676, -0.0126107335, 0.0001, 1]]
             visible: true
-            distanceToCamera: 486.48737
+            distanceToCamera: 656.4337
             billboardRotation: [1, 0, 0, 0]
             billboard: false
             fakeBillboard: false
@@ -415,7 +416,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: -1
-            scissor: [312, 141.00006, 150, 50]
+            scissor: [199.32199, 349.3276, 102.45202, 34.15067]
             ignoreScissor: false
             ignoreEvents: true
           text:
@@ -428,3 +429,126 @@ entities:
             fixedHeight: false
             pivotBaseline: false
             pivotCentered: false
+  - type: Entity
+    entity: 105
+    name: Image
+    components:
+      transform:
+        position: [451.8617, 0.0904541, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [451.8617, 0.0904541, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [451.8617, 0.0904541, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [451.8617, 0.0904541, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelViewProjectionMatrix: [[0.001040386, 0, 0, 0], [0, -0.0018069136, 0, 0], [0, 0, -0.0001, 0], [-0.49885744, 0.48412699, 0.0001, 1]]
+        visible: true
+        distanceToCamera: 559.94226
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 36
+          size: 576
+          count: 16
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: color
+              dataType: float
+              bufferName: ""
+              elements: 4
+              offset: 20
+              count: 16
+              normalized: true
+              perInstance: false
+          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAALRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAALRAAAC0QAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAC0QAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAALRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAALRAAAC0QAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAC0QAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAALRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAALRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAALRAAAC0QAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAALRAAAC0QAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAC0QAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAC0QAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 108
+          count: 54
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 54
+              normalized: true
+              perInstance: false
+          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
+        minBufferCount: 0
+        minIndicesCount: 0
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [556, 556, 0]
+        worldAABB:
+          min: [451.8617, 0.0904541, 0]
+          max: [1007.8617, 556.09045, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: assets/logo.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 556
+        height: 556
+        anchorPointLeft: 0
+        anchorPointTop: 0
+        anchorPointRight: 0
+        anchorPointBottom: 0
+        anchorOffsetLeft: 451
+        anchorOffsetTop: 0
+        anchorOffsetRight: 1007
+        anchorOffsetBottom: 556
+        positionOffset: [0, 0]
+        anchorPreset: 0
+        usingAnchors: false
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [329.0001, 181.24457, 379.75546, 379.75543]
+        ignoreScissor: false
+        ignoreEvents: false
+      image:
+        patchMarginLeft: 0
+        patchMarginRight: 0
+        patchMarginTop: 0
+        patchMarginBottom: 0
+        textureScaleFactor: 0
