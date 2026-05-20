@@ -21,6 +21,8 @@ shaderKeys:
   - 8589935736
   - 8589935738
   - 17179869184
+childScenes:
+  - 2
 cppScripts:
   - path: IcePee.cpp
     headerPath: IcePee.h

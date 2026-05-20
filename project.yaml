@@ -51,11 +51,11 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: .nan
+      aspect: 1.6367265
       nearClip: 0.2
       farClip: 200
       position: [2.3173177, 1.7040787, 1.0871387]
-  - filepath: New Scene 2.scene
+  - filepath: UI Scene 2.scene
     showAllJoints: false
     showAllBones: false
     showAllBodies: false
@@ -77,7 +77,7 @@ scenes:
       target: [-50, -50, 0]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.4694589
+      aspect: 1.6367265
       nearClip: -10000
       farClip: 10000
       position: [-50, -50, 1]

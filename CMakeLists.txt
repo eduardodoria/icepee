@@ -47,7 +47,7 @@ set(SCRIPT_SOURCES
 
 set(FACTORY_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/New_Scene.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/New_Scene_2.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/UI_Scene.cpp
 )
 
 set(PROJECT_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/scene_scripts.cpp)
