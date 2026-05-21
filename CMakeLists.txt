@@ -6,6 +6,10 @@ project(IcePee)
 set(PROJECT_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 set(INTERNAL_DIR ${PROJECT_ROOT}/.doriax)
 
+# Doriax runtime API headers for this project come from ${INTERNAL_DIR}/engine-api.
+# Local engine API source used by this editor build: /home/eduardo/Development/doriax/build/engine
+# Full engine + editor source (including YAML serialization for *.scene/*.bundle/project.yaml): https://github.com/doriaxengine/doriax
+
 # Specify C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -46,7 +50,7 @@ set(SCRIPT_SOURCES
 )
 
 set(FACTORY_SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/New_Scene.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/Main_Scene.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/UI_Scene.cpp
 )
 
@@ -108,7 +112,7 @@ target_include_directories(IcePee ${DORIAX_LIB_SYSTEM} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/util
 )
 
-# Default DORIAX_LIB_DIR if not provided
+# libdoriax is searched in DORIAX_LIB_DIR; by default it points to the Doriax editor executable directory.
 if(NOT DEFINED DORIAX_LIB_DIR OR DORIAX_LIB_DIR STREQUAL "")
     set(DORIAX_LIB_DIR "/home/eduardo/Development/doriax/build")
     # Must be the same as the editor's library to not ODR violation / ABI mismatch

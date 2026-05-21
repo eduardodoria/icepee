@@ -29,9 +29,9 @@ tabs:
   - type: codeeditor
     filepath: ButtonScript.h
   - type: scene
-    filepath: New Scene.scene
+    filepath: Main Scene.scene
 scenes:
-  - filepath: New Scene.scene
+  - filepath: Main Scene.scene
     showAllJoints: false
     showAllBones: false
     showAllBodies: false
@@ -53,10 +53,10 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 2.6975138
+      aspect: 2.512431
       nearClip: 0.2
       farClip: 200
-      position: [3.0122986, 1.7073002, -0.3809457]
+      position: [7.861709, 3.990472, 8.39712]
   - filepath: UI Scene.scene
     showAllJoints: false
     showAllBones: false
