@@ -2,6 +2,7 @@
 
 #include "ButtonComponent.h"
 #include "Engine.h"
+#include "IcePee.h"
 #include "Log.h"
 
 using namespace doriax;
@@ -19,6 +20,10 @@ ButtonScript::~ButtonScript() {
 
 void ButtonScript::onButtonPress() {
     if (!isActive) return;
+
+    if (icePeeScript) {
+        icePeeScript->isActive = true;
+    }
 
     Log::print("Button '%s' pressed", getName().c_str());
     Engine::removeScene(scene);

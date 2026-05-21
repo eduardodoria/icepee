@@ -15,7 +15,7 @@ public:
     float speed = 5.0f;
 
     SPROPERTY("Is Active")
-    bool isActive = true;
+    bool isActive = false;
 
     SPROPERTY("Counter")
     int counter = 0;
@@ -33,6 +33,7 @@ public:
     float particlesMaxSpeed = 0.0f;
     float particlesConeAngle = 0.0f;
     bool particlesConeCached = false;
+    bool particlesStarted = false;
 
     doriax::Entity waterEntity = NULL_ENTITY;
     float waterMaxScaleY = 0.0f;

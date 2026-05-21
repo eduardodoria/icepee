@@ -1,6 +1,7 @@
 #include "IcePee.h"
 #include "Input.h"
 
+#include "action/Particles.h"
 #include "component/ActionComponent.h"
 #include "component/MeshComponent.h"
 #include "component/ParticlesComponent.h"
@@ -289,6 +290,11 @@ void IcePee::onUpdate() {
         if (particlesEntity == NULL_ENTITY || !scene->findComponent<ParticlesComponent>(particlesEntity)) {
             particlesEntity = findParticlesEntityForTarget(scene, targetEntity);
             particlesConeCached = false;
+        }
+
+        if (!particlesStarted && particlesEntity != NULL_ENTITY) {
+            Particles(scene, particlesEntity).start();
+            particlesStarted = true;
         }
 
         if (waterEntity == NULL_ENTITY || !scene->findComponent<MeshComponent>(waterEntity)) {
