@@ -1,0 +1,139 @@
+id: 7
+name: Score Scene
+scene:
+  backgroundColor: [0.525, 0.525, 0.525, 1]
+  shadowsPCF: true
+  lightState: off
+  globalIlluminationIntensity: 0.1
+  globalIlluminationColor: [1, 1, 1]
+  enableUIEvents: not_set
+sceneType: scene_ui
+mainCamera: 0
+maxValues:
+  maxSubmeshes: 0
+  maxTilemapTilesRect: 0
+  maxTilemapTiles: 0
+  maxExternalBuffers: 0
+  maxSpriteFrames: 0
+shaderKeys:
+  - 21474836482
+entities:
+  - type: Entity
+    entity: 101
+    name: Text
+    components:
+      transform:
+        position: [83.000015, 31.000015, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [83.000015, 31.000015, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [83.000015, 31.000015, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [83.000015, 31.000015, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelViewProjectionMatrix: [[0.0021881838, 0, 0, 0], [0, -0.002962963, 0, 0], [0, 0, -0.0001, 0], [-0.7089715, 0.75999993, 0.0001, 1]]
+        visible: true
+        distanceToCamera: 155.72734
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 20
+          size: 320
+          count: 16
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 16
+              normalized: true
+              perInstance: false
+          data: AAAAAFhV4UAAAAAAAIBBPwAApD0AALBBWFXhQAAAAAAAgEw/AACkPQAAsEGrKghCAAAAAACATD8AAAg+AAAAAKsqCEIAAAAAAIBBPwAACD4AALhBrKpgQQAAAAAAAME+AAAUPgAAJEKsqmBBAAAAAAAA0z4AABQ+AAAkQqsqDEIAAAAAAADTPgAAPj4AALhBqyoMQgAAAAAAAME+AAA+PgAAJEKsqmBBAAAAAAAAADsAAF4+AABsQqyqYEEAAAAAAAAYPQAAXj4AAGxCqyoIQgAAAAAAABg9AACDPgAAJEKrKghCAAAAAAAAADsAAIM+AABwQqyqEEEAAAAAAIBYPwAAFD4AAI5CrKoQQQAAAAAAAF4/AAAUPgAAjkKrKgxCAAAAAAAAXj8AAEg+AABwQqsqDEIAAAAAAIBYPwAASD4=
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 48
+          count: 24
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 24
+              normalized: true
+              perInstance: false
+          data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8A
+        minBufferCount: 400
+        minIndicesCount: 600
+        primitiveType: triangles
+        vertexCount: 24
+        aabb:
+          min: [0, 0, 0]
+          max: [71, 35.041668, 0]
+        worldAABB:
+          min: [83.000015, 31.000015, 0]
+          max: [154.00002, 66.04169, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: font|43
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
+        color: [1, 0.9322396, 0, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 71
+        height: 43
+        anchorPointLeft: 0
+        anchorPointTop: 0
+        anchorPointRight: 0
+        anchorPointBottom: 0
+        anchorOffsetLeft: 83
+        anchorOffsetTop: 31
+        anchorOffsetRight: 154
+        anchorOffsetBottom: 74
+        positionOffset: [0, 0]
+        anchorPreset: 0
+        usingAnchors: false
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [0, 0, 0, 0]
+        ignoreScissor: false
+        ignoreEvents: false
+      text:
+        font: ""
+        text: Text
+        fontSize: 43
+        multiline: true
+        maxTextSize: 100
+        fixedWidth: false
+        fixedHeight: false
+        pivotBaseline: false
+        pivotCentered: false

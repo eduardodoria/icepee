@@ -1,9 +1,9 @@
 #include "ButtonScript.h"
 
 #include "ButtonComponent.h"
-#include "Engine.h"
 #include "IcePee.h"
 #include "Log.h"
+#include "SceneManager.h"
 
 using namespace doriax;
 
@@ -26,6 +26,7 @@ void ButtonScript::onButtonPress() {
     }
 
     Log::print("Button '%s' pressed", getName().c_str());
-    Engine::removeScene(scene);
+    SceneManager::addChildScene("Score Scene");
+    SceneManager::removeChildScene("UI Scene");
 }
 
