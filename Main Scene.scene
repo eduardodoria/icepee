@@ -13,14 +13,8 @@ maxValues:
   maxSubmeshes: 1
   maxTilemapTilesRect: 0
   maxTilemapTiles: 0
-  maxExternalBuffers: 4
+  maxExternalBuffers: 0
   maxSpriteFrames: 0
-shaderKeys:
-  - 5
-  - 8589934842
-  - 8589935736
-  - 8589935738
-  - 17179869184
 childScenes:
   - id: 2
     startActive: true
@@ -512,33 +506,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -696,33 +663,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -880,33 +820,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1064,33 +977,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1248,33 +1134,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1432,33 +1291,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1616,33 +1448,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1800,33 +1605,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1984,33 +1762,6 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
-              baseColorTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              emissiveTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
-              normalTexture:
-                textureType: 2D
-                source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
-                minFilter: linear_mipmap_linear
-                magFilter: linear
-                wrapU: clamp_to_edge
-                wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles

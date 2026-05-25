@@ -15,8 +15,6 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 0
   maxSpriteFrames: 0
-shaderKeys:
-  - 21474836482
 entities:
   - type: Entity
     entity: 101
@@ -94,15 +92,7 @@ entities:
         worldAABB:
           min: [83.000015, 31.000015, 0]
           max: [154.00002, 66.04169, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: font|43
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [1, 0.9322396, 0, 1]
         automaticFlipY: true
         flipY: false
