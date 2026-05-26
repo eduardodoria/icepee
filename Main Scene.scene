@@ -13,8 +13,14 @@ maxValues:
   maxSubmeshes: 1
   maxTilemapTilesRect: 0
   maxTilemapTiles: 0
-  maxExternalBuffers: 0
+  maxExternalBuffers: 4
   maxSpriteFrames: 0
+shaderKeys:
+  - 5
+  - 8589934842
+  - 8589935736
+  - 8589935738
+  - 17179869184
 childScenes:
   - id: 2
     startActive: true
@@ -49,9 +55,9 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 10, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 10, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, -10], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.24336885, -1.5531598, -0.78426975, -0.7827028], [0, 2.0021105, -0.61680037, -0.615568], [-2.0719156, -0.1824354, -0.09212095, -0.091936894], [-1.0266762, 20.776554, 0.91754484, 1.3153119]]
+        modelViewProjectionMatrix: [[1.3484567, -0.31390652, -0.36803472, -0.36729938], [0, 2.4078805, -0.31948653, -0.3188482], [-0.56685686, -0.7467306, -0.87549233, -0.8737431], [-1.7774384, 22.98409, 8.26439, 8.647478]]
         visible: true
-        distanceToCamera: 8.297906
+        distanceToCamera: 12.574033
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -85,9 +91,9 @@ entities:
         localMatrix: [[5.9604645e-08, -0.99999994, 0, 0], [0.99999994, 5.9604645e-08, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         modelMatrix: [[5.9604645e-08, -0.99999994, 0, 0], [0.99999994, 5.9604645e-08, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normalMatrix: [[5.960465e-08, -1, 0, 0], [1, 5.960465e-08, -0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[1.4505914e-08, -2.0021102, 0.61680025, 0.61556786], [0.24336883, -1.5531596, -0.78426975, -0.7827028], [-2.0719156, -0.1824354, -0.09212095, -0.091936894], [-1.0266762, 0.7554501, 7.0855484, 7.4709916]]
+        modelViewProjectionMatrix: [[8.0374285e-08, -2.4078803, 0.31948647, 0.31884813], [1.3484566, -0.31390634, -0.36803472, -0.36729938], [-0.56685686, -0.7467306, -0.87549233, -0.8737431], [-1.7774384, -1.0947156, 11.459255, 11.835959]]
         visible: true
-        distanceToCamera: 7.4930863
+        distanceToCamera: 11.905972
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -289,9 +295,9 @@ entities:
         localMatrix: [[-2.3841854e-07, 1.0430811e-07, -0.9999998, 0], [-0.39197212, 0.91997707, 1.7881393e-07, 0], [0.91997683, 0.39197204, -1.19209254e-07, 0], [2.8729749, 1.8959136, 0, 1]]
         modelMatrix: [[-2.3841854e-07, 1.0430811e-07, -0.9999998, 0], [-0.39197212, 0.91997707, 1.7881393e-07, 0], [0.91997683, 0.39197204, -1.19209254e-07, 0], [2.8729749, 1.8959136, 0, 1]]
         normalMatrix: [[-1.7975992e-07, 1.17778036e-07, -1.0000001, 2.931488e-07], [-0.39197215, 0.91997707, 1.8941452e-07, -0.6180709], [0.9199773, 0.39197224, -1.784538e-07, -3.3862174], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[2.0719151, 0.18243594, 0.09212106, 0.091937], [-0.09539418, 2.450691, -0.26003033, -0.2595108], [0.22389396, -0.6440997, -0.9632785, -0.9613539], [-0.3274836, 0.08908951, 3.662961, 4.0552425]]
+        modelViewProjectionMatrix: [[0.56685644, 0.7467308, 0.8754922, 0.873743], [-0.5285576, 2.3382373, -0.1496611, -0.14936206], [1.2405491, 0.6550352, -0.46381307, -0.46288642], [2.096644, 2.5685725, 9.796182, 10.1762085]]
         visible: true
-        distanceToCamera: 4.058431
+        distanceToCamera: 10.326275
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -326,9 +332,9 @@ entities:
         localMatrix: [[3.576277e-07, 0, -0.99999946, 0], [0, 0.99999994, 0, 0], [0.9999994, 0, 3.5762767e-07, 0], [0.41241783, 0.20161533, 0, 1]]
         modelMatrix: [[3.576277e-07, 0, -0.99999946, 0], [0, 0.99999994, 0, 0], [0.9999994, 0, 3.5762767e-07, 0], [0.41241783, 0.20161533, 0, 1]]
         normalMatrix: [[3.5762807e-07, 0, -1.0000005, -1.4749219e-07], [0, 1, 0, -0.20161535], [1.0000006, 0, 3.576281e-07, -0.41241807], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[2.0719144, 0.18243474, 0.09212062, 0.09193656], [0, 2.0021102, -0.6168003, -0.6155679], [0.24336796, -1.553159, -0.78426933, -0.7827024], [-0.92630655, 0.5185555, 6.637745, 7.024083]]
+        modelViewProjectionMatrix: [[0.56685704, 0.7467301, 0.87549174, 0.8737425], [0, 2.4078803, -0.3194865, -0.31884816], [1.3484557, -0.3139066, -0.36803484, -0.36729947], [-1.2213109, -0.7387106, 11.243058, 11.6201935]]
         visible: true
-        distanceToCamera: 7.041063
+        distanceToCamera: 11.65378
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -492,9 +498,9 @@ entities:
         localMatrix: [[0.07384464, 0, 0, 0], [0, 2.640878e-08, -0.07384429, 0], [0, 0.07384429, 2.640878e-08, 0], [0.5591309, 0.65441203, -0.016331524, 1]]
         modelMatrix: [[0.07384464, 0, 0, 0], [0, 2.640878e-08, -0.07384429, 0], [0, 0.07384429, 2.640878e-08, 0], [0.5591309, 0.65441203, -0.016331524, 1]]
         normalMatrix: [[13.541943, 0, 0, -7.571719], [0, 4.8429997e-06, -13.542007, -0.22116476], [0, 13.542007, 4.8429997e-06, -8.862053], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.017971486, -0.11469253, -0.05791412, -0.057798408], [0.15299915, 0.013471865, 0.00680259, 0.0067889984], [-5.471676e-08, 0.14784443, -0.04554719, -0.045456186], [-0.8567636, 1.2002151, 6.2449017, 6.632025]]
+        modelViewProjectionMatrix: [[0.0995763, -0.023180315, -0.027177392, -0.027123092], [0.041859142, 0.05514186, 0.0646501, 0.06452093], [-1.4969997e-08, 0.17780821, -0.023592278, -0.02354514], [-1.0142169, 0.31771076, 11.058698, 11.436202]]
         visible: true
-        distanceToCamera: 6.6615024
+        distanceToCamera: 11.457884
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -506,6 +512,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -649,9 +682,9 @@ entities:
         localMatrix: [[0.017420428, -0.054003637, 0.047256384, 0], [-0.071760096, -0.013109792, 0.011471794, 0], [3.5211702e-08, -0.04862866, -0.055571873, 0], [0.39779162, 0.8050267, -0.016331524, 1]]
         modelMatrix: [[0.017420428, -0.054003637, 0.047256384, 0], [-0.071760096, -0.013109792, 0.011471794, 0], [3.5211702e-08, -0.04862866, -0.055571873, 0], [0.39779162, 0.8050267, -0.016331524, 1]]
         normalMatrix: [[3.1946335, -9.903418, 8.666077, 6.843248], [-13.159793, -2.404151, 2.1037652, 7.204619], [6.7939936e-06, -8.917815, -10.1911, 7.0126405], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[-0.09367165, -0.14379919, 0.015293844, 0.015263289], [-0.04123276, 0.08311478, 0.063308604, 0.063182116], [0.11514024, -0.087221734, 0.035113484, 0.035043325], [-0.8960285, 1.752348, 6.2785363, 6.6655917]]
+        modelViewProjectionMatrix: [[-0.0032969117, -0.1707905, -0.03053049, -0.03046949], [-0.10326825, -0.01760719, 0.020555142, 0.020514071], [0.031501345, -0.0755948, 0.06418894, 0.06406069], [-1.231776, 0.7310184, 11.069957, 11.447439]]
         visible: true
-        distanceToCamera: 6.7149363
+        distanceToCamera: 11.481976
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -663,6 +696,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -806,9 +866,9 @@ entities:
         localMatrix: [[0.025979567, 0.018652404, 0.06655959, 0], [0.03290791, -0.065867566, 0.0056138383, 0], [0.060787488, 0.027686404, -0.031485334, 0], [0.39779162, 0.8050267, -0.16598842, 1]]
         modelMatrix: [[0.025979567, 0.018652404, 0.06655959, 0], [0.03290791, -0.065867566, 0.0056138383, 0], [0.060787488, 0.027686404, -0.031485334, 0], [0.39779162, 0.8050267, -0.16598842, 1]]
         normalMatrix: [[4.764246, 3.4205573, 12.205983, -2.6227653], [6.0348477, -12.079182, 1.029499, 7.494337], [11.147568, 5.0772953, -5.7739654, -9.480179], [-0, 0, 0, 0.9999999]]
-        modelViewProjectionMatrix: [[-0.13158323, -0.015149075, -0.03801133, -0.037935384], [-0.003622639, -0.18400955, 0.014301306, 0.014272731], [0.08002874, -0.033237405, -0.061850317, -0.06172674], [-0.5859521, 1.7796507, 6.2923226, 6.679351]]
+        modelViewProjectionMatrix: [[-0.0026974343, -0.012944482, -0.07379299, -0.07364555], [0.04119265, -0.17312326, 0.0040176734, 0.0040096464], [0.09981698, 0.07109503, -0.0036521722, -0.0036448743], [-1.1469419, 0.84277177, 11.20098, 11.5782]]
         visible: true
-        distanceToCamera: 6.721855
+        distanceToCamera: 11.609461
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -820,6 +880,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -963,9 +1050,9 @@ entities:
         localMatrix: [[0.061745495, -0.030475082, -0.026679475, 0], [0.0066372263, 0.05559646, -0.048145175, 0], [0.03995568, 0.037858814, 0.049226336, 0], [0.39779162, 0.8050267, 0.13450113, 1]]
         modelMatrix: [[0.061745495, -0.030475082, -0.026679475, 0], [0.0066372263, 0.05559646, -0.048145175, 0], [0.03995568, 0.037858814, 0.049226336, 0], [0.39779162, 0.8050267, 0.13450113, 1]]
         normalMatrix: [[11.323153, -5.5886507, -4.8925953, 0.65281767], [1.217174, 10.195617, -8.829156, -7.5043945], [7.3273144, 6.9427776, 9.027423, -9.718064], [-0, 0, 0, 1.0000001]]
-        modelViewProjectionMatrix: [[0.07030455, -0.15204781, -0.027170343, -0.02711606], [0.10136803, 0.10978496, -0.035062112, -0.034992058], [-0.09226885, 0.004759347, -0.05922214, -0.059103813], [-1.208541, 1.7248309, 6.2646413, 6.651725]]
+        modelViewProjectionMatrix: [[0.09838457, -0.07284029, 0.010369569, 0.010348852], [0.036241435, 0.16773765, 0.021945681, 0.021901835], [0.025974218, 0.04185834, -0.06989774, -0.06975809], [-1.3172765, 0.6183871, 10.937904, 11.31565]]
         visible: true
-        distanceToCamera: 6.7113333
+        distanceToCamera: 11.354037
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -977,6 +1064,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1120,9 +1234,9 @@ entities:
         localMatrix: [[-0.016551841, 0.00955621, -0.071328446, 0], [-0.03692217, -0.06395102, 3.3010972e-09, 0], [-0.06177196, 0.03566409, 0.019112324, 0], [0.43884766, 0.65441203, 0.16490942, 1]]
         modelMatrix: [[-0.016551841, 0.00955621, -0.071328446, 0], [-0.03692217, -0.06395102, 3.3010972e-09, 0], [-0.06177196, 0.03566409, 0.019112324, 0], [0.43884766, 0.65441203, 0.16490942, 1]]
         normalMatrix: [[-3.0353446, 1.7524577, -13.080512, 2.3423243], [-6.771008, -11.72772, 1.44553e-06, 10.646202], [-11.328104, 6.5402894, 3.5049317, 0.113271475], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.14375833, 0.057853077, 0.01365768, 0.013630391], [-0.008985713, -0.07069099, 0.068401955, 0.06826529], [-0.054632496, 0.1638584, 0.024687612, 0.024638286], [-1.2615527, 1.3539695, 6.3225403, 6.709508]]
+        modelViewProjectionMatrix: [[0.018113578, 0.081469074, 0.06548608, 0.06535524], [-0.049787953, -0.14239632, 0.03402013, 0.033952158], [-0.09413077, 0.090993725, -0.005392664, -0.0053818896], [-1.2791514, 0.2201302, 10.944291, 11.322024]]
         visible: true
-        distanceToCamera: 6.7577534
+        distanceToCamera: 11.356075
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -1134,6 +1248,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1277,9 +1418,9 @@ entities:
         localMatrix: [[0.07384464, 0, 0, 0], [0, -0.036922164, -0.06395107, 0], [0, 0.06395107, -0.036922164, 0], [0.43884766, 0.65441203, -0.18363076, 1]]
         modelMatrix: [[0.07384464, 0, 0, 0], [0, -0.036922164, -0.06395107, 0], [0, 0.06395107, -0.036922164, 0], [0.43884766, 0.65441203, -0.18363076, 1]]
         normalMatrix: [[13.541944, 0, 0, -5.94285], [0, -6.7709994, -11.727716, 2.2774544], [0, 11.727716, -6.7709994, -8.918122], [-0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.017971486, -0.11469253, -0.05791412, -0.057798408], [0.13250121, -0.062255315, 0.028664839, 0.028607566], [0.07649961, 0.13477302, -0.036043737, -0.03597172], [-0.5394069, 1.4175556, 6.354648, 6.7415514]]
+        modelViewProjectionMatrix: [[0.0995763, -0.023180315, -0.027177392, -0.027123092], [0.0362511, -0.041149937, 0.0677848, 0.06764937], [0.020929582, 0.18155745, 0.011893565, 0.011869807], [-1.081579, 0.4803959, 11.249435, 11.626559]]
         visible: true
-        distanceToCamera: 6.769544
+        distanceToCamera: 11.651582
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -1291,6 +1432,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1434,9 +1602,9 @@ entities:
         localMatrix: [[0.06123767, 0.038290888, -0.015387871, 0], [-0.03573827, 0.0354406, -0.054034527, 0], [-0.020633513, 0.052256797, 0.04792155, 0], [0.26655424, 0.65441203, -0.18363076, 1]]
         modelMatrix: [[0.06123767, 0.038290888, -0.015387871, 0], [-0.03573827, 0.0354406, -0.054034527, 0], [-0.020633513, 0.052256797, 0.04792155, 0], [0.26655424, 0.65441203, -0.18363076, 1]]
         normalMatrix: [[11.230025, 7.0219455, -2.8218935, -8.106843], [-6.5538845, 6.499296, -9.909155, -4.325878], [-3.78389, 9.583146, 8.788125, -3.6489441], [0, -0, 0, 1]]
-        modelViewProjectionMatrix: [[0.046785712, -0.015642013, -0.07022714, -0.07008682], [0.103257395, 0.13632105, 0.0111463815, 0.011124113], [-0.10431097, 0.12792844, -0.020464351, -0.02042346], [-0.58133775, 1.6851547, 6.489773, 6.876406]]
+        modelViewProjectionMatrix: [[0.09129907, 0.084467575, -0.021299046, -0.021256492], [-0.01756167, 0.13690445, 0.049136944, 0.049038768], [-0.054988056, 0.096520625, -0.051056445, -0.05095443], [-1.3139092, 0.53448, 11.312845, 11.689842]]
         visible: true
-        distanceToCamera: 6.913943
+        distanceToCamera: 11.726189
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -1448,6 +1616,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1591,9 +1786,9 @@ entities:
         localMatrix: [[-0.048188783, -4.4014845e-09, -0.055954225, 0], [-0.048457574, -0.036922194, 0.041732527, 0], [-0.027977005, 0.063951075, 0.024094291, 0], [0.26655424, 0.65441203, -0.037266076, 1]]
         modelMatrix: [[-0.048188783, -4.4014845e-09, -0.055954225, 0], [-0.048457574, -0.036922194, 0.041732527, 0], [-0.027977005, 0.063951075, 0.024094291, 0], [0.26655424, 0.65441203, -0.037266076, 1]]
         normalMatrix: [[-8.837058, -5.7821114e-07, -10.261118, 1.9731637], [-8.886425, -6.771, 7.653149, 7.0849414], [-5.130584, 11.727712, 4.4185495, -6.1425157], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.10420479, 0.08505291, 0.042947568, 0.042861756], [-0.09825934, -0.0062734433, 0.056932993, 0.056819245], [-0.05673007, 0.16709423, -0.019723117, -0.01968371], [-0.884593, 1.6584526, 6.4762893, 6.86295]]
+        modelViewProjectionMatrix: [[-0.033262454, 0.056909494, 0.06672265, 0.06658933], [-0.08899931, -0.10485604, -0.0069062933, -0.0068924986], [-0.051383793, 0.14477676, -0.031229366, -0.031166967], [-1.396877, 0.42518497, 11.184705, 11.561957]]
         visible: true
-        distanceToCamera: 6.9069557
+        distanceToCamera: 11.602534
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -1605,6 +1800,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1748,9 +1970,9 @@ entities:
         localMatrix: [[-0.06929875, 0.025509156, 2.2007423e-09, 0], [0.012754526, 0.03464924, -0.06395108, 0], [-0.022091484, -0.060014226, -0.036922194, 0], [0.26655424, 0.65441203, 0.118741214, 1]]
         modelMatrix: [[-0.06929875, 0.025509156, 2.2007423e-09, 0], [0.012754526, 0.03464924, -0.06395108, 0], [-0.022091484, -0.060014226, -0.036922194, 0], [0.26655424, 0.65441203, 0.118741214, 1]]
         normalMatrix: [[-12.708293, 4.6779747, 4.3365833e-07, 0.32612646], [2.3389978, 6.354175, -11.727711, -3.3891556], [-4.051262, -11.005749, -6.771, 9.086172], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[-0.01686516, 0.15870419, 0.038614858, 0.038537707], [0.1356053, 0.06122873, -0.025483422, -0.025432503], [0.071123295, -0.07910759, 0.057743788, 0.05762841], [-1.207827, 1.6299914, 6.461918, 6.848607]]
+        modelViewProjectionMatrix: [[-0.09344637, 0.08317633, 0.017354513, 0.017319838], [0.053450033, 0.12718174, 0.04022461, 0.04014424], [-0.008859811, -0.11000149, 0.059629265, 0.059510127], [-1.4853108, 0.30868948, 11.048121, 11.425647]]
         visible: true
-        distanceToCamera: 6.9029183
+        distanceToCamera: 11.471323
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -1762,6 +1984,33 @@ entities:
               metallicFactor: 0
               roughnessFactor: 0.5
               emissiveFactor: [1, 1, 1]
+              baseColorTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              emissiveTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
+              normalTexture:
+                textureType: 2D
+                source: id
+                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                minFilter: linear_mipmap_linear
+                magFilter: linear
+                wrapU: clamp_to_edge
+                wrapV: clamp_to_edge
+                releaseDataAfterLoad: false
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1938,9 +2187,9 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1.4598836, 0.46830678, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1.4598836, 0.46830678, 0, 1]]
         normalMatrix: [[1, 0, 0, -1.4598836], [0, 1, 0, -0.46830678], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.24336885, -1.5531598, -0.78426975, -0.7827028], [0, 2.0021105, -0.61680037, -0.615568], [-2.0719156, -0.1824354, -0.09212095, -0.091936894], [-0.671386, -0.5743804, 5.6517544, 6.040062]]
+        modelViewProjectionMatrix: [[1.3484567, -0.31390652, -0.36803472, -0.36729938], [0, 2.4078805, -0.31948653, -0.3188482], [-0.56685686, -0.7467306, -0.87549233, -0.8737431], [0.19115138, -0.4253558, 10.772349, 11.150426]]
         visible: true
-        distanceToCamera: 6.0528536
+        distanceToCamera: 11.152449
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -2094,9 +2343,9 @@ entities:
         localMatrix: [[0.3984884, 0, 0, 0], [0, 0.025844906, 0, 0], [0, 0, 0.39555442, 0], [0.29146898, -0.150756, 0, 1]]
         modelMatrix: [[0.3984884, 0, 0, 0], [0, 0.025844906, 0, 0], [0, 0, 0.39555442, 0], [0.29146898, -0.150756, 0, 1]]
         normalMatrix: [[2.5094833, 0, 0, -0.73143655], [0, 38.69235, 0, 5.833103], [0, 0, 2.5280972, -0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.09697966, -0.61891615, -0.3125224, -0.311898], [0, 0.051744357, -0.015941147, -0.015909296], [-0.8195554, -0.07216313, -0.03643885, -0.036366045], [-0.9557417, 0.00092208385, 6.9499445, 7.3356586]]
+        modelViewProjectionMatrix: [[0.5373444, -0.12508811, -0.14665757, -0.14636454], [0, 0.062231444, -0.008257099, -0.008240601], [-0.22422273, -0.2953726, -0.34630486, -0.34561294], [-1.3844051, -1.5492121, 11.400149, 11.776972]]
         visible: true
-        distanceToCamera: 7.3499503
+        distanceToCamera: 11.830667
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false

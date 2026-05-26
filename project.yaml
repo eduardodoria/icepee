@@ -6,6 +6,7 @@ canvasHeight: 720
 scalingMode: fitwidth
 textureStrategy: resize
 luaDir: .
+startSceneId: 1
 terrainEditor:
   brushMode: 0
   brushShape: 0
@@ -30,6 +31,8 @@ tabs:
     filepath: ButtonScript.h
   - type: scene
     filepath: Main Scene.scene
+  - type: codeeditor
+    filepath: ButtonScript.cpp
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
@@ -56,7 +59,7 @@ scenes:
       aspect: .nan
       nearClip: 0.2
       farClip: 200
-      position: [7.861709, 3.990472, 8.39712]
+      position: [5.4142723, 4.1822925, 9.744036]
   - filepath: UI Scene.scene
     showAllJoints: false
     showAllBones: false
@@ -76,14 +79,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-726.739, -140.4632, 0]
+      target: [-333.39243, -304.8486, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.6367265
       nearClip: -10000
       farClip: 10000
-      position: [-726.739, -140.4632, 1]
-      zoom: 1.4641001
+      position: [-333.39243, -304.8486, 1]
+      zoom: 1.4728934
   - filepath: Score Scene.scene
     showAllJoints: false
     showAllBones: false
