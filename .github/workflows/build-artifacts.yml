@@ -186,23 +186,6 @@ jobs:
             --shader ui:Ftx \
             --shader points:Tex,Vc4
 
-      - name: Fix exported NaN camera literals
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          replacements = 0
-          for source in Path('.ci-build/export/project').glob('*.cpp'):
-              text = source.read_text()
-              count = text.count('= nanf;')
-              if count:
-                  text = text.replace('= nanf;', '= nanf("");')
-                  source.write_text(text)
-                  replacements += count
-
-          print(f'Patched {replacements} invalid nanf literal(s)')
-          PY
-
       - name: Configure
         run: |
           cmake \
