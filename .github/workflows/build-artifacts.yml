@@ -196,7 +196,7 @@ jobs:
 
       - name: Build
         run: |
-          cmake --build "$BUILD_DIR" --config Release --parallel
+          cmake --build "$BUILD_DIR" --config Release
 
       - name: Install
         run: |
