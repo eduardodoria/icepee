@@ -177,14 +177,7 @@ jobs:
           "$EDITOR_PATH" export \
             --project . \
             --out "$EXPORT_DIR" \
-            --platform "${{ matrix.platform }}" \
-            --shader mesh:Uv1,Puc,Shw,Pcf,Nor,Vc4 \
-            --shader mesh:Uv1,Puc,Shw,Pcf,Nor,Nmp \
-            --shader depth \
-            --shader ui:Vc4 \
-            --shader ui:Tex,Vc4 \
-            --shader ui:Ftx \
-            --shader points:Tex,Vc4
+            --platform "${{ matrix.platform }}"
 
       - name: Configure
         run: |

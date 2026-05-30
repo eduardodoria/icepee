@@ -7,6 +7,7 @@
 #include "math/Vector2.h"
 #include "object/Points.h"
 #include "ScriptProperty.h"
+#include "object/ui/Text.h"
 
 class IcePee : public doriax::ScriptBase {
 public:
@@ -22,6 +23,12 @@ public:
 
     SPROPERTY("Point Sprites")
     doriax::Points* pointSprites = nullptr;
+
+    SPROPERTY("Time")
+    doriax::Text* time = nullptr;
+
+    SPROPERTY("Score")
+    doriax::Text* score = nullptr;
 
     doriax::Vector2 lastMousePosition;
     float pointSpritesYaw = 0.0f;
@@ -40,6 +47,7 @@ public:
 
     std::vector<doriax::Entity> iceEntities;
     bool iceEntitiesCached = false;
+    float remainingTimeSeconds = 30.0f;
 
     IcePee(doriax::Scene* scene, doriax::Entity entity);
     ~IcePee();

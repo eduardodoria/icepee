@@ -85,10 +85,12 @@ static bool hasParticleHitAABB(const ParticlesComponent& particles, const AABB& 
 }
 
 static const Vector3 kIceMeltTargetColor(0.88f, 0.95f, 1.0f);
+static constexpr int kScorePerIceEntity = 100;
 
 struct IceMeltVisualState {
     float initialLargestScale = 0.0f;
     Vector4 initialColor = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+    int awardedScore = 0;
 };
 
 static std::unordered_map<Entity, IceMeltVisualState>& getIceMeltVisualStates() {
@@ -98,6 +100,13 @@ static std::unordered_map<Entity, IceMeltVisualState>& getIceMeltVisualStates() 
 
 static float getLargestScaleComponent(const Vector3& scale) {
     return std::max(scale.x, std::max(scale.y, scale.z));
+}
+
+static float getIceMeltProgress(const IceMeltVisualState& state, float currentLargestScale, float minIceScale) {
+    const float scaleRange = std::max(0.0001f, state.initialLargestScale - minIceScale);
+    return (state.initialLargestScale <= minIceScale)
+        ? 1.0f
+        : std::max(0.0f, std::min(1.0f - ((currentLargestScale - minIceScale) / scaleRange), 1.0f));
 }
 
 static Vector4 lerpColor(const Vector4& from, const Vector4& to, float factor) {
@@ -122,18 +131,40 @@ static IceMeltVisualState& getIceMeltVisualState(Entity entity, const Mesh& ice,
 }
 
 static void applyIceMeltColor(Mesh& ice, IceMeltVisualState& state, float currentLargestScale, float minIceScale) {
-    const float scaleRange = std::max(0.0001f, state.initialLargestScale - minIceScale);
-    const float meltProgress = (state.initialLargestScale <= minIceScale)
-        ? 1.0f
-        : std::max(0.0f, std::min(1.0f - ((currentLargestScale - minIceScale) / scaleRange), 1.0f));
+    const float meltProgress = getIceMeltProgress(state, currentLargestScale, minIceScale);
     const Vector4 meltedColor(kIceMeltTargetColor.x, kIceMeltTargetColor.y, kIceMeltTargetColor.z, state.initialColor.w);
 
     ice.setColor(lerpColor(state.initialColor, meltedColor, meltProgress));
 }
 
+static int awardIceMeltScore(IceMeltVisualState& state, float currentLargestScale, float minIceScale) {
+    const int targetScore = static_cast<int>(std::floor(getIceMeltProgress(state, currentLargestScale, minIceScale) * kScorePerIceEntity));
+    const int gainedScore = std::max(0, targetScore - state.awardedScore);
+
+    state.awardedScore += gainedScore;
+    return gainedScore;
+}
+
 static void hideMeltedIce(Entity entity, Mesh& ice) {
     ice.setVisible(false);
     getIceMeltVisualStates().erase(entity);
+}
+
+static void syncScoreText(Text* text, int score) {
+    if (!text) {
+        return;
+    }
+
+    text->setText("Score: " + std::to_string(score));
+}
+
+static void syncTimeText(Text* text, float remainingTimeSeconds) {
+    if (!text) {
+        return;
+    }
+
+    const int displayedSeconds = static_cast<int>(std::ceil(std::max(0.0f, remainingTimeSeconds)));
+    text->setText("Time: " + std::to_string(displayedSeconds));
 }
 
 static void fillWaterEntity(Scene* scene, const ParticlesComponent& particles, Entity waterEntity, float deltaTime, float& waterMaxScaleY) {
@@ -175,14 +206,15 @@ static void fillWaterEntity(Scene* scene, const ParticlesComponent& particles, E
     water.updateTransform();
 }
 
-static void meltIceEntities(Scene* scene, const ParticlesComponent& particles, float deltaTime, const std::vector<Entity>& iceEntities) {
+static int meltIceEntities(Scene* scene, const ParticlesComponent& particles, float deltaTime, const std::vector<Entity>& iceEntities) {
     if (!scene || deltaTime <= 0.0f) {
-        return;
+        return 0;
     }
 
     const float meltRatePerSecond = 0.015f;
     const float minIceScale = 0.025f;
     const float meltAmount = meltRatePerSecond * deltaTime;
+    int gainedScore = 0;
 
     for (Entity candidate : iceEntities) {
         Mesh ice(scene, candidate);
@@ -199,6 +231,7 @@ static void meltIceEntities(Scene* scene, const ParticlesComponent& particles, f
         }
 
         if (largestScale <= minIceScale) {
+            gainedScore += awardIceMeltScore(visualState, minIceScale, minIceScale);
             hideMeltedIce(candidate, ice);
             continue;
         }
@@ -215,6 +248,8 @@ static void meltIceEntities(Scene* scene, const ParticlesComponent& particles, f
             currentScale.z * scaleFactor));
         ice.updateTransform();
 
+        gainedScore += awardIceMeltScore(visualState, nextLargestScale, minIceScale);
+
         if (nextLargestScale <= minIceScale) {
             hideMeltedIce(candidate, ice);
             continue;
@@ -222,6 +257,8 @@ static void meltIceEntities(Scene* scene, const ParticlesComponent& particles, f
 
         applyIceMeltColor(ice, visualState, nextLargestScale, minIceScale);
     }
+
+    return gainedScore;
 }
 
 static void cacheVelocityConeFromParticles(const ParticlesComponent& particles, float& minSpeed, float& maxSpeed, float& coneAngle) {
@@ -267,6 +304,14 @@ IcePee::~IcePee() {
 void IcePee::onUpdate() {
     if (!isActive) return;
 
+    const float deltaTime = Engine::getDeltatime();
+    remainingTimeSeconds = std::max(0.0f, remainingTimeSeconds - deltaTime);
+    syncTimeText(time, remainingTimeSeconds);
+    if (remainingTimeSeconds <= 0.0f) {
+        isActive = false;
+        return;
+    }
+
     Vector2 mousePosition = Input::getMousePosition();
     bool isDragging = Input::isMousePressed(S_MOUSE_BUTTON_LEFT);
 
@@ -309,7 +354,7 @@ void IcePee::onUpdate() {
                 particlesConeCached = true;
             }
             applyVelocityConeToParticles(*particles, particlesMinSpeed, particlesMaxSpeed, particlesConeAngle);
-            fillWaterEntity(scene, *particles, waterEntity, Engine::getDeltatime(), waterMaxScaleY);
+            fillWaterEntity(scene, *particles, waterEntity, deltaTime, waterMaxScaleY);
             if (!iceEntitiesCached) {
                 std::vector<Entity> allEntities = scene->getEntityList();
                 for (Entity candidate : allEntities) {
@@ -319,11 +364,12 @@ void IcePee::onUpdate() {
                 }
                 iceEntitiesCached = true;
             }
-            meltIceEntities(scene, *particles, Engine::getDeltatime(), iceEntities);
+            const int gainedScore = meltIceEntities(scene, *particles, deltaTime, iceEntities);
+            if (gainedScore > 0) {
+                counter += gainedScore;
+                syncScoreText(score, counter);
+            }
         }
     }
-
-    // Example: Increment counter every frame
-    counter++;
 }
 
