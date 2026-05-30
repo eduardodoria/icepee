@@ -15,6 +15,10 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 0
   maxSpriteFrames: 0
+shaderKeys:
+  - 21474836482
+  - 21474836488
+  - 21474836489
 cppScripts:
   - path: ButtonScript.cpp
     headerPath: ButtonScript.h
@@ -38,18 +42,18 @@ entities:
     name: Button
     components:
       transform:
-        position: [727.60004, 622.64, 0]
+        position: [512, 619.2, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [727.60004, 622.64, 0]
+        worldPosition: [512, 619.2, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [727.60004, 622.64, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [727.60004, 622.64, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [512, 619.2, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [512, 619.2, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0010995052, 0, 0, 0], [0, -0.002762431, 0, 0], [0, 0, -0.1, 0], [-0.19999993, -0.72000015, 0.1, 1]]
+        modelViewProjectionMatrix: [[0.002522068, 0, 0, 0], [0, -0.0035650623, 0, 0], [0, 0, -0.1, 0], [0.29129887, -1.2074866, 0.1, 1]]
         visible: true
-        distanceToCamera: 957.6447
+        distanceToCamera: 803.4635
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -88,7 +92,7 @@ entities:
               count: 16
               normalized: true
               perInstance: false
-          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACbQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACbQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACbQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACbQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
         indices:
           type: index_buffer
           usage: dynamic
@@ -113,16 +117,16 @@ entities:
         vertexCount: 54
         aabb:
           min: [0, 0, 0]
-          max: [310, 44, 0]
+          max: [218, 44, 0]
         worldAABB:
-          min: [727.60004, 622.64, 0]
-          max: [1037.6001, 666.64, 0]
+          min: [512, 619.2, 0]
+          max: [730, 663.2, 0]
         texture: ~
         color: [1, 1, 1, 1]
         automaticFlipY: true
         flipY: false
         pointerMoved: false
-        focused: false
+        focused: true
       button:
         label: 103
         textureNormal: ~
@@ -133,7 +137,7 @@ entities:
         colorDisabled: [1, 1, 1, 1]
         disabled: false
       uilayout:
-        width: 310
+        width: 218
         height: 44
         anchorPointLeft: 0.4
         anchorPointTop: 0.86
@@ -148,7 +152,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [727.6, 57.359985, 310, 44]
+        scissor: [512, -102.20001, 218, 44]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -199,18 +203,18 @@ entities:
         name: Label
         components:
           transform:
-            position: [137, 12, 0]
+            position: [91, 12, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [864.60004, 634.64, 0]
+            worldPosition: [603, 631.2, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [137, 12, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [864.60004, 634.64, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [91, 12, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [603, 631.2, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-            modelViewProjectionMatrix: [[0.0010995052, 0, 0, 0], [0, -0.002762431, 0, 0], [0, 0, -0.1, 0], [-0.049367726, -0.7531493, 0.1, 1]]
+            modelViewProjectionMatrix: [[0.002522068, 0, 0, 0], [0, -0.0035650623, 0, 0], [0, 0, -0.1, 0], [0.520807, -1.2502673, 0.1, 1]]
             visible: true
-            distanceToCamera: 1072.5215
+            distanceToCamera: 872.9396
             billboardRotation: [1, 0, 0, 0]
             billboard: false
             fakeBillboard: false
@@ -268,9 +272,17 @@ entities:
               min: [0, 0, 0]
               max: [36, 16.833334, 0]
             worldAABB:
-              min: [864.60004, 634.64, 0]
-              max: [900.60004, 651.4733, 0]
-            texture: ~
+              min: [603, 631.2, 0]
+              max: [639, 648.0333, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|20
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
             color: [0, 0, 0, 1]
             automaticFlipY: true
             flipY: false
@@ -292,7 +304,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: -1
-            scissor: [727.6, 57.359985, 310, 44]
+            scissor: [512, -102.20001, 218, 44]
             ignoreScissor: false
             ignoreEvents: true
           text:
@@ -310,18 +322,18 @@ entities:
     name: Image
     components:
       transform:
-        position: [695.5, 0, 0]
+        position: [422, 0, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [695.5, 0, 0]
+        worldPosition: [422, 0, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [695.5, 0, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [695.5, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [422, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [422, 0, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0010995052, 0, 0, 0], [0, -0.002762431, 0, 0], [0, 0, -0.1, 0], [-0.2352941, 1, 0.1, 1]]
+        modelViewProjectionMatrix: [[0.002522068, 0, 0, 0], [0, -0.0035650623, 0, 0], [0, 0, -0.1, 0], [0.0643127, 1, 0.1, 1]]
         visible: true
-        distanceToCamera: 695.50073
+        distanceToCamera: 422.0012
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -360,7 +372,7 @@ entities:
               count: 16
               normalized: true
               perInstance: false
-          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AIDWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AIDWQwCA1kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAACA1kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AIDWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AIDWQwCA1kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAACA1kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AIDWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AIDWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AIDWQwCA1kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AIDWQwCA1kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAACA1kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAACA1kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADaQwAA2kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADaQwAA2kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADaQwAA2kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AADaQwAA2kMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2kMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
         indices:
           type: index_buffer
           usage: dynamic
@@ -385,10 +397,10 @@ entities:
         vertexCount: 54
         aabb:
           min: [0, 0, 0]
-          max: [429, 429, 0]
+          max: [436, 436, 0]
         worldAABB:
-          min: [695.5, 0, 0]
-          max: [1124.5, 429, 0]
+          min: [422, 0, 0]
+          max: [858, 436, 0]
         texture:
           textureType: 2D
           source: path
@@ -404,22 +416,22 @@ entities:
         pointerMoved: false
         focused: false
       uilayout:
-        width: 429
-        height: 429
+        width: 436
+        height: 436
         anchorPointLeft: 0.5
         anchorPointTop: 0
         anchorPointRight: 0.5
         anchorPointBottom: 0
-        anchorOffsetLeft: -214
+        anchorOffsetLeft: -218
         anchorOffsetTop: 0
-        anchorOffsetRight: 215
-        anchorOffsetBottom: 429
+        anchorOffsetRight: 218
+        anchorOffsetBottom: 436
         positionOffset: [0, 0]
         anchorPreset: 6
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [695.5, 295, 429, 429]
+        scissor: [422, 125, 436, 436]
         ignoreScissor: false
         ignoreEvents: false
       image:

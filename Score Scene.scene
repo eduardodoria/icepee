@@ -15,24 +15,26 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 0
   maxSpriteFrames: 0
+shaderKeys:
+  - 21474836482
 entities:
   - type: Entity
     entity: 101
     name: Text
     components:
       transform:
-        position: [83.000015, 31.000015, 0]
+        position: [64.999985, 26.000015, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [83.000015, 31.000015, 0]
+        worldPosition: [64.999985, 26.000015, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [83.000015, 31.000015, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [83.000015, 31.000015, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [64.999985, 26.000015, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [64.999985, 26.000015, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0021881838, 0, 0, 0], [0, -0.002962963, 0, 0], [0, 0, -0.0001, 0], [-0.7089715, 0.75999993, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.002522068, 0, 0, 0], [0, -0.0035650623, 0, 0], [0, 0, -0.1, 0], [-0.8360656, 0.90730834, 0.1, 1]]
         visible: true
-        distanceToCamera: 155.72734
+        distanceToCamera: 70.014275
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -90,9 +92,17 @@ entities:
           min: [0, 0, 0]
           max: [71, 35.041668, 0]
         worldAABB:
-          min: [83.000015, 31.000015, 0]
-          max: [154.00002, 66.04169, 0]
-        texture: ~
+          min: [64.999985, 26.000015, 0]
+          max: [135.99998, 61.041683, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: font|43
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
         color: [1, 0.9322396, 0, 1]
         automaticFlipY: true
         flipY: false
@@ -105,10 +115,10 @@ entities:
         anchorPointTop: 0
         anchorPointRight: 0
         anchorPointBottom: 0
-        anchorOffsetLeft: 83
-        anchorOffsetTop: 31
-        anchorOffsetRight: 154
-        anchorOffsetBottom: 74
+        anchorOffsetLeft: 64
+        anchorOffsetTop: 26
+        anchorOffsetRight: 135
+        anchorOffsetBottom: 69
         positionOffset: [0, 0]
         anchorPreset: 0
         usingAnchors: false

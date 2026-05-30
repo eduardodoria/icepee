@@ -29,10 +29,10 @@ tabs:
     filepath: assets/New Scene 6.scene
   - type: codeeditor
     filepath: ButtonScript.h
-  - type: scene
-    filepath: Main Scene.scene
   - type: codeeditor
     filepath: ButtonScript.cpp
+  - type: scene
+    filepath: Main Scene.scene
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
@@ -79,14 +79,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-333.39243, -304.8486, 0]
+      target: [-869.9949, -676.7107, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.6367265
       nearClip: -10000
       farClip: 10000
-      position: [-333.39243, -304.8486, 1]
-      zoom: 1.4728934
+      position: [-869.9949, -676.7107, 1]
+      zoom: 2.1564634
   - filepath: Score Scene.scene
     showAllJoints: false
     showAllBones: false
