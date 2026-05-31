@@ -56,10 +56,10 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 2.7610497
+      aspect: 1.7015985
       nearClip: 0.2
       farClip: 200
-      position: [5.156532, 3.9585505, 9.130914]
+      position: [5.561362, 4.209013, 8.85333]
   - filepath: UI Scene.scene
     showAllJoints: false
     showAllBones: false
