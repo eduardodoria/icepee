@@ -1,5 +1,6 @@
 #include "IcePee.h"
 #include "Input.h"
+#include "SceneManager.h"
 
 #include "action/Particles.h"
 #include "component/ActionComponent.h"
@@ -93,9 +94,123 @@ struct IceMeltVisualState {
     int awardedScore = 0;
 };
 
+struct MeshResetState {
+    Entity entity = NULL_ENTITY;
+    Vector3 position = Vector3(0.0f, 0.0f, 0.0f);
+    Vector3 scale = Vector3(1.0f, 1.0f, 1.0f);
+    Vector4 color = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+    bool visible = true;
+};
+
+struct ObjectResetState {
+    Entity entity = NULL_ENTITY;
+    Vector3 position = Vector3(0.0f, 0.0f, 0.0f);
+    Quaternion rotation;
+    Vector3 scale = Vector3(1.0f, 1.0f, 1.0f);
+    bool visible = true;
+};
+
+struct IcePeeResetState {
+    std::vector<MeshResetState> iceStates;
+    MeshResetState waterState;
+    ObjectResetState pointSpritesState;
+    ParticleVelocityInitializer particleVelocity;
+    bool hasWaterState = false;
+    bool hasPointSpritesState = false;
+    bool hasParticleVelocity = false;
+    bool cached = false;
+};
+
 static std::unordered_map<Entity, IceMeltVisualState>& getIceMeltVisualStates() {
     static std::unordered_map<Entity, IceMeltVisualState> states;
     return states;
+}
+
+static std::unordered_map<Entity, IcePeeResetState>& getIcePeeResetStates() {
+    static std::unordered_map<Entity, IcePeeResetState> states;
+    return states;
+}
+
+static void cacheResetState(IcePee& icePee) {
+    Scene* scene = icePee.getScene();
+    if (!scene) {
+        return;
+    }
+
+    IcePeeResetState& resetState = getIcePeeResetStates()[icePee.getEntity()];
+    if (resetState.cached) {
+        return;
+    }
+
+    resetState.iceStates.clear();
+    icePee.iceEntities.clear();
+
+    std::vector<Entity> entities = scene->getEntityList();
+    for (Entity candidate : entities) {
+        if (!isIceEntity(scene, candidate)) {
+            continue;
+        }
+
+        Mesh ice(scene, candidate);
+
+        MeshResetState iceState;
+        iceState.entity = candidate;
+        iceState.position = ice.getPosition();
+        iceState.scale = ice.getScale();
+        iceState.color = ice.getColor();
+        iceState.visible = ice.isVisible();
+
+        resetState.iceStates.push_back(iceState);
+        icePee.iceEntities.push_back(candidate);
+    }
+
+    icePee.iceEntitiesCached = !icePee.iceEntities.empty();
+    icePee.waterEntity = findMeshEntityByName(scene, "water");
+
+    if (icePee.waterEntity != NULL_ENTITY && scene->findComponent<MeshComponent>(icePee.waterEntity)) {
+        Mesh water(scene, icePee.waterEntity);
+
+        resetState.waterState.entity = icePee.waterEntity;
+        resetState.waterState.position = water.getPosition();
+        resetState.waterState.scale = water.getScale();
+        resetState.waterState.color = water.getColor();
+        resetState.waterState.visible = water.isVisible();
+        resetState.hasWaterState = true;
+    }
+
+    if (icePee.pointSprites) {
+        resetState.pointSpritesState.entity = icePee.pointSprites->getEntity();
+        resetState.pointSpritesState.position = icePee.pointSprites->getPosition();
+        resetState.pointSpritesState.rotation = icePee.pointSprites->getRotation();
+        resetState.pointSpritesState.scale = icePee.pointSprites->getScale();
+        resetState.pointSpritesState.visible = icePee.pointSprites->isVisible();
+        resetState.hasPointSpritesState = true;
+
+        Entity particlesEntity = findParticlesEntityForTarget(scene, icePee.pointSprites->getEntity());
+        if (particlesEntity != NULL_ENTITY) {
+            if (const ParticlesComponent* pc = scene->findComponent<ParticlesComponent>(particlesEntity)) {
+                resetState.particleVelocity = pc->velocityInitializer;
+                resetState.hasParticleVelocity = true;
+            }
+        }
+    }
+
+    resetState.cached = true;
+}
+
+static void resetParticleRuntime(IcePee& icePee) {
+    Scene* scene = icePee.getScene();
+    if (!scene) {
+        return;
+    }
+
+    if (icePee.particlesEntity == NULL_ENTITY && icePee.pointSprites) {
+        icePee.particlesEntity = findParticlesEntityForTarget(scene, icePee.pointSprites->getEntity());
+    }
+
+    if (icePee.particlesEntity != NULL_ENTITY) {
+        Particles(scene, icePee.particlesEntity).reset();
+    }
 }
 
 static float getLargestScaleComponent(const Vector3& scale) {
@@ -298,17 +413,30 @@ IcePee::IcePee(Scene* scene, Entity entity): ScriptBase(scene, entity) {
 }
 
 IcePee::~IcePee() {
-
+    getIcePeeResetStates().erase(getEntity());
 }
 
 void IcePee::onUpdate() {
-    if (!isActive) return;
+    cacheResetState(*this);
+
+    if (!isActive) {
+        if (pointSprites) pointSprites->setVisible(false);
+        return;
+    }
+
+    if (pointSprites) pointSprites->setVisible(true);
 
     const float deltaTime = Engine::getDeltatime();
     remainingTimeSeconds = std::max(0.0f, remainingTimeSeconds - deltaTime);
     syncTimeText(time, remainingTimeSeconds);
     if (remainingTimeSeconds <= 0.0f) {
         isActive = false;
+        if (pointSprites) pointSprites->setVisible(false);
+        if (particlesEntity != NULL_ENTITY && scene->findComponent<ParticlesComponent>(particlesEntity)) {
+            Particles(scene, particlesEntity).stop();
+        }
+        SceneManager::addChildScene("Game Over Scene");
+        SceneManager::removeChildScene("Score Scene");
         return;
     }
 
@@ -371,5 +499,80 @@ void IcePee::onUpdate() {
             }
         }
     }
+}
+
+void IcePee::resetGame() {
+    Scene* currentScene = getScene();
+    if (!currentScene) {
+        return;
+    }
+
+    cacheResetState(*this);
+    IcePeeResetState& resetState = getIcePeeResetStates()[getEntity()];
+
+    getIceMeltVisualStates().clear();
+    resetParticleRuntime(*this);
+
+    pointSpritesYaw = 0.0f;
+    pointSpritesPitch = 0.0f;
+    wasDragging = false;
+    lastMousePosition = Vector2(0.0f, 0.0f);
+
+    particlesMinSpeed = 0.0f;
+    particlesMaxSpeed = 0.0f;
+    particlesConeAngle = 0.0f;
+    particlesConeCached = false;
+    particlesStarted = false;
+
+    counter = 0;
+    remainingTimeSeconds = 15.0f;
+    waterMaxScaleY = 0.0f;
+    isActive = false;
+
+    iceEntities.clear();
+    for (const MeshResetState& iceState : resetState.iceStates) {
+        if (!currentScene->findComponent<MeshComponent>(iceState.entity)) {
+            continue;
+        }
+
+        Mesh ice(currentScene, iceState.entity);
+        ice.setPosition(iceState.position);
+        ice.setVisible(iceState.visible);
+        ice.setScale(iceState.scale);
+        ice.setColor(iceState.color);
+        ice.updateTransform();
+
+        iceEntities.push_back(iceState.entity);
+    }
+    iceEntitiesCached = !iceEntities.empty();
+
+    if (resetState.hasWaterState && currentScene->findComponent<MeshComponent>(resetState.waterState.entity)) {
+        Mesh water(currentScene, resetState.waterState.entity);
+        water.setVisible(resetState.waterState.visible);
+        water.setPosition(resetState.waterState.position);
+        water.setScale(resetState.waterState.scale);
+        water.setColor(resetState.waterState.color);
+        water.updateTransform();
+        waterEntity = resetState.waterState.entity;
+    }
+
+    if (pointSprites) {
+        if (resetState.hasPointSpritesState) {
+            pointSprites->setPosition(resetState.pointSpritesState.position);
+            pointSprites->setScale(resetState.pointSpritesState.scale);
+        }
+        pointSprites->setRotation(getPointSpritesBaseRotation());
+        pointSprites->setVisible(false);
+        pointSprites->updateTransform();
+
+        if (resetState.hasParticleVelocity && particlesEntity != NULL_ENTITY) {
+            if (ParticlesComponent* pc = currentScene->findComponent<ParticlesComponent>(particlesEntity)) {
+                pc->velocityInitializer = resetState.particleVelocity;
+            }
+        }
+    }
+
+    syncScoreText(score, counter);
+    syncTimeText(time, remainingTimeSeconds);
 }
 

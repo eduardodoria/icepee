@@ -47,10 +47,11 @@ public:
 
     std::vector<doriax::Entity> iceEntities;
     bool iceEntitiesCached = false;
-    float remainingTimeSeconds = 30.0f;
+    float remainingTimeSeconds = 15.0f;
 
     IcePee(doriax::Scene* scene, doriax::Entity entity);
     ~IcePee();
 
     void onUpdate();
+    void resetGame();
 };

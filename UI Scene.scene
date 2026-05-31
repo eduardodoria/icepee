@@ -33,27 +33,24 @@ cppScripts:
       - name: icePeeScript
         isPtr: true
         ptrTypeName: IcePee
-      - name: particles
-        isPtr: true
-        ptrTypeName: doriax::Particles
 entities:
   - type: Entity
     entity: 105
     name: Image
     components:
       transform:
-        position: [422, 0, 0]
+        position: [174, 0, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [422, 0, 0]
+        worldPosition: [174, 0, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [422, 0, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [422, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [174, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [174, 0, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.00046395417, 0, 0, 0], [0, -0.0012810006, 0, 0], [0, 0, -0.0001, 0], [-0.40057355, 0.13313323, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.0025510204, 0, 0, 0], [0, -0.0045871558, 0, 0], [0, 0, -0.1, 0], [-0.5561224, 1, 0.1, 1]]
         visible: true
-        distanceToCamera: 1458.4886
+        distanceToCamera: 174.00287
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -119,8 +116,8 @@ entities:
           min: [0, 0, 0]
           max: [436, 436, 0]
         worldAABB:
-          min: [422, 0, 0]
-          max: [858, 436, 0]
+          min: [174, 0, 0]
+          max: [610, 436, 0]
         texture:
           textureType: 2D
           source: path
@@ -151,7 +148,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [599.1267, 208.01135, 202.18288, 202.18288]
+        scissor: [174.00002, 0, 436, 436]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -165,18 +162,18 @@ entities:
     name: Button
     components:
       transform:
-        position: [512, 619.2, 0]
+        position: [313.6, 374.96, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [512, 619.2, 0]
+        worldPosition: [313.6, 374.96, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [512, 619.2, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [512, 619.2, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [313.6, 374.96, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [313.6, 374.96, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.00046395417, 0, 0, 0], [0, -0.0012810006, 0, 0], [0, 0, -0.0001, 0], [-0.3588177, -0.6600623, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.0025510204, 0, 0, 0], [0, -0.0045871558, 0, 0], [0, 0, -0.1, 0], [-0.19999999, -0.7199999, 0.1, 1]]
         visible: true
-        distanceToCamera: 1894.5436
+        distanceToCamera: 488.8159
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -215,7 +212,7 @@ entities:
               count: 16
               normalized: true
               perInstance: false
-          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AABaQwAAMEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAMEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAGQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAGQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAGQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAGQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAGQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAGQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAGQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAGQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
         indices:
           type: index_buffer
           usage: dynamic
@@ -240,10 +237,10 @@ entities:
         vertexCount: 54
         aabb:
           min: [0, 0, 0]
-          max: [218, 44, 0]
+          max: [134, 27, 0]
         worldAABB:
-          min: [512, 619.2, 0]
-          max: [730, 663.2, 0]
+          min: [313.6, 374.96, 0]
+          max: [447.6, 401.96, 0]
         texture: ~
         color: [1, 1, 1, 1]
         automaticFlipY: true
@@ -260,8 +257,8 @@ entities:
         colorDisabled: [1, 1, 1, 1]
         disabled: false
       uilayout:
-        width: 218
-        height: 44
+        width: 134
+        height: 27
         anchorPointLeft: 0.4
         anchorPointTop: 0.86
         anchorPointRight: 0.57
@@ -275,7 +272,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [640.8617, 102.65375, 101.09144, 20.403776]
+        scissor: [313.6, 34.04004, 134, 27]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -314,30 +311,24 @@ entities:
                 value: 108
                 defaultValue: 0
                 sceneId: 1
-              - name: particles
-                displayName: Particles
-                type: 9
-                ptrTypeName: doriax::Particles
-                value: 0
-                defaultValue: 0
     children:
       - type: Entity
         entity: 103
         name: Label
         components:
           transform:
-            position: [91, 12, 0]
+            position: [49, 3.5, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [603, 631.2, 0]
+            worldPosition: [362.6, 378.46, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [91, 12, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [603, 631.2, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [49, 3.5, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [362.6, 378.46, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-            modelViewProjectionMatrix: [[0.00046395417, 0, 0, 0], [0, -0.0012810006, 0, 0], [0, 0, -0.0001, 0], [-0.31659788, -0.67543435, 0.0001, 1]]
+            modelViewProjectionMatrix: [[0.0025510204, 0, 0, 0], [0, -0.0045871558, 0, 0], [0, 0, -0.1, 0], [-0.07499999, -0.7360549, 0.1, 1]]
             visible: true
-            distanceToCamera: 1969.8593
+            distanceToCamera: 524.1295
             billboardRotation: [1, 0, 0, 0]
             billboard: false
             fakeBillboard: false
@@ -395,8 +386,8 @@ entities:
               min: [0, 0, 0]
               max: [36, 16.833334, 0]
             worldAABB:
-              min: [603, 631.2, 0]
-              max: [639, 648.0333, 0]
+              min: [362.6, 378.46, 0]
+              max: [398.6, 395.29333, 0]
             texture:
               textureType: 2D
               source: id
@@ -427,7 +418,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: -1
-            scissor: [640.8617, 102.65375, 101.09144, 20.403776]
+            scissor: [313.6, 34.04004, 134, 27]
             ignoreScissor: false
             ignoreEvents: true
           text:

@@ -25,9 +25,6 @@ public:
     SPROPERTY("Ice Pee Script")
     IcePee* icePeeScript = nullptr;
 
-    SPROPERTY("Particles")
-    doriax::Particles* particles = nullptr;
-
     ButtonScript(doriax::Scene* scene, doriax::Entity entity);
     virtual ~ButtonScript();
 

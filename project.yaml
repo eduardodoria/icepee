@@ -33,6 +33,8 @@ tabs:
     filepath: ButtonScript.cpp
   - type: scene
     filepath: Main Scene.scene
+  - type: codeeditor
+    filepath: TryAgainScript.h
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
@@ -79,14 +81,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-869.9949, -676.7107, 0]
+      target: [16.653267, 167.53143, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.6367265
       nearClip: -10000
       farClip: 10000
-      position: [-869.9949, -676.7107, 1]
-      zoom: 2.1564634
+      position: [16.653267, 167.53143, 1]
+      zoom: 2.0852253
   - filepath: Score Scene.scene
     showAllJoints: false
     showAllBones: false
@@ -133,11 +135,11 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [152.25648, -240.83145, 0]
+      target: [-446.70514, -345.0381, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.4135473
       nearClip: -10000
       farClip: 10000
-      position: [152.25648, -240.83145, 1]
-      zoom: 1.9487174
+      position: [-446.70514, -345.0381, 1]
+      zoom: 2.527391
