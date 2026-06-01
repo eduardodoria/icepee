@@ -157,14 +157,10 @@ jobs:
         run: |
           cmake --build "$BUILD_DIR" --config Release
 
-      - name: Install
-        run: |
-          cmake --install "$BUILD_DIR" --config Release --prefix "$PACKAGE_DIR"
-
       - name: Prepare Pages artifact
         id: pages
         run: |
-          site_html=$(find "$PACKAGE_DIR" -type f -name '*.html' | head -n 1)
+          site_html=$(find "$BUILD_DIR" -type f -name '*.html' | head -n 1)
           if [[ -z "$site_html" ]]; then
             echo 'No HTML entry point found in the installed web build.' >&2
             exit 1
