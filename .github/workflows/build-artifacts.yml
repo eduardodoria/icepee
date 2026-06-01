@@ -151,7 +151,8 @@ jobs:
             -B "$BUILD_DIR" \
             -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
-            -DAPP_NAME="$APP_NAME"
+            -DAPP_NAME="$APP_NAME" \
+            -DEM_ADDITIONAL_LINK_FLAGS="--shell-file ${{ github.workspace }}/web/shell.html"
 
       - name: Build
         run: |
@@ -170,6 +171,7 @@ jobs:
           if [[ ! -f "$site_dir/index.html" ]]; then
             cp "$site_html" "$site_dir/index.html"
           fi
+          cp assets/logo.png "$site_dir/logo.png"
           touch "$site_dir/.nojekyll"
 
           echo "site_dir=$site_dir" >> "$GITHUB_OUTPUT"

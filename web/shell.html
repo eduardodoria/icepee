@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IcePee Simulator</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: #060f20;
+      overflow: hidden;
+      font-family: 'Segoe UI', 'Arial Black', sans-serif;
+    }
+
+    /* ── floating ice bubbles ─────────────────────────────────────── */
+    .bubble {
+      position: fixed;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%,
+                  rgba(180,230,255,0.55),
+                  rgba(80,180,240,0.18) 60%,
+                  transparent 100%);
+      border: 1px solid rgba(120,210,255,0.30);
+      pointer-events: none;
+      animation: float linear infinite;
+    }
+    @keyframes float {
+      0%   { transform: translateY(0)   rotate(0deg); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.7; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ── loading overlay ──────────────────────────────────────────── */
+    #loading-overlay {
+      position: fixed; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 28px;
+      background: linear-gradient(160deg, #060f20 0%, #0c1e3d 55%, #06111e 100%);
+      z-index: 10;
+      transition: opacity 0.6s ease, visibility 0.6s;
+    }
+    #loading-overlay.hidden {
+      opacity: 0; visibility: hidden;
+    }
+
+    #logo {
+      width: min(420px, 80vw);
+      filter: drop-shadow(0 0 24px rgba(77,184,232,0.55))
+              drop-shadow(0 0 8px  rgba(255,215,0,0.35));
+      animation: logoBreath 3s ease-in-out infinite;
+    }
+    @keyframes logoBreath {
+      0%, 100% { filter: drop-shadow(0 0 24px rgba(77,184,232,0.55))
+                          drop-shadow(0 0 8px  rgba(255,215,0,0.35)); }
+      50%       { filter: drop-shadow(0 0 38px rgba(77,184,232,0.85))
+                          drop-shadow(0 0 18px rgba(255,215,0,0.55)); }
+    }
+
+    #status-text {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #a8dcf5;
+      text-shadow: 0 0 10px rgba(77,184,232,0.7);
+      min-height: 1.2em;
+    }
+
+    /* progress track */
+    #progress-wrap {
+      width: min(380px, 72vw);
+    }
+    #progress-track {
+      width: 100%;
+      height: 14px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 99px;
+      border: 1px solid rgba(77,184,232,0.25);
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(77,184,232,0.18) inset;
+    }
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #4db8e8 0%, #ffe135 100%);
+      box-shadow: 0 0 14px rgba(77,184,232,0.7), 0 0 6px rgba(255,225,53,0.5);
+      transition: width 0.25s ease;
+    }
+
+    /* ── game canvas ──────────────────────────────────────────────── */
+    #canvas-wrap {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #canvas {
+      display: block;
+      background: #000;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- bubbles -->
+  <div class="bubble" style="width:60px;height:60px;left:8%;animation-duration:14s;animation-delay:0s;bottom:-80px"></div>
+  <div class="bubble" style="width:35px;height:35px;left:22%;animation-duration:11s;animation-delay:3s;bottom:-60px"></div>
+  <div class="bubble" style="width:90px;height:90px;left:40%;animation-duration:18s;animation-delay:1s;bottom:-100px"></div>
+  <div class="bubble" style="width:25px;height:25px;left:58%;animation-duration:10s;animation-delay:5s;bottom:-50px"></div>
+  <div class="bubble" style="width:50px;height:50px;left:70%;animation-duration:13s;animation-delay:2s;bottom:-70px"></div>
+  <div class="bubble" style="width:40px;height:40px;left:85%;animation-duration:16s;animation-delay:7s;bottom:-65px"></div>
+  <div class="bubble" style="width:15px;height:15px;left:93%;animation-duration: 9s;animation-delay:4s;bottom:-40px"></div>
+
+  <!-- loading screen -->
+  <div id="loading-overlay">
+    <img id="logo" src="logo.png" alt="IcePee Simulator" />
+    <div id="status-text">Loading…</div>
+    <div id="progress-wrap">
+      <div id="progress-track">
+        <div id="progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- canvas -->
+  <div id="canvas-wrap">
+    <canvas id="canvas" tabindex="1" oncontextmenu="event.preventDefault()"></canvas>
+  </div>
+
+  <script>
+    var totalDeps = 0;
+    var resolvedDeps = 0;
+
+    var statusEl  = document.getElementById('status-text');
+    var barEl     = document.getElementById('progress-bar');
+    var overlayEl = document.getElementById('loading-overlay');
+
+    function setProgress(pct) {
+      barEl.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    }
+
+    var Module = {
+      canvas: document.getElementById('canvas'),
+
+      print: function(text) {
+        if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+        console.log(text);
+      },
+      printErr: function(text) {
+        if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+        console.error(text);
+      },
+
+      setStatus: function(text) {
+        if (!text) {
+          // done loading — hide overlay
+          setProgress(100);
+          setTimeout(function() { overlayEl.classList.add('hidden'); }, 300);
+          return;
+        }
+
+        // parse "Downloading … (x/y)" for a real progress value
+        var m = text.match(/\((\d+)\/(\d+)\)/);
+        if (m) {
+          var done = parseInt(m[1]);
+          var tot  = parseInt(m[2]);
+          if (tot > 0) setProgress(20 + 78 * done / tot);
+        }
+
+        statusEl.textContent = text.replace(/\s*\(\d+\/\d+\)$/, '');
+      },
+
+      totalDependencies: 0,
+      monitorRunDependencies: function(left) {
+        totalDeps = Math.max(totalDeps, left);
+        if (left === 0) {
+          setProgress(20);
+        } else {
+          setProgress(20 * (totalDeps - left) / totalDeps);
+        }
+      },
+
+      onRuntimeInitialized: function() {
+        setProgress(100);
+      }
+    };
+
+    window.onerror = function(event) {
+      statusEl.textContent = 'An error occurred — check the console.';
+      statusEl.style.color = '#ff6b6b';
+      Module.setStatus = function(text) {
+        if (text) Module.printErr('[post-exception status] ' + text);
+      };
+    };
+  </script>
+
+  {{{ SCRIPT }}}
+
+</body>
+</html>
