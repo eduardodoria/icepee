@@ -52,7 +52,7 @@ set(SCRIPT_SOURCES
 
 set(FACTORY_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/Main_Scene.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/UI_Scene.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/Start_Scene.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/Score_Scene.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/generated/Game_Over_Scene.cpp
 )

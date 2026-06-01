@@ -1,6 +1,6 @@
 name: IcePee
 nextSceneId: 9
-selectedScene: 9
+selectedScene: 1
 canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
@@ -34,7 +34,7 @@ tabs:
   - type: codeeditor
     filepath: TryAgainScript.h
   - type: scene
-    filepath: Game Over Scene.scene
+    filepath: Main Scene.scene
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
@@ -58,11 +58,11 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.7015985
+      aspect: 1.7367725
       nearClip: 0.2
       farClip: 200
       position: [6.9066153, 4.048237, 8.150011]
-  - filepath: UI Scene.scene
+  - filepath: Start Scene.scene
     showAllJoints: false
     showAllBones: false
     showAllBodies: false

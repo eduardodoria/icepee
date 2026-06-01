@@ -1,5 +1,5 @@
 id: 2
-name: UI Scene
+name: Start Scene
 scene:
   backgroundColor: [0.525, 0.525, 0.525, 1]
   shadowsPCF: true
@@ -48,7 +48,7 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0010011784, 0, 0, 0], [0, -0.0017036039, 0, 0], [0, 0, -0.0001, 0], [-0.6116624, 0.58203244, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.00073048664, 0, 0, 0], [0, -0.001268689, 0, 0], [0, 0, -0.0001, 0], [-0.7166585, 0.68873584, 0.0001, 1]]
         visible: true
         distanceToCamera: 458.96143
         billboardRotation: [1, 0, 0, 0]
@@ -140,7 +140,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [186.01373, 100.05569, 613.8425, 345.28644]
+        scissor: [186.01373, 293.05573, 613.8425, 345.2864]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -163,7 +163,7 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [433, 0, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [433, 0, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0010011784, 0, 0, 0], [0, -0.0017036039, 0, 0], [0, 0, -0.0001, 0], [-0.17815214, 0.58203244, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.00073048664, 0, 0, 0], [0, -0.001268689, 0, 0], [0, 0, -0.0001, 0], [-0.40035775, 0.68873584, 0.0001, 1]]
         visible: true
         distanceToCamera: 856.7608
         billboardRotation: [1, 0, 0, 0]
@@ -263,7 +263,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [393.66516, 245.36374, 199.01926, 199.9784]
+        scissor: [393.66516, 438.36374, 199.01926, 199.97838]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -286,7 +286,7 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [539.10785, 617.11475, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [539.10785, 617.11475, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0010011784, 0, 0, 0], [0, -0.0017036039, 0, 0], [0, 0, -0.0001, 0], [-0.07191926, -0.46928668, 0.0001, 1]]
+        modelViewProjectionMatrix: [[0.00073048664, 0, 0, 0], [0, -0.001268689, 0, 0], [0, 0, -0.0001, 0], [-0.3228474, -0.094190896, 0.0001, 1]]
         visible: true
         distanceToCamera: 1266.1525
         billboardRotation: [1, 0, 0, 0]
@@ -387,7 +387,7 @@ entities:
         usingAnchors: false
         panel: 0
         containerBoxIndex: -1
-        scissor: [444.55072, 128.29498, 104.54506, 21.100838]
+        scissor: [444.55072, 321.295, 104.54506, 21.100836]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -441,7 +441,7 @@ entities:
             localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [91, 12, 0, 1]]
             modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [630.10785, 629.11475, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-            modelViewProjectionMatrix: [[0.0010011784, 0, 0, 0], [0, -0.0017036039, 0, 0], [0, 0, -0.0001, 0], [0.019187987, -0.48972988, 0.0001, 1]]
+            modelViewProjectionMatrix: [[0.00073048664, 0, 0, 0], [0, -0.001268689, 0, 0], [0, 0, -0.0001, 0], [-0.2563731, -0.10941517, 0.0001, 1]]
             visible: true
             distanceToCamera: 1342.0052
             billboardRotation: [1, 0, 0, 0]
@@ -503,15 +503,7 @@ entities:
             worldAABB:
               min: [630.10785, 629.11475, 0]
               max: [666.10785, 645.94806, 0]
-            texture:
-              textureType: 2D
-              source: id
-              id: font|20
-              minFilter: linear
-              magFilter: linear
-              wrapU: repeat
-              wrapV: repeat
-              releaseDataAfterLoad: false
+            texture: ~
             color: [0, 0, 0, 1]
             automaticFlipY: true
             flipY: false
@@ -533,7 +525,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: -1
-            scissor: [444.55072, 128.29498, 104.54506, 21.100838]
+            scissor: [444.55072, 321.295, 104.54506, 21.100836]
             ignoreScissor: false
             ignoreEvents: true
           text:

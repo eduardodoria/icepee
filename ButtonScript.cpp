@@ -27,6 +27,6 @@ void ButtonScript::onButtonPress() {
 
     Log::print("Button '%s' pressed", getName().c_str());
     SceneManager::addChildScene("Score Scene");
-    SceneManager::removeChildScene("UI Scene");
+    SceneManager::removeChildScene("Start Scene");
 }
 

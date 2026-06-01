@@ -94,15 +94,7 @@ entities:
         worldAABB:
           min: [1036.0458, 30.28717, 0]
           max: [1167.0458, 65.32884, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: font|43
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [1, 0.9322396, 0, 1]
         automaticFlipY: true
         flipY: false
@@ -213,15 +205,7 @@ entities:
         worldAABB:
           min: [39.276917, 26.000061, 0]
           max: [179.27692, 61.04173, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: font|43
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [1, 0.9322396, 0, 1]
         automaticFlipY: true
         flipY: false
