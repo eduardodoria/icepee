@@ -30,6 +30,12 @@ public:
     SPROPERTY("Score")
     doriax::Text* score = nullptr;
 
+    SPROPERTY("Game Over Best Score")
+    doriax::Text* gameOverBestScore = nullptr;
+
+    SPROPERTY("Game Over Message")
+    doriax::Text* gameOverMessage = nullptr;
+
     doriax::Vector2 lastMousePosition;
     float pointSpritesYaw = 0.0f;
     float pointSpritesPitch = 0.0f;

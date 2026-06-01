@@ -7,6 +7,7 @@
 #include "component/MeshComponent.h"
 #include "component/ParticlesComponent.h"
 #include "object/Mesh.h"
+#include "io/UserSettings.h"
 
 #include <cmath>
 #include <unordered_map>
@@ -87,6 +88,7 @@ static bool hasParticleHitAABB(const ParticlesComponent& particles, const AABB& 
 
 static const Vector3 kIceMeltTargetColor(0.88f, 0.95f, 1.0f);
 static constexpr int kScorePerIceEntity = 100;
+static const char* kBestScoreKey = "icepee_best_score";
 
 struct IceMeltVisualState {
     float initialLargestScale = 0.0f;
@@ -273,6 +275,25 @@ static void syncScoreText(Text* text, int score) {
     text->setText("Score: " + std::to_string(score));
 }
 
+static void syncGameOverTexts(Text* bestScoreText, Text* messageText, int currentScore) {
+    const int storedBest = UserSettings::getIntegerForKey(kBestScoreKey, 0);
+    const bool isNewBest = currentScore > storedBest;
+
+    if (isNewBest) {
+        UserSettings::setIntegerForKey(kBestScoreKey, currentScore);
+    }
+
+    const int bestScore = isNewBest ? currentScore : storedBest;
+
+    if (bestScoreText) {
+        bestScoreText->setText("Best: " + std::to_string(bestScore));
+    }
+
+    if (messageText) {
+        messageText->setText(isNewBest ? "New best score!" : "Keep trying!");
+    }
+}
+
 static void syncTimeText(Text* text, float remainingTimeSeconds) {
     if (!text) {
         return;
@@ -435,6 +456,7 @@ void IcePee::onUpdate() {
         if (particlesEntity != NULL_ENTITY && scene->findComponent<ParticlesComponent>(particlesEntity)) {
             Particles(scene, particlesEntity).stop();
         }
+        syncGameOverTexts(gameOverBestScore, gameOverMessage, counter);
         SceneManager::addChildScene("Game Over Scene");
         SceneManager::removeChildScene("Score Scene");
         return;
