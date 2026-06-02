@@ -273,14 +273,14 @@ entities:
     name: Button
     components:
       transform:
-        position: [532.8522, 615.0296, 0]
+        position: [532.8522, 600.433, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [532.8522, 615.0296, 0]
+        worldPosition: [532.8522, 600.433, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [532.8522, 615.0296, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [532.8522, 615.0296, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [532.8522, 600.433, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [532.8522, 600.433, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
@@ -348,8 +348,8 @@ entities:
           min: [0, 0, 0]
           max: [218, 44, 0]
         worldAABB:
-          min: [532.8522, 615.0296, 0]
-          max: [750.8522, 659.0296, 0]
+          min: [532.8522, 600.433, 0]
+          max: [750.8522, 644.433, 0]
         texture: ~
         color: [1, 1, 1, 1]
         automaticFlipY: true
@@ -373,15 +373,15 @@ entities:
         anchorPointRight: 0.57
         anchorPointBottom: 0.92
         anchorOffsetLeft: 20
-        anchorOffsetTop: -4
+        anchorOffsetTop: -18
         anchorOffsetRight: 21
-        anchorOffsetBottom: -3
+        anchorOffsetBottom: -17
         positionOffset: [0, 0]
         anchorPreset: 0
         usingAnchors: false
         panel: 0
         containerBoxIndex: -1
-        scissor: [441.55072, 129.29492, 104.54506, 21.100838]
+        scissor: [441.55072, 136.29498, 104.54506, 21.100838]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -429,11 +429,11 @@ entities:
             position: [91, 12, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [623.8522, 627.0296, 0]
+            worldPosition: [623.8522, 612.433, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
             localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [91, 12, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [623.8522, 627.0296, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [623.8522, 612.433, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -493,8 +493,8 @@ entities:
               min: [0, 0, 0]
               max: [36, 16.833334, 0]
             worldAABB:
-              min: [623.8522, 627.0296, 0]
-              max: [659.8522, 643.8629, 0]
+              min: [623.8522, 612.433, 0]
+              max: [659.8522, 629.2663, 0]
             texture:
               textureType: 2D
               source: id
@@ -525,7 +525,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: -1
-            scissor: [441.55072, 129.29492, 104.54506, 21.100838]
+            scissor: [441.55072, 136.29498, 104.54506, 21.100838]
             ignoreScissor: false
             ignoreEvents: true
           text:
