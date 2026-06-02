@@ -58,10 +58,10 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.7367725
+      aspect: 1.7015985
       nearClip: 0.2
       farClip: 200
-      position: [6.9066153, 4.048237, 8.150011]
+      position: [9.526942, 4.4395957, 5.3438926]
   - filepath: Start Scene.scene
     showAllJoints: false
     showAllBones: false

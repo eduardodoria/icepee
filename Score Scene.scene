@@ -23,18 +23,16 @@ entities:
     name: Score
     components:
       transform:
-        position: [1036.0458, 30.28717, 0]
+        position: [1036.0457, 32.43074, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [1036.0458, 30.28717, 0]
+        worldPosition: [1036.0457, 32.43074, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1036.0458, 30.28717, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1036.0458, 30.28717, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1036.0457, 32.43074, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1036.0457, 32.43074, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0012851442, 0, 0, 0], [0, -0.0016631277, 0, 0], [0, 0, -0.0001, 0], [0.39700752, 0.33868304, 0.0001, 1]]
         visible: true
-        distanceToCamera: 1157.4875
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -92,9 +90,17 @@ entities:
           min: [0, 0, 0]
           max: [131, 35.041668, 0]
         worldAABB:
-          min: [1036.0458, 30.28717, 0]
-          max: [1167.0458, 65.32884, 0]
-        texture: ~
+          min: [1036.0457, 32.43074, 0]
+          max: [1167.0457, 67.47241, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: font|43
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
         color: [1, 0.9322396, 0, 1]
         automaticFlipY: true
         flipY: false
@@ -108,9 +114,9 @@ entities:
         anchorPointRight: 0
         anchorPointBottom: 0
         anchorOffsetLeft: 1036
-        anchorOffsetTop: 30
+        anchorOffsetTop: 32
         anchorOffsetRight: 1168
-        anchorOffsetBottom: 73
+        anchorOffsetBottom: 75
         positionOffset: [0, 0]
         anchorPreset: 0
         usingAnchors: false
@@ -143,9 +149,7 @@ entities:
         localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [39.276917, 26.000061, 0, 1]]
         modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [39.276917, 26.000061, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelViewProjectionMatrix: [[0.0012851442, 0, 0, 0], [0, -0.0016631277, 0, 0], [0, 0, -0.0001, 0], [-0.8839842, 0.34581307, 0.0001, 1]]
         visible: true
-        distanceToCamera: 403.57483
         billboardRotation: [1, 0, 0, 0]
         billboard: false
         fakeBillboard: false
@@ -205,7 +209,15 @@ entities:
         worldAABB:
           min: [39.276917, 26.000061, 0]
           max: [179.27692, 61.04173, 0]
-        texture: ~
+        texture:
+          textureType: 2D
+          source: id
+          id: font|43
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
         color: [1, 0.9322396, 0, 1]
         automaticFlipY: true
         flipY: false
