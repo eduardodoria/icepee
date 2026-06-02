@@ -133,7 +133,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [163.7456, 150.6018, 506.45114, 284.87875]
+        scissor: [163.74559, 150.6018, 506.4511, 284.87875]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -143,18 +143,18 @@ entities:
         patchMarginBottom: 0
         textureScaleFactor: 0
   - type: Entity
-    entity: 102
-    name: TryAgainButton
+    entity: 106
+    name: Container
     components:
       transform:
-        position: [572.59155, 584.4944, 0]
+        position: [0, 0, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [572.59155, 584.4944, 0]
+        worldPosition: [0, 0, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [572.59155, 584.4944, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [572.59155, 584.4944, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
@@ -164,44 +164,19 @@ entities:
       ui:
         buffer:
           type: vertex_buffer
-          usage: dynamic
-          stride: 36
-          size: 576
-          count: 16
+          usage: immutable
+          stride: 0
+          size: 0
+          count: 0
           renderAttributes: true
           instanceBuffer: false
-          attributes:
-            - type: position
-              dataType: float
-              bufferName: ""
-              elements: 3
-              offset: 0
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: texcoord1
-              dataType: float
-              bufferName: ""
-              elements: 2
-              offset: 12
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: color
-              dataType: float
-              bufferName: ""
-              elements: 4
-              offset: 20
-              count: 16
-              normalized: true
-              perInstance: false
-          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAWQwAASEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAWQwAASEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAWQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAWQwAASEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAWQwAASEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+          attributes: ~
         indices:
           type: index_buffer
-          usage: dynamic
+          usage: immutable
           stride: 2
-          size: 108
-          count: 54
+          size: 0
+          count: 0
           renderAttributes: true
           instanceBuffer: false
           attributes:
@@ -210,94 +185,63 @@ entities:
               bufferName: ""
               elements: 1
               offset: 0
-              count: 54
+              count: 0
               normalized: true
               perInstance: false
-          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
         minBufferCount: 0
         minIndicesCount: 0
         primitiveType: triangles
-        vertexCount: 54
+        vertexCount: 0
         aabb:
           min: [0, 0, 0]
-          max: [150, 50, 0]
+          max: [0, 0, 0]
         worldAABB:
-          min: [572.59155, 584.4944, 0]
-          max: [722.59155, 634.4944, 0]
+          min: [0, 0, 0]
+          max: [0, 0, 0]
         texture: ~
         color: [1, 1, 1, 1]
         automaticFlipY: true
         flipY: false
         pointerMoved: false
         focused: false
-      button:
-        label: 103
-        textureNormal: ~
-        texturePressed: ~
-        textureDisabled: ~
-        colorNormal: [1, 1, 1, 1]
-        colorPressed: [0.56074935, 0.58669585, 0.18202841, 1]
-        colorDisabled: [1, 1, 1, 1]
-        disabled: false
       uilayout:
-        width: 150
-        height: 50
+        width: 1280
+        height: 720
         anchorPointLeft: 0
         anchorPointTop: 0
-        anchorPointRight: 0
-        anchorPointBottom: 0
-        anchorOffsetLeft: 572
-        anchorOffsetTop: 584
-        anchorOffsetRight: 722
-        anchorOffsetBottom: 634
+        anchorPointRight: 1
+        anchorPointBottom: 1
+        anchorOffsetLeft: 0
+        anchorOffsetTop: 0
+        anchorOffsetRight: 0
+        anchorOffsetBottom: 0
         positionOffset: [0, 0]
-        anchorPreset: 0
-        usingAnchors: false
+        anchorPreset: 16
+        usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [390.30002, 184.43335, 59.349743, 19.783247]
+        scissor: [0, 0, 0, 0]
         ignoreScissor: false
         ignoreEvents: false
-      image:
-        patchMarginLeft: 0
-        patchMarginRight: 0
-        patchMarginTop: 0
-        patchMarginBottom: 0
-        textureScaleFactor: 0
-      script:
-        scripts:
-          - type: subclass
-            path: TryAgainScript.cpp
-            headerPath: TryAgainScript.h
-            className: TryAgainScript
-            enabled: true
-            properties:
-              - name: isActive
-                displayName: Is Active
-                type: 0
-                value: true
-                defaultValue: true
-              - name: icePeeScript
-                displayName: Ice Pee Script
-                type: 9
-                ptrTypeName: IcePee
-                value: 108
-                defaultValue: 0
-                sceneId: 1
+      uicontainer:
+        type: vertical
+        useAllWrapSpace: false
+        wrapCellWidth: 0
+        wrapCellHeight: 0
     children:
       - type: Entity
-        entity: 103
-        name: Label
+        entity: 104
+        name: Message
         components:
           transform:
-            position: [40, 15, 0]
+            position: [488, 76, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [612.59155, 599.4944, 0]
+            worldPosition: [488, 76, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [40, 15, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [612.59155, 599.4944, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [488, 76, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [488, 76, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -309,8 +253,8 @@ entities:
               type: vertex_buffer
               usage: dynamic
               stride: 20
-              size: 720
-              count: 36
+              size: 560
+              count: 28
               renderAttributes: true
               instanceBuffer: false
               attributes:
@@ -319,7 +263,7 @@ entities:
                   bufferName: ""
                   elements: 3
                   offset: 0
-                  count: 36
+                  count: 28
                   normalized: true
                   perInstance: false
                 - type: texcoord1
@@ -327,10 +271,252 @@ entities:
                   bufferName: ""
                   elements: 2
                   offset: 12
-                  count: 36
+                  count: 28
                   normalized: true
                   perInstance: false
-              data: AAAAAFhVNUAAAAAAAIBsPwAAADsAACBBWFU1QAAAAAAAgHE/AAAAOwAAIEFWVX1BAAAAAACAcT8AAOA8AAAAAFZVfUEAAAAAAIBsPwAA4DwAADBBrKq6QAAAAAAAAPA+AAAgPQAAgEGsqrpAAAAAAAAA9T4AACA9AACAQVZVfUEAAAAAAAD1PgAAcD0AADBBVlV9QQAAAAAAAPA+AABwPQAAgEGsqrpAAAAAAACAFz8AACA9AADAQayqukAAAAAAAIAbPwAAID0AAMBBq6qeQQAAAAAAgBs/AACIPQAAgEGrqp5BAAAAAACAFz8AAIg9AADAQVZVfUEAAAAAAAAAOwAAADsAAMBBVlV9QQAAAAAAAAA7AAAAOwAAwEFWVX1BAAAAAAAAADsAAAA7AADAQVZVfUEAAAAAAAAAOwAAADsAAOBBrKq6QAAAAAAAADg+AAAgPQAAFEKsqrpAAAAAAAAASj4AACA9AAAUQquqhkEAAAAAAABKPgAAeD0AAOBBq6qGQQAAAAAAADg+AAB4PQAAGEKsqrpAAAAAAAAAlD4AACA9AAA8QqyqukAAAAAAAACdPgAAID0AADxCq6qeQQAAAAAAAJ0+AACIPQAAGEKrqp5BAAAAAAAAlD4AAIg9AAA8QqyqukAAAAAAAAA4PgAAID0AAGBCrKq6QAAAAAAAAEo+AAAgPQAAYEKrqoZBAAAAAAAASj4AAHg9AAA8QquqhkEAAAAAAAA4PgAAeD0AAGRCWFU1QAAAAAAAAKc+AAAgPQAAcEJYVTVAAAAAAAAAqj4AACA9AABwQlZVfUEAAAAAAACqPgAAhD0AAGRCVlV9QQAAAAAAAKc+AACEPQAAeEKsqrpAAAAAAAAAyj4AACA9AACMQqyqukAAAAAAAADSPgAAID0AAIxCVlV9QQAAAAAAANI+AABwPQAAeEJWVX1BAAAAAAAAyj4AAHA9
+              data: AADAQKiqekEAAAAAAIDIPgAAoj0AAHBCqKp6QQAAAAAAgOM+AACiPQAAcEJVVYtCAAAAAACA4z4AAAc+AADAQFVVi0IAAAAAAIDIPgAABz4AAIpCVFXlQQAAAAAAgKI+AAATPgAA0EJUVeVBAAAAAAAAtD4AABM+AADQQlVVjUIAAAAAAAC0PgAAPT4AAIpCVVWNQgAAAAAAgKI+AAA9PgAA2EJUVeVBAAAAAABAOj8AABM+AAANQ1RV5UEAAAAAAIBCPwAAEz4AAA1DVVWNQgAAAAAAgEI/AAA9PgAA2EJVVY1CAAAAAABAOj8AAD0+AAATQ1RV5UEAAAAAAEA6PwAAEz4AADRDVFXlQQAAAAAAgEI/AAATPgAANENVVY1CAAAAAACAQj8AAD0+AAATQ1VVjUIAAAAAAEA6PwAAPT4AADpDVFXlQQAAAAAAADk+AAATPgAAXENUVeVBAAAAAAAAWz4AABM+AABcQ1VVjUIAAAAAAABbPgAAPT4AADpDVVWNQgAAAAAAADk+AAA9PgAAY0NUVeVBAAAAAACAwT4AABM+AACDQ1RV5UEAAAAAAADTPgAAEz4AAINDVVWrQgAAAAAAANM+AABMPgAAY0NVVatCAAAAAACAwT4AAEw+AICGQ1RV5UEAAAAAAICiPgAAEz4AAJhDVFXlQQAAAAAAALQ+AAATPgAAmENVVY1CAAAAAAAAtD4AAD0+AICGQ1VVjUIAAAAAAICiPgAAPT4=
+            indices:
+              type: index_buffer
+              usage: dynamic
+              stride: 2
+              size: 84
+              count: 42
+              renderAttributes: true
+              instanceBuffer: false
+              attributes:
+                - type: index
+                  dataType: unsigned_short
+                  bufferName: ""
+                  elements: 1
+                  offset: 0
+                  count: 42
+                  normalized: true
+                  perInstance: false
+              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsA
+            minBufferCount: 400
+            minIndicesCount: 600
+            primitiveType: triangles
+            vertexCount: 42
+            aabb:
+              min: [0, 0, 0]
+              max: [304, 85.666664, 0]
+            worldAABB:
+              min: [488, 76, 0]
+              max: [792, 161.66666, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|88
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
+            color: [0.941761, 0.90027446, 0.09603942, 1]
+            automaticFlipY: true
+            flipY: false
+            pointerMoved: false
+            focused: false
+          uilayout:
+            width: 305
+            height: 88
+            anchorPointLeft: 0.5
+            anchorPointTop: 0.5
+            anchorPointRight: 0.5
+            anchorPointBottom: 0.5
+            anchorOffsetLeft: -152
+            anchorOffsetTop: -44
+            anchorOffsetRight: 153
+            anchorOffsetBottom: 44
+            positionOffset: [0, 0]
+            anchorPreset: 9
+            usingAnchors: true
+            panel: 0
+            containerBoxIndex: 0
+            scissor: [0, 0, 0, 0]
+            ignoreScissor: false
+            ignoreEvents: false
+          text:
+            font: ""
+            text: Message
+            fontSize: 88
+            multiline: true
+            maxTextSize: 100
+            fixedWidth: false
+            fixedHeight: false
+            pivotBaseline: false
+            pivotCentered: false
+      - type: Entity
+        entity: 105
+        name: BestScore
+        components:
+          transform:
+            position: [498, 331, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [498, 331, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [498, 331, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [498, 331, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          ui:
+            buffer:
+              type: vertex_buffer
+              usage: dynamic
+              stride: 20
+              size: 1040
+              count: 52
+              renderAttributes: true
+              instanceBuffer: false
+              attributes:
+                - type: position
+                  dataType: float
+                  bufferName: ""
+                  elements: 3
+                  offset: 0
+                  count: 52
+                  normalized: true
+                  perInstance: false
+                - type: texcoord1
+                  dataType: float
+                  bufferName: ""
+                  elements: 2
+                  offset: 12
+                  count: 52
+                  normalized: true
+                  perInstance: false
+              data: AACAQKiqHkEAAAAAAEAtPwAAgDoAAOhBqKoeQQAAAAAAgDM/AACAOgAA6EGqqjdCAAAAAACAMz8AABQ9AACAQKqqN0IAAAAAAEAtPwAAFD0AAARCVFWXQQAAAAAAABM/AABYPQAAYEJUVZdBAAAAAADAGD8AAFg9AABgQqqqO0IAAAAAAMAYPwAApD0AAARCqqo7QgAAAAAAABM/AACkPQAAbEJUVZdBAAAAAAAAWz8AAFg9AACiQlRVl0EAAAAAAIBgPwAAWD0AAKJCqqo7QgAAAAAAgGA/AACkPQAAbEKqqjtCAAAAAAAAWz8AAKQ9AACmQqiqTkEAAAAAAMBgPwAAWD0AAMRCqKpOQQAAAAAAgGQ/AABYPQAAxEKqqjtCAAAAAACAZD8AALA9AACmQqqqO0IAAAAAAMBgPwAAsD0AAMZCqqo3QgAAAAAAAIA6AACAOgAAxkKqqjdCAAAAAAAAgDoAAIA6AADGQqqqN0IAAAAAAACAOgAAgDoAAMZCqqo3QgAAAAAAAIA6AACAOgAA4kJUVZdBAAAAAAAAWz8AAFg9AAAHQ1RVl0EAAAAAAIBgPwAAWD0AAAdDqqo7QgAAAAAAgGA/AACkPQAA4kKqqjtCAAAAAAAAWz8AAKQ9AAAKQ1RVl0EAAAAAAAAHPwAAWD0AACFDVFWXQQAAAAAAwAw/AABYPQAAIUOqqjtCAAAAAADADD8AAKQ9AAAKQ6qqO0IAAAAAAAAHPwAApD0AACRDVFWXQQAAAAAAwEQ/AABYPQAAPUNUVZdBAAAAAAAASz8AAFg9AAA9Q6qqO0IAAAAAAABLPwAApD0AACRDqqo7QgAAAAAAwEQ/AACkPQAAQkNUVZdBAAAAAABAVz8AAFg9AABQQ1RVl0EAAAAAAMBaPwAAWD0AAFBDqqo3QgAAAAAAwFo/AACiPQAAQkOqqjdCAAAAAABAVz8AAKI9AABRQ1RVl0EAAAAAAAATPwAAWD0AAGhDVFWXQQAAAAAAwBg/AABYPQAAaEOqqjtCAAAAAADAGD8AAKQ9AABRQ6qqO0IAAAAAAAATPwAApD0AAG1DVFWXQQAAAAAAQAA/AACAOgAAc0NUVZdBAAAAAADAAT8AAIA6AABzQ6qqO0IAAAAAAMABPwAA6DwAAG1Dqqo7QgAAAAAAQAA/AADoPAAAdkOqqjdCAAAAAAAAgDoAAIA6AAB2Q6qqN0IAAAAAAACAOgAAgDoAAHZDqqo3QgAAAAAAAIA6AACAOgAAdkOqqjdCAAAAAAAAgDoAAIA6AACCQ6iqHkEAAAAAAICJPgAAgDoAgI1DqKoeQQAAAAAAAJU+AACAOgCAjUOqqjtCAAAAAAAAlT4AABg9AACCQ6qqO0IAAAAAAICJPgAAGD0=
+            indices:
+              type: index_buffer
+              usage: dynamic
+              stride: 2
+              size: 156
+              count: 78
+              renderAttributes: true
+              instanceBuffer: false
+              attributes:
+                - type: index
+                  dataType: unsigned_short
+                  bufferName: ""
+                  elements: 1
+                  offset: 0
+                  count: 78
+                  normalized: true
+                  perInstance: false
+              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMA
+            minBufferCount: 400
+            minIndicesCount: 600
+            primitiveType: triangles
+            vertexCount: 78
+            aabb:
+              min: [0, 0, 0]
+              max: [283, 46.916664, 0]
+            worldAABB:
+              min: [498, 331, 0]
+              max: [781, 377.91666, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|58
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
+            color: [0.9322396, 0.008958948, 0.008958948, 1]
+            automaticFlipY: true
+            flipY: false
+            pointerMoved: false
+            focused: false
+          uilayout:
+            width: 285
+            height: 58
+            anchorPointLeft: 0.5
+            anchorPointTop: 0.5
+            anchorPointRight: 0.5
+            anchorPointBottom: 0.5
+            anchorOffsetLeft: -142
+            anchorOffsetTop: -29
+            anchorOffsetRight: 143
+            anchorOffsetBottom: 29
+            positionOffset: [0, 0]
+            anchorPreset: 9
+            usingAnchors: true
+            panel: 0
+            containerBoxIndex: 1
+            scissor: [0, 0, 0, 0]
+            ignoreScissor: false
+            ignoreEvents: false
+          text:
+            font: ""
+            text: "Best score: 0"
+            fontSize: 58
+            multiline: true
+            maxTextSize: 100
+            fixedWidth: false
+            fixedHeight: false
+            pivotBaseline: false
+            pivotCentered: false
+      - type: Entity
+        entity: 102
+        name: TryAgainButton
+        components:
+          transform:
+            position: [477, 553, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [477, 553, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [477, 553, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [477, 553, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          ui:
+            buffer:
+              type: vertex_buffer
+              usage: dynamic
+              stride: 36
+              size: 576
+              count: 16
+              renderAttributes: true
+              instanceBuffer: false
+              attributes:
+                - type: position
+                  dataType: float
+                  bufferName: ""
+                  elements: 3
+                  offset: 0
+                  count: 16
+                  normalized: true
+                  perInstance: false
+                - type: texcoord1
+                  dataType: float
+                  bufferName: ""
+                  elements: 2
+                  offset: 12
+                  count: 16
+                  normalized: true
+                  perInstance: false
+                - type: color
+                  dataType: float
+                  bufferName: ""
+                  elements: 4
+                  offset: 20
+                  count: 16
+                  normalized: true
+                  perInstance: false
+              data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACjQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACjQwAAvkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAvkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACjQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACjQwAAvkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAvkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACjQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACjQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACjQwAAvkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACjQwAAvkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAvkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAvkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
             indices:
               type: index_buffer
               usage: dynamic
@@ -348,267 +534,192 @@ entities:
                   count: 54
                   normalized: true
                   perInstance: false
-              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMA
-            minBufferCount: 400
-            minIndicesCount: 600
+              data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
+            minBufferCount: 0
+            minIndicesCount: 0
             primitiveType: triangles
             vertexCount: 54
             aabb:
               min: [0, 0, 0]
-              max: [70, 19.833334, 0]
+              max: [326, 95, 0]
             worldAABB:
-              min: [612.59155, 599.4944, 0]
-              max: [682.59155, 619.3277, 0]
+              min: [477, 553, 0]
+              max: [803, 648, 0]
             texture: ~
-            color: [0, 0, 0, 1]
+            color: [1, 1, 1, 1]
             automaticFlipY: true
             flipY: false
             pointerMoved: false
             focused: false
+          button:
+            label: 103
+            textureNormal: ~
+            texturePressed: ~
+            textureDisabled: ~
+            colorNormal: [1, 1, 1, 1]
+            colorPressed: [0.56074935, 0.58669585, 0.18202841, 1]
+            colorDisabled: [1, 1, 1, 1]
+            disabled: false
           uilayout:
-            width: 70
-            height: 20
+            width: 326
+            height: 95
             anchorPointLeft: 0.5
             anchorPointTop: 0.5
             anchorPointRight: 0.5
             anchorPointBottom: 0.5
-            anchorOffsetLeft: -35
-            anchorOffsetTop: -10
-            anchorOffsetRight: 35
-            anchorOffsetBottom: 10
+            anchorOffsetLeft: -163
+            anchorOffsetTop: -47
+            anchorOffsetRight: 163
+            anchorOffsetBottom: 48
             positionOffset: [0, 0]
             anchorPreset: 9
             usingAnchors: true
             panel: 0
-            containerBoxIndex: -1
-            scissor: [390.30002, 184.43335, 59.349743, 19.783247]
+            containerBoxIndex: 2
+            scissor: [352.47775, 179.08966, 128.98677, 37.58817]
             ignoreScissor: false
-            ignoreEvents: true
-          text:
-            font: ""
-            text: Try again
-            fontSize: 20
-            multiline: true
-            maxTextSize: 100
-            fixedWidth: false
-            fixedHeight: false
-            pivotBaseline: false
-            pivotCentered: false
-  - type: Entity
-    entity: 104
-    name: Message
-    components:
-      transform:
-        position: [488, 0, 0]
-        rotation: [1, 0, 0, 0]
-        scale: [1, 1, 1]
-        worldPosition: [488, 0, 0]
-        worldRotation: [1, 0, 0, 0]
-        worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [488, 0, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [488, 0, 0, 1]]
-        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      ui:
-        buffer:
-          type: vertex_buffer
-          usage: dynamic
-          stride: 20
-          size: 560
-          count: 28
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: position
-              dataType: float
-              bufferName: ""
-              elements: 3
-              offset: 0
-              count: 28
-              normalized: true
-              perInstance: false
-            - type: texcoord1
-              dataType: float
-              bufferName: ""
-              elements: 2
-              offset: 12
-              count: 28
-              normalized: true
-              perInstance: false
-          data: AADAQKiqekEAAAAAAIDIPgAAoj0AAHBCqKp6QQAAAAAAgOM+AACiPQAAcEJVVYtCAAAAAACA4z4AAAc+AADAQFVVi0IAAAAAAIDIPgAABz4AAIpCVFXlQQAAAAAAgKI+AAATPgAA0EJUVeVBAAAAAAAAtD4AABM+AADQQlVVjUIAAAAAAAC0PgAAPT4AAIpCVVWNQgAAAAAAgKI+AAA9PgAA2EJUVeVBAAAAAABAOj8AABM+AAANQ1RV5UEAAAAAAIBCPwAAEz4AAA1DVVWNQgAAAAAAgEI/AAA9PgAA2EJVVY1CAAAAAABAOj8AAD0+AAATQ1RV5UEAAAAAAEA6PwAAEz4AADRDVFXlQQAAAAAAgEI/AAATPgAANENVVY1CAAAAAACAQj8AAD0+AAATQ1VVjUIAAAAAAEA6PwAAPT4AADpDVFXlQQAAAAAAADk+AAATPgAAXENUVeVBAAAAAAAAWz4AABM+AABcQ1VVjUIAAAAAAABbPgAAPT4AADpDVVWNQgAAAAAAADk+AAA9PgAAY0NUVeVBAAAAAACAwT4AABM+AACDQ1RV5UEAAAAAAADTPgAAEz4AAINDVVWrQgAAAAAAANM+AABMPgAAY0NVVatCAAAAAACAwT4AAEw+AICGQ1RV5UEAAAAAAICiPgAAEz4AAJhDVFXlQQAAAAAAALQ+AAATPgAAmENVVY1CAAAAAAAAtD4AAD0+AICGQ1VVjUIAAAAAAICiPgAAPT4=
-        indices:
-          type: index_buffer
-          usage: dynamic
-          stride: 2
-          size: 84
-          count: 42
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: index
-              dataType: unsigned_short
-              bufferName: ""
-              elements: 1
-              offset: 0
-              count: 42
-              normalized: true
-              perInstance: false
-          data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsA
-        minBufferCount: 400
-        minIndicesCount: 600
-        primitiveType: triangles
-        vertexCount: 42
-        aabb:
-          min: [0, 0, 0]
-          max: [304, 85.666664, 0]
-        worldAABB:
-          min: [488, 0, 0]
-          max: [792, 85.666664, 0]
-        texture: ~
-        color: [0.941761, 0.90027446, 0.09603942, 1]
-        automaticFlipY: true
-        flipY: false
-        pointerMoved: false
-        focused: false
-      uilayout:
-        width: 305
-        height: 88
-        anchorPointLeft: 0.5
-        anchorPointTop: 0
-        anchorPointRight: 0.5
-        anchorPointBottom: 0
-        anchorOffsetLeft: -152
-        anchorOffsetTop: 0
-        anchorOffsetRight: 153
-        anchorOffsetBottom: 88
-        positionOffset: [0, 0]
-        anchorPreset: 6
-        usingAnchors: true
-        panel: 0
-        containerBoxIndex: -1
-        scissor: [0, 0, 0, 0]
-        ignoreScissor: false
-        ignoreEvents: false
-      text:
-        font: ""
-        text: Message
-        fontSize: 88
-        multiline: true
-        maxTextSize: 100
-        fixedWidth: false
-        fixedHeight: false
-        pivotBaseline: false
-        pivotCentered: false
-  - type: Entity
-    entity: 105
-    name: BestScore
-    components:
-      transform:
-        position: [498, 331, 0]
-        rotation: [1, 0, 0, 0]
-        scale: [1, 1, 1]
-        worldPosition: [498, 331, 0]
-        worldRotation: [1, 0, 0, 0]
-        worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [498, 331, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [498, 331, 0, 1]]
-        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      ui:
-        buffer:
-          type: vertex_buffer
-          usage: dynamic
-          stride: 20
-          size: 1040
-          count: 52
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: position
-              dataType: float
-              bufferName: ""
-              elements: 3
-              offset: 0
-              count: 52
-              normalized: true
-              perInstance: false
-            - type: texcoord1
-              dataType: float
-              bufferName: ""
-              elements: 2
-              offset: 12
-              count: 52
-              normalized: true
-              perInstance: false
-          data: AACAQKiqHkEAAAAAAEAtPwAAgDoAAOhBqKoeQQAAAAAAgDM/AACAOgAA6EGqqjdCAAAAAACAMz8AABQ9AACAQKqqN0IAAAAAAEAtPwAAFD0AAARCVFWXQQAAAAAAABM/AABYPQAAYEJUVZdBAAAAAADAGD8AAFg9AABgQqqqO0IAAAAAAMAYPwAApD0AAARCqqo7QgAAAAAAABM/AACkPQAAbEJUVZdBAAAAAAAAWz8AAFg9AACiQlRVl0EAAAAAAIBgPwAAWD0AAKJCqqo7QgAAAAAAgGA/AACkPQAAbEKqqjtCAAAAAAAAWz8AAKQ9AACmQqiqTkEAAAAAAMBgPwAAWD0AAMRCqKpOQQAAAAAAgGQ/AABYPQAAxEKqqjtCAAAAAACAZD8AALA9AACmQqqqO0IAAAAAAMBgPwAAsD0AAMZCqqo3QgAAAAAAAIA6AACAOgAAxkKqqjdCAAAAAAAAgDoAAIA6AADGQqqqN0IAAAAAAACAOgAAgDoAAMZCqqo3QgAAAAAAAIA6AACAOgAA4kJUVZdBAAAAAAAAWz8AAFg9AAAHQ1RVl0EAAAAAAIBgPwAAWD0AAAdDqqo7QgAAAAAAgGA/AACkPQAA4kKqqjtCAAAAAAAAWz8AAKQ9AAAKQ1RVl0EAAAAAAAAHPwAAWD0AACFDVFWXQQAAAAAAwAw/AABYPQAAIUOqqjtCAAAAAADADD8AAKQ9AAAKQ6qqO0IAAAAAAAAHPwAApD0AACRDVFWXQQAAAAAAwEQ/AABYPQAAPUNUVZdBAAAAAAAASz8AAFg9AAA9Q6qqO0IAAAAAAABLPwAApD0AACRDqqo7QgAAAAAAwEQ/AACkPQAAQkNUVZdBAAAAAABAVz8AAFg9AABQQ1RVl0EAAAAAAMBaPwAAWD0AAFBDqqo3QgAAAAAAwFo/AACiPQAAQkOqqjdCAAAAAABAVz8AAKI9AABRQ1RVl0EAAAAAAAATPwAAWD0AAGhDVFWXQQAAAAAAwBg/AABYPQAAaEOqqjtCAAAAAADAGD8AAKQ9AABRQ6qqO0IAAAAAAAATPwAApD0AAG1DVFWXQQAAAAAAQAA/AACAOgAAc0NUVZdBAAAAAADAAT8AAIA6AABzQ6qqO0IAAAAAAMABPwAA6DwAAG1Dqqo7QgAAAAAAQAA/AADoPAAAdkOqqjdCAAAAAAAAgDoAAIA6AAB2Q6qqN0IAAAAAAACAOgAAgDoAAHZDqqo3QgAAAAAAAIA6AACAOgAAdkOqqjdCAAAAAAAAgDoAAIA6AACCQ6iqHkEAAAAAAICJPgAAgDoAgI1DqKoeQQAAAAAAAJU+AACAOgCAjUOqqjtCAAAAAAAAlT4AABg9AACCQ6qqO0IAAAAAAICJPgAAGD0=
-        indices:
-          type: index_buffer
-          usage: dynamic
-          stride: 2
-          size: 156
-          count: 78
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: index
-              dataType: unsigned_short
-              bufferName: ""
-              elements: 1
-              offset: 0
-              count: 78
-              normalized: true
-              perInstance: false
-          data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMA
-        minBufferCount: 400
-        minIndicesCount: 600
-        primitiveType: triangles
-        vertexCount: 78
-        aabb:
-          min: [0, 0, 0]
-          max: [283, 46.916664, 0]
-        worldAABB:
-          min: [498, 331, 0]
-          max: [781, 377.91666, 0]
-        texture: ~
-        color: [0.9322396, 0.008958948, 0.008958948, 1]
-        automaticFlipY: true
-        flipY: false
-        pointerMoved: false
-        focused: false
-      uilayout:
-        width: 285
-        height: 58
-        anchorPointLeft: 0.5
-        anchorPointTop: 0.5
-        anchorPointRight: 0.5
-        anchorPointBottom: 0.5
-        anchorOffsetLeft: -142
-        anchorOffsetTop: -29
-        anchorOffsetRight: 143
-        anchorOffsetBottom: 29
-        positionOffset: [0, 0]
-        anchorPreset: 9
-        usingAnchors: true
-        panel: 0
-        containerBoxIndex: -1
-        scissor: [0, 0, 0, 0]
-        ignoreScissor: false
-        ignoreEvents: false
-      text:
-        font: ""
-        text: "Best score: 0"
-        fontSize: 58
-        multiline: true
-        maxTextSize: 100
-        fixedWidth: false
-        fixedHeight: false
-        pivotBaseline: false
-        pivotCentered: false
+            ignoreEvents: false
+          image:
+            patchMarginLeft: 0
+            patchMarginRight: 0
+            patchMarginTop: 0
+            patchMarginBottom: 0
+            textureScaleFactor: 0
+          script:
+            scripts:
+              - type: subclass
+                path: TryAgainScript.cpp
+                headerPath: TryAgainScript.h
+                className: TryAgainScript
+                enabled: true
+                properties:
+                  - name: isActive
+                    displayName: Is Active
+                    type: 0
+                    value: true
+                    defaultValue: true
+                  - name: icePeeScript
+                    displayName: Ice Pee Script
+                    type: 9
+                    ptrTypeName: IcePee
+                    value: 108
+                    defaultValue: 0
+                    sceneId: 1
+        children:
+          - type: Entity
+            entity: 103
+            name: Label
+            components:
+              transform:
+                position: [48, 14.5, 0]
+                rotation: [1, 0, 0, 0]
+                scale: [1, 1, 1]
+                worldPosition: [525, 567.5, 0]
+                worldRotation: [1, 0, 0, 0]
+                worldScale: [1, 1, 1]
+                localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [48, 14.5, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [525, 567.5, 0, 1]]
+                normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+                visible: true
+                billboardRotation: [1, 0, 0, 0]
+                billboard: false
+                fakeBillboard: false
+                cylindricalBillboard: false
+              ui:
+                buffer:
+                  type: vertex_buffer
+                  usage: dynamic
+                  stride: 20
+                  size: 720
+                  count: 36
+                  renderAttributes: true
+                  instanceBuffer: false
+                  attributes:
+                    - type: position
+                      dataType: float
+                      bufferName: ""
+                      elements: 3
+                      offset: 0
+                      count: 36
+                      normalized: true
+                      perInstance: false
+                    - type: texcoord1
+                      dataType: float
+                      bufferName: ""
+                      elements: 2
+                      offset: 12
+                      count: 36
+                      normalized: true
+                      perInstance: false
+                  data: AACAPwAANEEAAAAAAACiPgAAdD0AAARCAAA0QQAAAAAAALI+AAB0PQAABEIAAFFCAAAAAAAAsj4AAMw9AACAPwAAUUIAAAAAAACiPgAAzD0AABRCAACqQQAAAAAAAKg9AADqPQAAVEIAAKpBAAAAAAAAyD0AAOo9AABUQgAAUUIAAAAAAADIPQAAFD4AABRCAABRQgAAAAAAAKg9AAAUPgAAVEIAALJBAAAAAAAAhj4AAOo9AACeQgAAskEAAAAAAACTPgAA6j0AAJ5CAICCQgAAAAAAAJM+AAAgPgAAVEIAgIJCAAAAAAAAhj4AACA+AACeQgAAUUIAAAAAAACAOgAAgDoAAJ5CAABRQgAAAAAAAIA6AACAOgAAnkIAAFFCAAAAAAAAgDoAAIA6AACeQgAAUUIAAAAAAACAOgAAgDoAAL5CAACqQQAAAAAAACs/AAB0PQAA8kIAAKpBAAAAAACAMT8AAHQ9AADyQgAAVUIAAAAAAIAxPwAAuj0AAL5CAABVQgAAAAAAACs/AAC6PQAA/EIAAKpBAAAAAAAAUj8AAHQ9AAAYQwAAqkEAAAAAAIBYPwAAdD0AABhDAICAQgAAAAAAgFg/AADQPQAA/EIAgIBCAAAAAAAAUj8AANA9AAAdQwAAqkEAAAAAAAArPwAAdD0AADdDAACqQQAAAAAAgDE/AAB0PQAAN0MAAFVCAAAAAACAMT8AALo9AAAdQwAAVUIAAAAAAAArPwAAuj0AAD1DAAA0QQAAAAAAQF8/AAB0PQAAREMAADRBAAAAAAAAYT8AAHQ9AABEQwAAUUIAAAAAAABhPwAAzD0AAD1DAABRQgAAAAAAQF8/AADMPQAAS0MAAKpBAAAAAAAAeD8AAHQ9AABkQwAAqkEAAAAAAEB+PwAAdD0AAGRDAABRQgAAAAAAQH4/AAC4PQAAS0MAAFFCAAAAAAAAeD8AALg9
+                indices:
+                  type: index_buffer
+                  usage: dynamic
+                  stride: 2
+                  size: 108
+                  count: 54
+                  renderAttributes: true
+                  instanceBuffer: false
+                  attributes:
+                    - type: index
+                      dataType: unsigned_short
+                      bufferName: ""
+                      elements: 1
+                      offset: 0
+                      count: 54
+                      normalized: true
+                      perInstance: false
+                  data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMA
+                minBufferCount: 400
+                minIndicesCount: 600
+                primitiveType: triangles
+                vertexCount: 54
+                aabb:
+                  min: [0, 0, 0]
+                  max: [228, 65.25, 0]
+                worldAABB:
+                  min: [525, 567.5, 0]
+                  max: [753, 632.75, 0]
+                texture:
+                  textureType: 2D
+                  source: id
+                  id: font|66
+                  minFilter: linear
+                  magFilter: linear
+                  wrapU: repeat
+                  wrapV: repeat
+                  releaseDataAfterLoad: false
+                color: [0, 0, 0, 1]
+                automaticFlipY: true
+                flipY: false
+                pointerMoved: false
+                focused: false
+              uilayout:
+                width: 230
+                height: 66
+                anchorPointLeft: 0.5
+                anchorPointTop: 0.5
+                anchorPointRight: 0.5
+                anchorPointBottom: 0.5
+                anchorOffsetLeft: -115
+                anchorOffsetTop: -33
+                anchorOffsetRight: 115
+                anchorOffsetBottom: 33
+                positionOffset: [0, 0]
+                anchorPreset: 9
+                usingAnchors: true
+                panel: 0
+                containerBoxIndex: -1
+                scissor: [352.47775, 179.08966, 128.98677, 37.58817]
+                ignoreScissor: false
+                ignoreEvents: true
+              text:
+                font: ""
+                text: Try again
+                fontSize: 66
+                multiline: true
+                maxTextSize: 100
+                fixedWidth: false
+                fixedHeight: false
+                pivotBaseline: false
+                pivotCentered: false

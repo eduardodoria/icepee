@@ -2224,7 +2224,7 @@ entities:
         points:
           - position: [0, 0, 0]
             color: [0.6242073, 0.577455, 0.19693404, 1]
-            size: 29.3
+            size: 0.05
             rotation: 0
             textureRect: [0, 0, 1, 1]
             visible: true
@@ -2304,8 +2304,8 @@ entities:
           toAlpha: 0
           function: LINEAR
         sizeInitializer:
-          minSize: 20
-          maxSize: 30
+          minSize: 0.02
+          maxSize: 0.04
         sizeModifier:
           fromTime: 0
           toTime: 0
