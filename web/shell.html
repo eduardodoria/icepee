@@ -177,6 +177,7 @@
     var canvasEl = document.getElementById('canvas');
     var isMobile = document.documentElement.classList.contains('mobile');
     var runtimeReady = false;
+    var changeCanvasSizeFn = null;
 
     function getWindowSize() {
       var vp = window.visualViewport;
@@ -186,7 +187,15 @@
       return { w: window.innerWidth, h: window.innerHeight };
     }
 
-    /** Resize canvas to window and notify Doriax (systemViewChanged / onViewChanged). */
+    /** Map canvas for Emscripten 5 HTML5 target lookup (querySelector / specialHTMLTargets). */
+    function registerCanvasTargets() {
+      if (typeof specialHTMLTargets === 'undefined') return;
+      specialHTMLTargets[''] = canvasEl;
+      specialHTMLTargets['#canvas'] = canvasEl;
+      specialHTMLTargets['!canvas'] = canvasEl;
+    }
+
+    /** Resize canvas to window and notify Doriax (changeCanvasSize → systemViewChanged / onViewChanged). */
     function notifyViewChanged() {
       if (!isMobile) return;
       var size = getWindowSize();
@@ -194,21 +203,29 @@
       var h = size.h;
       if (w <= 0 || h <= 0) return;
 
-      canvasEl.style.width = w + 'px';
-      canvasEl.style.height = h + 'px';
+      var canvas = (typeof Module !== 'undefined' && Module.canvas) ? Module.canvas : canvasEl;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      canvas.width = w;
+      canvas.height = h;
 
-      if (runtimeReady && typeof Module.ccall === 'function') {
-        Module.ccall('changeCanvasSize', null, ['number', 'number'], [w, h]);
+      if (!runtimeReady) return;
+
+      registerCanvasTargets();
+      if (!changeCanvasSizeFn && typeof Module.cwrap === 'function') {
+        changeCanvasSizeFn = Module.cwrap('changeCanvasSize', 'number', ['number', 'number']);
+      }
+      if (changeCanvasSizeFn) {
+        changeCanvasSizeFn(w, h);
       }
     }
 
     function scheduleViewChanged() {
       notifyViewChanged();
-      setTimeout(notifyViewChanged, 100);
+      setTimeout(notifyViewChanged, 150);
     }
 
     if (isMobile) {
-      notifyViewChanged();
       window.addEventListener('resize', scheduleViewChanged);
       window.addEventListener('orientationchange', scheduleViewChanged);
       if (window.visualViewport) {
@@ -216,8 +233,11 @@
       }
     }
 
+    var modulePreRun = [registerCanvasTargets];
+
     var Module = {
       canvas: canvasEl,
+      preRun: modulePreRun,
 
       print: function(text) {
         if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
