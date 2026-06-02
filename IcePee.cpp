@@ -431,6 +431,8 @@ static void applyVelocityConeToParticles(ParticlesComponent& particles, float mi
 IcePee::IcePee(Scene* scene, Entity entity): ScriptBase(scene, entity) {
     REGISTER_ENGINE_EVENT(onUpdate);
     getIceMeltVisualStates().clear();
+    
+    Engine::setCallTouchInMouseEvent(true);
 }
 
 IcePee::~IcePee() {

@@ -359,15 +359,7 @@ entities:
             worldAABB:
               min: [612.59155, 599.4944, 0]
               max: [682.59155, 619.3277, 0]
-            texture:
-              textureType: 2D
-              source: id
-              id: font|20
-              minFilter: linear
-              magFilter: linear
-              wrapU: repeat
-              wrapV: repeat
-              releaseDataAfterLoad: false
+            texture: ~
             color: [0, 0, 0, 1]
             automaticFlipY: true
             flipY: false
@@ -476,15 +468,7 @@ entities:
         worldAABB:
           min: [488, 0, 0]
           max: [792, 85.666664, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: font|88
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [0.941761, 0.90027446, 0.09603942, 1]
         automaticFlipY: true
         flipY: false
@@ -593,15 +577,7 @@ entities:
         worldAABB:
           min: [498, 331, 0]
           max: [781, 377.91666, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: font|58
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [0.9322396, 0.008958948, 0.008958948, 1]
         automaticFlipY: true
         flipY: false

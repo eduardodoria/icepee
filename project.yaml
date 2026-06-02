@@ -1,6 +1,6 @@
 name: IcePee
 nextSceneId: 9
-selectedScene: 1
+selectedScene: 2
 canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
@@ -34,7 +34,7 @@ tabs:
   - type: codeeditor
     filepath: TryAgainScript.h
   - type: scene
-    filepath: Main Scene.scene
+    filepath: Start Scene.scene
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
