@@ -176,7 +176,7 @@
 
     var canvasEl = document.getElementById('canvas');
     var isMobile = document.documentElement.classList.contains('mobile');
-    var runtimeReady = false;
+    var engineReady = false;
     var changeCanvasSizeFn = null;
 
     function getWindowSize() {
@@ -209,11 +209,11 @@
       canvas.width = w;
       canvas.height = h;
 
-      if (!runtimeReady) return;
+      if (!engineReady) return;
 
       registerCanvasTargets();
       if (!changeCanvasSizeFn && typeof Module.cwrap === 'function') {
-        changeCanvasSizeFn = Module.cwrap('changeCanvasSize', 'number', ['number', 'number']);
+        changeCanvasSizeFn = Module.cwrap('changeCanvasSize', null, ['number', 'number']);
       }
       if (changeCanvasSizeFn) {
         changeCanvasSizeFn(w, h);
@@ -234,10 +234,16 @@
     }
 
     var modulePreRun = [registerCanvasTargets];
+    var modulePostRun = [function() {
+      engineReady = true;
+      notifyViewChanged();
+      setTimeout(notifyViewChanged, 150);
+    }];
 
     var Module = {
       canvas: canvasEl,
       preRun: modulePreRun,
+      postRun: modulePostRun,
 
       print: function(text) {
         if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
@@ -279,8 +285,6 @@
 
       onRuntimeInitialized: function() {
         setProgress(100);
-        runtimeReady = true;
-        if (isMobile) notifyViewChanged();
       }
     };
 
