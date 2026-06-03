@@ -35,6 +35,10 @@ cppScripts:
     properties:
       - name: speed
         isPtr: false
+      - name: drunkSwayAmount
+        isPtr: false
+      - name: drunkSwaySpeed
+        isPtr: false
       - name: isActive
         isPtr: false
       - name: counter
@@ -55,6 +59,192 @@ cppScripts:
         isPtr: true
         ptrTypeName: doriax::Text
 entities:
+  - type: Entity
+    entity: 116
+    name: Particles
+    components:
+      action:
+        state: Stopped
+        speed: 1
+        target: 115
+        ownedTarget: false
+      particles:
+        maxParticles: 2000
+        emitter: true
+        loop: true
+        localSpace: false
+        rate: 200
+        maxPerUpdate: 500
+        bursts: ~
+        lifeInitializer:
+          minLife: 10
+          maxLife: 10
+        positionInitializer:
+          shape: 0
+          minPosition: [0, 0, 0]
+          maxPosition: [0, 0, 0]
+          radius: 1
+          innerRadius: 0
+          coneAngle: 30
+          coneHeight: 1
+        positionModifier:
+          fromTime: 0
+          toTime: 0
+          fromPosition: [0, 0, 0]
+          toPosition: [0, 0, 0]
+          function: LINEAR
+        velocityInitializer:
+          minVelocity: [-1.8, -0.1, -0.1]
+          maxVelocity: [-1.5, 0.1, 0.1]
+        velocityModifier:
+          fromTime: 0
+          toTime: 0
+          fromVelocity: [0, 0, 0]
+          toVelocity: [0, 0, 0]
+          function: LINEAR
+        accelerationInitializer:
+          minAcceleration: [0, -10, 0]
+          maxAcceleration: [0, -10, 0]
+        accelerationModifier:
+          fromTime: 0
+          toTime: 0
+          fromAcceleration: [0, 0, 0]
+          toAcceleration: [0, 0, 0]
+          function: LINEAR
+        colorInitializer:
+          minColor: [0.75189507, 0.57360965, 0.0334989]
+          maxColor: [0.91575015, 0.7946815, 0.21510532]
+          useSRGB: true
+        colorModifier:
+          fromTime: 0
+          toTime: 0
+          fromColor: [0, 0, 0]
+          toColor: [0, 0, 0]
+          function: LINEAR
+          useSRGB: true
+        colorGradient:
+          useSRGB: true
+          stops: ~
+        alphaInitializer:
+          minAlpha: 1
+          maxAlpha: 1
+        alphaModifier:
+          fromTime: 0
+          toTime: 0
+          fromAlpha: 0
+          toAlpha: 0
+          function: LINEAR
+        sizeInitializer:
+          minSize: 0.02
+          maxSize: 0.04
+        sizeModifier:
+          fromTime: 0
+          toTime: 0
+          fromSize: 0
+          toSize: 0
+          function: LINEAR
+        spriteInitializer:
+          frames:
+            - 0
+            - 1
+        spriteModifier:
+          fromTime: 0
+          toTime: 0
+          function: LINEAR
+          frames:
+            - 0
+        rotationInitializer:
+          minRotation: [1, 0, 0, 0]
+          maxRotation: [1, 0, 0, 0]
+          shortestPath: false
+        rotationModifier:
+          fromTime: 0
+          toTime: 0
+          fromRotation: [1, 0, 0, 0]
+          toRotation: [1, 0, 0, 0]
+          function: LINEAR
+          shortestPath: false
+        scaleInitializer:
+          minScale: [1, 1, 1]
+          maxScale: [1, 1, 1]
+          linearSort: true
+        scaleModifier:
+          fromTime: 0
+          toTime: 0
+          fromScale: [1, 1, 1]
+          toScale: [1, 1, 1]
+          function: LINEAR
+  - type: Entity
+    entity: 108
+    name: IcePee Script
+    components:
+      script:
+        scripts:
+          - type: script_class
+            path: IcePee.cpp
+            headerPath: IcePee.h
+            className: IcePee
+            enabled: true
+            properties:
+              - name: speed
+                displayName: Speed
+                type: 2
+                value: 5
+                defaultValue: 5
+              - name: drunkSwayAmount
+                displayName: Drunk Sway Amount
+                type: 2
+                value: 1
+                defaultValue: 1
+              - name: drunkSwaySpeed
+                displayName: Drunk Sway Speed
+                type: 2
+                value: 1
+                defaultValue: 1
+              - name: isActive
+                displayName: Is Active
+                type: 0
+                value: false
+                defaultValue: false
+              - name: counter
+                displayName: Counter
+                type: 1
+                value: 0
+                defaultValue: 0
+              - name: pointSprites
+                displayName: Point Sprites
+                type: 9
+                ptrTypeName: doriax::Points
+                value: 115
+                defaultValue: 0
+              - name: time
+                displayName: Time
+                type: 9
+                ptrTypeName: doriax::Text
+                value: 102
+                defaultValue: 0
+                sceneId: 7
+              - name: score
+                displayName: Score
+                type: 9
+                ptrTypeName: doriax::Text
+                value: 101
+                defaultValue: 0
+                sceneId: 7
+              - name: gameOverBestScore
+                displayName: Game Over Best Score
+                type: 9
+                ptrTypeName: doriax::Text
+                value: 105
+                defaultValue: 0
+                sceneId: 9
+              - name: gameOverMessage
+                displayName: Game Over Message
+                type: 9
+                ptrTypeName: doriax::Text
+                value: 104
+                defaultValue: 0
+                sceneId: 9
   - type: Entity
     entity: 101
     name: Sun
@@ -291,41 +481,6 @@ entities:
         transparent: false
         cullingMode: back
         windingOrder: ccw
-  - type: Entity
-    entity: 104
-    name: Camera
-    components:
-      transform:
-        position: [3.0144753, 1.8959136, 0]
-        rotation: [0.69281614, -0.14144155, 0.69281626, 0.14144166]
-        scale: [0.9999998, 1, 0.9999997]
-        worldPosition: [3.0144753, 1.8959136, 0]
-        worldRotation: [0.69281614, -0.14144155, 0.69281626, 0.14144166]
-        worldScale: [0.9999998, 1, 0.9999997]
-        localMatrix: [[-2.3841854e-07, 1.0430811e-07, -0.9999998, 0], [-0.39197212, 0.91997707, 1.7881393e-07, 0], [0.91997683, 0.39197204, -1.19209254e-07, 0], [3.0144753, 1.8959136, 0, 1]]
-        modelMatrix: [[-2.3841854e-07, 1.0430811e-07, -0.9999998, 0], [-0.39197212, 0.91997707, 1.7881393e-07, 0], [0.91997683, 0.39197204, -1.19209254e-07, 0], [3.0144753, 1.8959136, 0, 1]]
-        normalMatrix: [[-1.7975992e-07, 1.17778036e-07, -1.0000001, 3.1858488e-07], [-0.39197215, 0.91997707, 1.8941452e-07, -0.56260663], [0.9199773, 0.39197224, -1.784538e-07, -3.5163946], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      camera:
-        type: camera_perspective
-        target: [0, 0, 0]
-        up: [0, 1, 0]
-        leftClip: 0
-        rightClip: 10
-        bottomClip: 0
-        topClip: 10
-        yfov: 0.75
-        aspect: 1.5447059
-        nearClip: 0.2
-        farClip: 200
-        renderToTexture: false
-        transparentSort: true
-        useTarget: false
-        autoResize: true
   - type: Entity
     entity: 102
     name: micitorio
@@ -2129,221 +2284,6 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 108
-    name: IcePee Script
-    components:
-      script:
-        scripts:
-          - type: script_class
-            path: IcePee.cpp
-            headerPath: IcePee.h
-            className: IcePee
-            enabled: true
-            properties:
-              - name: speed
-                displayName: Speed
-                type: 2
-                value: 5
-                defaultValue: 5
-              - name: isActive
-                displayName: Is Active
-                type: 0
-                value: false
-                defaultValue: false
-              - name: counter
-                displayName: Counter
-                type: 1
-                value: 0
-                defaultValue: 0
-              - name: pointSprites
-                displayName: Point Sprites
-                type: 9
-                ptrTypeName: doriax::Points
-                value: 115
-                defaultValue: 0
-              - name: time
-                displayName: Time
-                type: 9
-                ptrTypeName: doriax::Text
-                value: 102
-                defaultValue: 0
-                sceneId: 7
-              - name: score
-                displayName: Score
-                type: 9
-                ptrTypeName: doriax::Text
-                value: 101
-                defaultValue: 0
-                sceneId: 7
-              - name: gameOverBestScore
-                displayName: Game Over Best Score
-                type: 9
-                ptrTypeName: doriax::Text
-                value: 105
-                defaultValue: 0
-                sceneId: 9
-              - name: gameOverMessage
-                displayName: Game Over Message
-                type: 9
-                ptrTypeName: doriax::Text
-                value: 104
-                defaultValue: 0
-                sceneId: 9
-  - type: Entity
-    entity: 115
-    name: PointSprites
-    components:
-      transform:
-        position: [1.5805887, 0.46830678, 0]
-        rotation: [1, 0, 0, 0]
-        scale: [1, 1, 1]
-        worldPosition: [1.5805887, 0.46830678, 0]
-        worldRotation: [1, 0, 0, 0]
-        worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1.5805887, 0.46830678, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1.5805887, 0.46830678, 0, 1]]
-        normalMatrix: [[1, 0, 0, -1.5805887], [0, 1, 0, -0.46830678], [0, 0, 1, 0], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      points:
-        maxPoints: 10000
-        transparent: true
-        autoTransparency: false
-        texture:
-          textureType: 2D
-          source: path
-          path: assets/particle.png
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: true
-        points:
-          - position: [0, 0, 0]
-            color: [0.6242073, 0.577455, 0.19693404, 1]
-            size: 0.05
-            rotation: 0
-            textureRect: [0, 0, 1, 1]
-            visible: true
-  - type: Entity
-    entity: 116
-    name: Particles
-    components:
-      action:
-        state: Stopped
-        speed: 1
-        target: 115
-        ownedTarget: false
-      particles:
-        maxParticles: 2000
-        emitter: true
-        loop: true
-        localSpace: false
-        rate: 200
-        maxPerUpdate: 500
-        bursts: ~
-        lifeInitializer:
-          minLife: 10
-          maxLife: 10
-        positionInitializer:
-          shape: 0
-          minPosition: [0, 0, 0]
-          maxPosition: [0, 0, 0]
-          radius: 1
-          innerRadius: 0
-          coneAngle: 30
-          coneHeight: 1
-        positionModifier:
-          fromTime: 0
-          toTime: 0
-          fromPosition: [0, 0, 0]
-          toPosition: [0, 0, 0]
-          function: LINEAR
-        velocityInitializer:
-          minVelocity: [-1.8, -0.1, -0.1]
-          maxVelocity: [-1.5, 0.1, 0.1]
-        velocityModifier:
-          fromTime: 0
-          toTime: 0
-          fromVelocity: [0, 0, 0]
-          toVelocity: [0, 0, 0]
-          function: LINEAR
-        accelerationInitializer:
-          minAcceleration: [0, -10, 0]
-          maxAcceleration: [0, -10, 0]
-        accelerationModifier:
-          fromTime: 0
-          toTime: 0
-          fromAcceleration: [0, 0, 0]
-          toAcceleration: [0, 0, 0]
-          function: LINEAR
-        colorInitializer:
-          minColor: [0.75189507, 0.57360965, 0.0334989]
-          maxColor: [0.91575015, 0.7946815, 0.21510532]
-          useSRGB: true
-        colorModifier:
-          fromTime: 0
-          toTime: 0
-          fromColor: [0, 0, 0]
-          toColor: [0, 0, 0]
-          function: LINEAR
-          useSRGB: true
-        colorGradient:
-          useSRGB: true
-          stops: ~
-        alphaInitializer:
-          minAlpha: 1
-          maxAlpha: 1
-        alphaModifier:
-          fromTime: 0
-          toTime: 0
-          fromAlpha: 0
-          toAlpha: 0
-          function: LINEAR
-        sizeInitializer:
-          minSize: 0.02
-          maxSize: 0.04
-        sizeModifier:
-          fromTime: 0
-          toTime: 0
-          fromSize: 0
-          toSize: 0
-          function: LINEAR
-        spriteInitializer:
-          frames:
-            - 0
-            - 1
-        spriteModifier:
-          fromTime: 0
-          toTime: 0
-          function: LINEAR
-          frames:
-            - 0
-        rotationInitializer:
-          minRotation: [1, 0, 0, 0]
-          maxRotation: [1, 0, 0, 0]
-          shortestPath: false
-        rotationModifier:
-          fromTime: 0
-          toTime: 0
-          fromRotation: [1, 0, 0, 0]
-          toRotation: [1, 0, 0, 0]
-          function: LINEAR
-          shortestPath: false
-        scaleInitializer:
-          minScale: [1, 1, 1]
-          maxScale: [1, 1, 1]
-          linearSort: true
-        scaleModifier:
-          fromTime: 0
-          toTime: 0
-          fromScale: [1, 1, 1]
-          toScale: [1, 1, 1]
-          function: LINEAR
-  - type: Entity
     entity: 117
     name: water
     components:
@@ -2536,3 +2476,97 @@ entities:
         transparent: true
         cullingMode: back
         windingOrder: ccw
+  - type: Entity
+    entity: 118
+    name: Actor
+    components:
+      transform:
+        position: [0, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+    children:
+      - type: Entity
+        entity: 115
+        name: PointSprites
+        components:
+          transform:
+            position: [1.5805887, 0.46830678, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [1.5805887, 0.46830678, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1.5805887, 0.46830678, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1.5805887, 0.46830678, 0, 1]]
+            normalMatrix: [[1, 0, 0, -1.5805887], [0, 1, 0, -0.46830678], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          points:
+            maxPoints: 10000
+            transparent: true
+            autoTransparency: false
+            texture:
+              textureType: 2D
+              source: path
+              path: assets/particle.png
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: true
+            points:
+              - position: [0, 0, 0]
+                color: [0.6242073, 0.577455, 0.19693404, 1]
+                size: 0.05
+                rotation: 0
+                textureRect: [0, 0, 1, 1]
+                visible: true
+      - type: Entity
+        entity: 104
+        name: Camera
+        components:
+          transform:
+            position: [3.0144753, 1.895914, 0]
+            rotation: [0.6928161, -0.14144136, 0.6928164, 0.1414415]
+            scale: [0.99999994, 0.9999999, 0.99999964]
+            worldPosition: [3.0144753, 1.895914, 0]
+            worldRotation: [0.6928161, -0.14144136, 0.6928164, 0.1414415]
+            worldScale: [0.99999994, 0.9999999, 0.99999964]
+            localMatrix: [[-4.7683713e-07, 1.0430812e-07, -0.99999994, 0], [-0.3919716, 0.9199772, 2.8312203e-07, 0], [0.91997695, 0.3919715, -3.5762775e-07, 0], [3.0144753, 1.895914, 0, 1]]
+            modelMatrix: [[-4.7683713e-07, 1.0430812e-07, -0.99999994, 0], [-0.3919716, 0.9199772, 2.8312203e-07, 0], [0.91997695, 0.3919715, -3.5762775e-07, 0], [3.0144753, 1.895914, 0, 1]]
+            normalMatrix: [[-4.399854e-07, 1.202859e-07, -1.0000001, 1.0982733e-06], [-0.3919717, 0.9199774, 2.828678e-07, -0.562609], [0.91997766, 0.3919718, -3.9779368e-07, -3.5163949], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          camera:
+            type: camera_perspective
+            target: [0, 0, 0]
+            up: [0, 1, 0]
+            leftClip: 0
+            rightClip: 10
+            bottomClip: 0
+            topClip: 10
+            yfov: 0.75
+            aspect: 1.5447059
+            nearClip: 0.2
+            farClip: 200
+            renderToTexture: false
+            transparentSort: true
+            useTarget: false
+            autoResize: true

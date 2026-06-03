@@ -7,6 +7,8 @@
 #include "component/MeshComponent.h"
 #include "component/ParticlesComponent.h"
 #include "object/Mesh.h"
+#include "object/Object.h"
+#include "component/Transform.h"
 #include "io/UserSettings.h"
 
 #include <cmath>
@@ -42,6 +44,51 @@ static Entity findParticlesEntityForTarget(Scene* scene, Entity targetEntity) {
     }
 
     return NULL_ENTITY;
+}
+
+static Entity getActorEntityFromPointSprites(Scene* scene, Entity pointSpritesEntity) {
+    if (!scene || pointSpritesEntity == NULL_ENTITY) {
+        return NULL_ENTITY;
+    }
+
+    const Transform* transform = scene->findComponent<Transform>(pointSpritesEntity);
+    if (!transform || transform->parent == NULL_ENTITY) {
+        return NULL_ENTITY;
+    }
+
+    return transform->parent;
+}
+
+static void applyDrunkSway(
+    Scene* scene,
+    Entity actorEntity,
+    const Vector3& basePosition,
+    const Quaternion& baseRotation,
+    float swayTime,
+    float amount,
+    float speed) {
+    if (!scene || actorEntity == NULL_ENTITY || amount <= 0.0f) {
+        return;
+    }
+
+    const float t = swayTime * std::max(0.0f, speed);
+    const float positionScale = 0.04f * amount;
+    const float rotationScale = 0.035f * amount;
+
+    const Vector3 positionOffset(
+        (std::sin(t * 0.91f) + std::sin(t * 1.73f) * 0.5f) * positionScale,
+        (std::sin(t * 1.13f) + std::cos(t * 2.27f) * 0.5f) * positionScale * 0.7f,
+        (std::cos(t * 0.79f) + std::sin(t * 1.97f) * 0.5f) * positionScale);
+
+    const Quaternion swayRotation(
+        std::sin(t * 0.67f) * rotationScale + std::sin(t * 1.31f) * rotationScale * 0.5f,
+        std::cos(t * 1.07f) * rotationScale + std::sin(t * 2.17f) * rotationScale * 0.5f,
+        std::sin(t * 1.49f) * rotationScale * 0.6f);
+
+    Object actor(scene, actorEntity);
+    actor.setPosition(basePosition + positionOffset);
+    actor.setRotation(baseRotation * swayRotation);
+    actor.updateTransform();
 }
 
 static Entity findMeshEntityByName(Scene* scene, const std::string& entityName) {
@@ -116,9 +163,11 @@ struct IcePeeResetState {
     std::vector<MeshResetState> iceStates;
     MeshResetState waterState;
     ObjectResetState pointSpritesState;
+    ObjectResetState actorState;
     ParticleVelocityInitializer particleVelocity;
     bool hasWaterState = false;
     bool hasPointSpritesState = false;
+    bool hasActorState = false;
     bool hasParticleVelocity = false;
     bool cached = false;
 };
@@ -181,14 +230,27 @@ static void cacheResetState(IcePee& icePee) {
     }
 
     if (icePee.pointSprites) {
-        resetState.pointSpritesState.entity = icePee.pointSprites->getEntity();
+        const Entity pointSpritesEntity = icePee.pointSprites->getEntity();
+
+        resetState.pointSpritesState.entity = pointSpritesEntity;
         resetState.pointSpritesState.position = icePee.pointSprites->getPosition();
         resetState.pointSpritesState.rotation = icePee.pointSprites->getRotation();
         resetState.pointSpritesState.scale = icePee.pointSprites->getScale();
         resetState.pointSpritesState.visible = icePee.pointSprites->isVisible();
         resetState.hasPointSpritesState = true;
 
-        Entity particlesEntity = findParticlesEntityForTarget(scene, icePee.pointSprites->getEntity());
+        icePee.actorEntity = getActorEntityFromPointSprites(scene, pointSpritesEntity);
+        if (icePee.actorEntity != NULL_ENTITY) {
+            Object actor(scene, icePee.actorEntity);
+            resetState.actorState.entity = icePee.actorEntity;
+            resetState.actorState.position = actor.getPosition();
+            resetState.actorState.rotation = actor.getRotation();
+            resetState.actorState.scale = actor.getScale();
+            resetState.actorState.visible = actor.isVisible();
+            resetState.hasActorState = true;
+        }
+
+        Entity particlesEntity = findParticlesEntityForTarget(scene, pointSpritesEntity);
         if (particlesEntity != NULL_ENTITY) {
             if (const ParticlesComponent* pc = scene->findComponent<ParticlesComponent>(particlesEntity)) {
                 resetState.particleVelocity = pc->velocityInitializer;
@@ -450,6 +512,7 @@ void IcePee::onUpdate() {
     if (pointSprites) pointSprites->setVisible(true);
 
     const float deltaTime = Engine::getDeltatime();
+    drunkSwayTime += deltaTime;
     remainingTimeSeconds = std::max(0.0f, remainingTimeSeconds - deltaTime);
     syncTimeText(time, remainingTimeSeconds);
     if (remainingTimeSeconds <= 0.0f) {
@@ -478,6 +541,24 @@ void IcePee::onUpdate() {
 
     lastMousePosition = mousePosition;
     wasDragging = isDragging;
+
+    if (actorEntity == NULL_ENTITY && pointSprites) {
+        actorEntity = getActorEntityFromPointSprites(scene, pointSprites->getEntity());
+    }
+
+    if (actorEntity != NULL_ENTITY) {
+        const IcePeeResetState& resetState = getIcePeeResetStates()[getEntity()];
+        if (resetState.hasActorState) {
+            applyDrunkSway(
+                scene,
+                actorEntity,
+                resetState.actorState.position,
+                resetState.actorState.rotation,
+                drunkSwayTime,
+                drunkSwayAmount,
+                drunkSwaySpeed);
+        }
+    }
 
     if (pointSprites) {
         Quaternion controlRotation = getPointSpritesControlRotation(pointSpritesYaw, pointSpritesPitch);
@@ -539,6 +620,7 @@ void IcePee::resetGame() {
 
     pointSpritesYaw = 0.0f;
     pointSpritesPitch = 0.0f;
+    drunkSwayTime = 0.0f;
     wasDragging = false;
     lastMousePosition = Vector2(0.0f, 0.0f);
 
@@ -578,6 +660,16 @@ void IcePee::resetGame() {
         water.setColor(resetState.waterState.color);
         water.updateTransform();
         waterEntity = resetState.waterState.entity;
+    }
+
+    if (resetState.hasActorState && currentScene->findComponent<Transform>(resetState.actorState.entity)) {
+        Object actor(currentScene, resetState.actorState.entity);
+        actor.setPosition(resetState.actorState.position);
+        actor.setRotation(resetState.actorState.rotation);
+        actor.setScale(resetState.actorState.scale);
+        actor.setVisible(resetState.actorState.visible);
+        actor.updateTransform();
+        actorEntity = resetState.actorState.entity;
     }
 
     if (pointSprites) {

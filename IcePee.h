@@ -15,6 +15,12 @@ public:
     SPROPERTY("Speed")
     float speed = 5.0f;
 
+    SPROPERTY("Drunk Sway Amount")
+    float drunkSwayAmount = 1.0f;
+
+    SPROPERTY("Drunk Sway Speed")
+    float drunkSwaySpeed = 1.0f;
+
     SPROPERTY("Is Active")
     bool isActive = false;
 
@@ -50,6 +56,9 @@ public:
 
     doriax::Entity waterEntity = NULL_ENTITY;
     float waterMaxScaleY = 0.0f;
+
+    doriax::Entity actorEntity = NULL_ENTITY;
+    float drunkSwayTime = 0.0f;
 
     std::vector<doriax::Entity> iceEntities;
     bool iceEntitiesCached = false;
