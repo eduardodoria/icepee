@@ -33,6 +33,8 @@ cppScripts:
       - name: icePeeScript
         isPtr: true
         ptrTypeName: IcePee
+bundles:
+  - Background.bundle
 entities:
   - type: Entity
     entity: 101
@@ -53,100 +55,9 @@ entities:
         billboard: false
         fakeBillboard: false
         cylindricalBillboard: false
-      ui:
-        buffer:
-          type: vertex_buffer
-          usage: dynamic
-          stride: 36
-          size: 576
-          count: 16
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: position
-              dataType: float
-              bufferName: ""
-              elements: 3
-              offset: 0
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: texcoord1
-              dataType: float
-              bufferName: ""
-              elements: 2
-              offset: 12
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: color
-              dataType: float
-              bufferName: ""
-              elements: 4
-              offset: 20
-              count: 16
-              normalized: true
-              perInstance: false
-          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACgRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACgRAAANEQAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANEQAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACgRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACgRAAANEQAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANEQAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACgRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACgRAAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACgRAAANEQAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACgRAAANEQAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANEQAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANEQAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
-        indices:
-          type: index_buffer
-          usage: dynamic
-          stride: 2
-          size: 108
-          count: 54
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: index
-              dataType: unsigned_short
-              bufferName: ""
-              elements: 1
-              offset: 0
-              count: 54
-              normalized: true
-              perInstance: false
-          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
-        minBufferCount: 0
-        minIndicesCount: 0
-        primitiveType: triangles
-        vertexCount: 54
-        aabb:
-          min: [0, 0, 0]
-          max: [1280, 720, 0]
-        worldAABB:
-          min: [0, 0, 0]
-          max: [1280, 720, 0]
-        texture: ~
-        color: [0.0013328876, 1.4989881e-05, 1.4989881e-05, 0.5560538]
-        automaticFlipY: true
-        flipY: false
-        pointerMoved: false
-        focused: false
-      uilayout:
-        width: 1280
-        height: 720
-        anchorPointLeft: 0
-        anchorPointTop: 0
-        anchorPointRight: 1
-        anchorPointBottom: 1
-        anchorOffsetLeft: 0
-        anchorOffsetTop: 0
-        anchorOffsetRight: 0
-        anchorOffsetBottom: 0
-        positionOffset: [0, 0]
-        anchorPreset: 16
-        usingAnchors: true
-        panel: 0
-        containerBoxIndex: -1
-        scissor: [186.01373, 100.05569, 613.8425, 345.28644]
-        ignoreScissor: false
-        ignoreEvents: false
-      image:
-        patchMarginLeft: 0
-        patchMarginRight: 0
-        patchMarginTop: 0
-        patchMarginBottom: 0
-        textureScaleFactor: 0
+      bundle:
+        name: Background
+        path: Background.bundle
   - type: Entity
     entity: 104
     name: Container
@@ -166,49 +77,6 @@ entities:
         billboard: false
         fakeBillboard: false
         cylindricalBillboard: false
-      ui:
-        buffer:
-          type: vertex_buffer
-          usage: immutable
-          stride: 0
-          size: 0
-          count: 0
-          renderAttributes: true
-          instanceBuffer: false
-          attributes: ~
-        indices:
-          type: index_buffer
-          usage: immutable
-          stride: 2
-          size: 0
-          count: 0
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: index
-              dataType: unsigned_short
-              bufferName: ""
-              elements: 1
-              offset: 0
-              count: 0
-              normalized: true
-              perInstance: false
-        minBufferCount: 0
-        minIndicesCount: 0
-        primitiveType: triangles
-        vertexCount: 0
-        aabb:
-          min: [0, 0, 0]
-          max: [0, 0, 0]
-        worldAABB:
-          min: [0, 0, 0]
-          max: [0, 0, 0]
-        texture: ~
-        color: [1, 1, 1, 1]
-        automaticFlipY: true
-        flipY: false
-        pointerMoved: false
-        focused: false
       uilayout:
         width: 1280
         height: 720
@@ -346,7 +214,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 0
-            scissor: [393.66516, 246.80243, 198.5397, 198.5397]
+            scissor: [401.98907, 439.17743, 198.26358, 198.26358]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -446,9 +314,11 @@ entities:
           button:
             label: 103
             textureNormal: ~
+            textureHovered: ~
             texturePressed: ~
             textureDisabled: ~
             colorNormal: [1, 1, 1, 1]
+            colorHovered: [1, 1, 1, 1]
             colorPressed: [0.17891622, 0.06628472, 0.06628472, 1]
             colorDisabled: [1, 1, 1, 1]
             disabled: false
@@ -468,7 +338,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 1
-            scissor: [397.02213, 147.5326, 192.30536, 51.792965]
+            scissor: [405.34134, 340.0456, 192.03792, 51.720936]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -612,7 +482,7 @@ entities:
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [397.02213, 147.5326, 192.30536, 51.792965]
+                scissor: [405.34134, 340.0456, 192.03792, 51.720936]
                 ignoreScissor: false
                 ignoreEvents: true
               text:
@@ -737,7 +607,7 @@ entities:
         usingAnchors: false
         panel: 0
         containerBoxIndex: -1
-        scissor: [68.0001, 217.22862, 75.77119, 96.39246]
+        scissor: [76.776886, 409.64465, 75.66581, 96.25841]
         ignoreScissor: false
         ignoreEvents: false
       image:
@@ -858,7 +728,7 @@ entities:
         usingAnchors: false
         panel: 0
         containerBoxIndex: -1
-        scissor: [86.000015, 96.96677, 59.465996, 87.28074]
+        scissor: [94.75179, 289.5501, 59.383297, 87.159355]
         ignoreScissor: false
         ignoreEvents: false
       image:

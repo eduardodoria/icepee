@@ -1,5 +1,5 @@
 name: IcePee
-nextSceneId: 9
+nextSceneId: 10
 selectedScene: 2
 canvasWidth: 1280
 canvasHeight: 720
@@ -60,7 +60,7 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.7015985
+      aspect: 1.7367725
       nearClip: 0.2
       farClip: 200
       position: [6.5175323, 3.0197914, 3.2910714]
@@ -83,14 +83,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-387.88055, -245.34317, 0]
+      target: [-406.40515, -247.56659, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.6367265
       nearClip: -10000
       farClip: 10000
-      position: [-387.88055, -245.34317, 1]
-      zoom: 2.0852253
+      position: [-406.40515, -247.56659, 1]
+      zoom: 2.0881293
   - filepath: Score Scene.scene
     showAllJoints: false
     showAllBones: false
@@ -145,3 +145,30 @@ scenes:
       farClip: 10000
       position: [-413.84915, -322.2915, 1]
       zoom: 2.527391
+  - filepath: Level Scene.scene
+    showAllJoints: false
+    showAllBones: false
+    showAllBodies: false
+    hideCameraView: false
+    hideLightIcons: false
+    hideSoundIcons: false
+    hideContainerGuides: false
+    showOrigin: true
+    showGrid3D: true
+    hideSelectionOutline: false
+    showGrid2D: false
+    gridSpacing2D: 50
+    gridSpacing3D: 1
+    snapToGrid: false
+    snapRotation: false
+    rotationSnapDegrees: 15
+    editorCamera:
+      type: camera_ui
+      target: [-296.96725, -344.55817, 0]
+      up: [0, 1, 0]
+      yfov: 0.75
+      aspect: 1.7367725
+      nearClip: -10000
+      farClip: 10000
+      position: [-296.96725, -344.55817, 1]
+      zoom: 1.873418
