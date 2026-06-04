@@ -81,7 +81,7 @@ components:
       min: [0, 0, 0]
       max: [1280, 720, 0]
     texture: ~
-    color: [0.76129854, 0.025942685, 0.025942685, 0.5560538]
+    color: [0, 0, 0, 0.5560538]
     automaticFlipY: true
     flipY: false
     pointerMoved: false

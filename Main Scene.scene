@@ -28,6 +28,8 @@ childScenes:
     startActive: false
   - id: 9
     startActive: false
+  - id: 10
+    startActive: false
 cppScripts:
   - path: IcePee.cpp
     headerPath: IcePee.h

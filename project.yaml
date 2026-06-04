@@ -1,6 +1,6 @@
 name: IcePee
 nextSceneId: 10
-selectedScene: 2
+selectedScene: 1
 canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
@@ -35,8 +35,10 @@ tabs:
     filepath: TryAgainScript.h
   - type: codeeditor
     filepath: models/gelo/geloMenor.mtl
+  - type: codeeditor
+    filepath: Background.bundle
   - type: scene
-    filepath: Start Scene.scene
+    filepath: Main Scene.scene
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
@@ -60,7 +62,7 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.7367725
+      aspect: 1.7015985
       nearClip: 0.2
       farClip: 200
       position: [6.5175323, 3.0197914, 3.2910714]
@@ -164,11 +166,11 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-296.96725, -344.55817, 0]
+      target: [-282.24606, -193.2019, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.7367725
       nearClip: -10000
       farClip: 10000
-      position: [-296.96725, -344.55817, 1]
-      zoom: 1.873418
+      position: [-282.24606, -193.2019, 1]
+      zoom: 1.836137

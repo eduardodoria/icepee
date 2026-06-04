@@ -214,7 +214,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 0
-            scissor: [401.98907, 439.17743, 198.26358, 198.26358]
+            scissor: [401.98907, 246.1774, 198.26358, 198.26358]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -224,7 +224,7 @@ entities:
             patchMarginBottom: 0
             textureScaleFactor: 0
       - type: Entity
-        entity: 102
+        entity: 103
         name: Button
         components:
           transform:
@@ -338,7 +338,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 1
-            scissor: [405.34134, 340.0456, 192.03792, 51.720936]
+            scissor: [405.34134, 147.0456, 192.03792, 51.720936]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -379,7 +379,7 @@ entities:
                     sceneId: 1
         children:
           - type: Entity
-            entity: 103
+            entity: 106
             name: Label
             components:
               transform:
@@ -482,7 +482,7 @@ entities:
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [405.34134, 340.0456, 192.03792, 51.720936]
+                scissor: [405.34134, 147.0456, 192.03792, 51.720936]
                 ignoreScissor: false
                 ignoreEvents: true
               text:
@@ -495,245 +495,3 @@ entities:
                 fixedHeight: false
                 pivotBaseline: false
                 pivotCentered: false
-  - type: Entity
-    entity: 110
-    name: GlassBeer
-    components:
-      transform:
-        position: [-246.08505, 274.6681, 0]
-        rotation: [1, 0, 0, 0]
-        scale: [1, 1, 1]
-        worldPosition: [-246.08505, 274.6681, 0]
-        worldRotation: [1, 0, 0, 0]
-        worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [-246.08505, 274.6681, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [-246.08505, 274.6681, 0, 1]]
-        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      ui:
-        buffer:
-          type: vertex_buffer
-          usage: dynamic
-          stride: 36
-          size: 576
-          count: 16
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: position
-              dataType: float
-              bufferName: ""
-              elements: 3
-              offset: 0
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: texcoord1
-              dataType: float
-              bufferName: ""
-              elements: 2
-              offset: 12
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: color
-              dataType: float
-              bufferName: ""
-              elements: 4
-              offset: 20
-              count: 16
-              normalized: true
-              perInstance: false
-          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAeQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAeQwAASUMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASUMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAeQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAeQwAASUMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASUMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAeQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAeQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAeQwAASUMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAeQwAASUMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASUMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAASUMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
-        indices:
-          type: index_buffer
-          usage: dynamic
-          stride: 2
-          size: 108
-          count: 54
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: index
-              dataType: unsigned_short
-              bufferName: ""
-              elements: 1
-              offset: 0
-              count: 54
-              normalized: true
-              perInstance: false
-          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
-        minBufferCount: 0
-        minIndicesCount: 0
-        primitiveType: triangles
-        vertexCount: 54
-        aabb:
-          min: [0, 0, 0]
-          max: [158, 201, 0]
-        worldAABB:
-          min: [-246.08505, 274.6681, 0]
-          max: [-88.08505, 475.6681, 0]
-        texture:
-          textureType: 2D
-          source: path
-          path: assets/Copo_Cerveja.png
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: true
-        color: [1, 1, 1, 1]
-        automaticFlipY: true
-        flipY: false
-        pointerMoved: false
-        focused: false
-      uilayout:
-        width: 158
-        height: 201
-        anchorPointLeft: 0
-        anchorPointTop: 0
-        anchorPointRight: 0
-        anchorPointBottom: 0
-        anchorOffsetLeft: -246
-        anchorOffsetTop: 274
-        anchorOffsetRight: -88
-        anchorOffsetBottom: 475
-        positionOffset: [0, 0]
-        anchorPreset: 0
-        usingAnchors: false
-        panel: 0
-        containerBoxIndex: -1
-        scissor: [76.776886, 409.64465, 75.66581, 96.25841]
-        ignoreScissor: false
-        ignoreEvents: false
-      image:
-        patchMarginLeft: 0
-        patchMarginRight: 0
-        patchMarginTop: 0
-        patchMarginBottom: 0
-        textureScaleFactor: 0
-  - type: Entity
-    entity: 115
-    name: GlassWater
-    components:
-      transform:
-        position: [-208.55115, 544.4411, 0]
-        rotation: [1, 0, 0, 0]
-        scale: [1, 1, 1]
-        worldPosition: [-208.55115, 544.4411, 0]
-        worldRotation: [1, 0, 0, 0]
-        worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [-208.55115, 544.4411, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [-208.55115, 544.4411, 0, 1]]
-        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      ui:
-        buffer:
-          type: vertex_buffer
-          usage: dynamic
-          stride: 36
-          size: 576
-          count: 16
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: position
-              dataType: float
-              bufferName: ""
-              elements: 3
-              offset: 0
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: texcoord1
-              dataType: float
-              bufferName: ""
-              elements: 2
-              offset: 12
-              count: 16
-              normalized: true
-              perInstance: false
-            - type: color
-              dataType: float
-              bufferName: ""
-              elements: 4
-              offset: 20
-              count: 16
-              normalized: true
-              perInstance: false
-          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAD4QgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAD4QgAANkMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANkMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAD4QgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAD4QgAANkMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANkMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAD4QgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAD4QgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAD4QgAANkMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAD4QgAANkMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANkMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAANkMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
-        indices:
-          type: index_buffer
-          usage: dynamic
-          stride: 2
-          size: 108
-          count: 54
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: index
-              dataType: unsigned_short
-              bufferName: ""
-              elements: 1
-              offset: 0
-              count: 54
-              normalized: true
-              perInstance: false
-          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
-        minBufferCount: 0
-        minIndicesCount: 0
-        primitiveType: triangles
-        vertexCount: 54
-        aabb:
-          min: [0, 0, 0]
-          max: [124, 182, 0]
-        worldAABB:
-          min: [-208.55115, 544.4411, 0]
-          max: [-84.55115, 726.4411, 0]
-        texture:
-          textureType: 2D
-          source: path
-          path: assets/Copo_agua.png
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: true
-        color: [1, 1, 1, 1]
-        automaticFlipY: true
-        flipY: false
-        pointerMoved: false
-        focused: false
-      uilayout:
-        width: 124
-        height: 182
-        anchorPointLeft: 0
-        anchorPointTop: 0
-        anchorPointRight: 0
-        anchorPointBottom: 0
-        anchorOffsetLeft: -208
-        anchorOffsetTop: 544
-        anchorOffsetRight: -84
-        anchorOffsetBottom: 726
-        positionOffset: [0, 0]
-        anchorPreset: 0
-        usingAnchors: false
-        panel: 0
-        containerBoxIndex: -1
-        scissor: [94.75179, 289.5501, 59.383297, 87.159355]
-        ignoreScissor: false
-        ignoreEvents: false
-      image:
-        patchMarginLeft: 0
-        patchMarginRight: 0
-        patchMarginTop: 0
-        patchMarginBottom: 0
-        textureScaleFactor: 0

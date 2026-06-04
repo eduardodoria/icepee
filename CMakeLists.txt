@@ -48,6 +48,7 @@ set(SCRIPT_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/IcePee.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ButtonScript.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/TryAgainScript.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/LevelScript.cpp
 )
 
 set(FACTORY_SOURCES

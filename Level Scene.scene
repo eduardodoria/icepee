@@ -19,6 +19,20 @@ shaderKeys:
   - 21474836482
   - 21474836488
   - 21474836489
+cppScripts:
+  - path: LevelScript.cpp
+    headerPath: LevelScript.h
+    className: LevelScript
+    properties:
+      - name: isActive
+        isPtr: false
+      - name: icePeeScript
+        isPtr: true
+        ptrTypeName: IcePee
+      - name: drunkSwayAmount
+        isPtr: false
+      - name: drunkSwaySpeed
+        isPtr: false
 bundles:
   - Background.bundle
 entities:
@@ -45,7 +59,7 @@ entities:
         name: Background
         path: Background.bundle
   - type: Entity
-    entity: 101
+    entity: 103
     name: Container
     components:
       transform:
@@ -298,14 +312,14 @@ entities:
                 name: WaterGlass
                 components:
                   transform:
-                    position: [251, 0.5, 0]
+                    position: [250, 0, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [251, 360.5, 0]
+                    worldPosition: [250, 360, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
-                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [251, 0.5, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [251, 360.5, 0, 1]]
+                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [250, 0, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [250, 360, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -346,7 +360,7 @@ entities:
                           count: 16
                           normalized: true
                           perInstance: false
-                      data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAKQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAKQwAAS0MAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAS0MAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAKQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAKQwAAS0MAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAS0MAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAKQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAKQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAKQwAAS0MAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAKQwAAS0MAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAS0MAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAS0MAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+                      data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAANQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAANQwAAUEMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAUEMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAANQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAANQwAAUEMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAUEMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAANQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAANQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAANQwAAUEMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAANQwAAUEMAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAUEMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAUEMAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
                     indices:
                       type: index_buffer
                       usage: dynamic
@@ -371,10 +385,10 @@ entities:
                     vertexCount: 54
                     aabb:
                       min: [0, 0, 0]
-                      max: [138, 203, 0]
+                      max: [141, 208, 0]
                     worldAABB:
-                      min: [251, 360.5, 0]
-                      max: [389, 563.5, 0]
+                      min: [250, 360, 0]
+                      max: [391, 568, 0]
                     texture:
                       textureType: 2D
                       source: path
@@ -389,23 +403,42 @@ entities:
                     flipY: false
                     pointerMoved: false
                     focused: false
+                  button:
+                    label: 109
+                    textureNormal:
+                      textureType: 2D
+                      source: path
+                      path: assets/Copo_Cerveja.png
+                      minFilter: linear
+                      magFilter: linear
+                      wrapU: repeat
+                      wrapV: repeat
+                      releaseDataAfterLoad: true
+                    textureHovered: ~
+                    texturePressed: ~
+                    textureDisabled: ~
+                    colorNormal: [1, 1, 1, 1]
+                    colorHovered: [1, 1, 1, 1]
+                    colorPressed: [0.85, 0.85, 0.85, 1]
+                    colorDisabled: [1, 1, 1, 1]
+                    disabled: false
                   uilayout:
-                    width: 138
-                    height: 203
+                    width: 141
+                    height: 208
                     anchorPointLeft: 0.5
                     anchorPointTop: 0.5
                     anchorPointRight: 0.5
                     anchorPointBottom: 0.5
-                    anchorOffsetLeft: -69
-                    anchorOffsetTop: -101
-                    anchorOffsetRight: 69
-                    anchorOffsetBottom: 102
+                    anchorOffsetLeft: -70
+                    anchorOffsetTop: -104
+                    anchorOffsetRight: 71
+                    anchorOffsetBottom: 104
                     positionOffset: [0, 0]
                     anchorPreset: 9
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [292.496, 271.29333, 73.66215, 108.3581]
+                    scissor: [289.87274, 148.43292, 76.79165, 113.28131]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -414,19 +447,49 @@ entities:
                     patchMarginTop: 0
                     patchMarginBottom: 0
                     textureScaleFactor: 0
+                  script:
+                    scripts:
+                      - type: subclass
+                        path: LevelScript.cpp
+                        headerPath: LevelScript.h
+                        className: LevelScript
+                        enabled: true
+                        properties:
+                          - name: isActive
+                            displayName: Is Active
+                            type: 0
+                            value: true
+                            defaultValue: true
+                          - name: icePeeScript
+                            displayName: Ice Pee Script
+                            type: 9
+                            ptrTypeName: IcePee
+                            value: 108
+                            defaultValue: 0
+                            sceneId: 1
+                          - name: drunkSwayAmount
+                            displayName: Drunk Sway Amount
+                            type: 2
+                            value: 0.5
+                            defaultValue: 1
+                          - name: drunkSwaySpeed
+                            displayName: Drunk Sway Speed
+                            type: 2
+                            value: 0.5
+                            defaultValue: 1
               - type: Entity
                 entity: 114
                 name: EasyLabel
                 components:
                   transform:
-                    position: [284, 261.5, 0]
+                    position: [284, 208, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [284, 621.5, 0]
+                    worldPosition: [284, 568, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
-                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 261.5, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 621.5, 0, 1]]
+                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 208, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 568, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -486,8 +549,8 @@ entities:
                       min: [0, 0, 0]
                       max: [72, 39.666668, 0]
                     worldAABB:
-                      min: [284, 621.5, 0]
-                      max: [356, 661.1667, 0]
+                      min: [284, 568, 0]
+                      max: [356, 607.6667, 0]
                     texture:
                       textureType: 2D
                       source: id
@@ -506,15 +569,15 @@ entities:
                     width: 72
                     height: 40
                     anchorPointLeft: 0.5
-                    anchorPointTop: 0.5
+                    anchorPointTop: 0
                     anchorPointRight: 0.5
-                    anchorPointBottom: 0.5
+                    anchorPointBottom: 0
                     anchorOffsetLeft: -36
-                    anchorOffsetTop: -20
+                    anchorOffsetTop: 0
                     anchorOffsetRight: 36
-                    anchorOffsetBottom: 20
+                    anchorOffsetBottom: 40
                     positionOffset: [0, 0]
-                    anchorPreset: 9
+                    anchorPreset: 6
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 1
@@ -671,6 +734,17 @@ entities:
                     flipY: false
                     pointerMoved: false
                     focused: false
+                  button:
+                    label: 106
+                    textureNormal: ~
+                    textureHovered: ~
+                    texturePressed: ~
+                    textureDisabled: ~
+                    colorNormal: [1, 1, 1, 1]
+                    colorHovered: [1, 1, 1, 1]
+                    colorPressed: [0.85, 0.85, 0.85, 1]
+                    colorDisabled: [1, 1, 1, 1]
+                    disabled: false
                   uilayout:
                     width: 164
                     height: 207
@@ -687,7 +761,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [627.17834, 269.1582, 87.54052, 110.49323]
+                    scissor: [631.89514, 148.70523, 89.31795, 112.736694]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -696,19 +770,49 @@ entities:
                     patchMarginTop: 0
                     patchMarginBottom: 0
                     textureScaleFactor: 0
+                  script:
+                    scripts:
+                      - type: subclass
+                        path: LevelScript.cpp
+                        headerPath: LevelScript.h
+                        className: LevelScript
+                        enabled: true
+                        properties:
+                          - name: isActive
+                            displayName: Is Active
+                            type: 0
+                            value: true
+                            defaultValue: true
+                          - name: icePeeScript
+                            displayName: Ice Pee Script
+                            type: 9
+                            ptrTypeName: IcePee
+                            value: 108
+                            defaultValue: 0
+                            sceneId: 1
+                          - name: drunkSwayAmount
+                            displayName: Drunk Sway Amount
+                            type: 2
+                            value: 2.5
+                            defaultValue: 1
+                          - name: drunkSwaySpeed
+                            displayName: Drunk Sway Speed
+                            type: 2
+                            value: 2
+                            defaultValue: 1
               - type: Entity
                 entity: 115
                 name: HardLabel
                 components:
                   transform:
-                    position: [284, 263.5, 0]
+                    position: [284, 207, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [924, 623.5, 0]
+                    worldPosition: [924, 567, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
-                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 263.5, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 623.5, 0, 1]]
+                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 207, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 567, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -768,8 +872,8 @@ entities:
                       min: [0, 0, 0]
                       max: [71, 32.666668, 0]
                     worldAABB:
-                      min: [924, 623.5, 0]
-                      max: [995, 656.1667, 0]
+                      min: [924, 567, 0]
+                      max: [995, 599.6667, 0]
                     texture:
                       textureType: 2D
                       source: id
@@ -788,15 +892,15 @@ entities:
                     width: 73
                     height: 40
                     anchorPointLeft: 0.5
-                    anchorPointTop: 0.5
+                    anchorPointTop: 0
                     anchorPointRight: 0.5
-                    anchorPointBottom: 0.5
+                    anchorPointBottom: 0
                     anchorOffsetLeft: -36
-                    anchorOffsetTop: -20
+                    anchorOffsetTop: 0
                     anchorOffsetRight: 37
-                    anchorOffsetBottom: 20
+                    anchorOffsetBottom: 40
                     positionOffset: [0, 0]
-                    anchorPreset: 9
+                    anchorPreset: 6
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 1

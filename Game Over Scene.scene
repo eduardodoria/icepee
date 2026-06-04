@@ -28,7 +28,31 @@ cppScripts:
       - name: icePeeScript
         isPtr: true
         ptrTypeName: IcePee
+bundles:
+  - Background.bundle
 entities:
+  - type: Entity
+    entity: 101
+    name: Background
+    components:
+      transform:
+        position: [0, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Background
+        path: Background.bundle
   - type: Entity
     entity: 106
     name: Container
@@ -465,7 +489,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 2
-            scissor: [352.47775, 372.08963, 128.98677, 37.588173]
+            scissor: [352.47778, 179.08966, 128.98677, 37.58817]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -599,7 +623,7 @@ entities:
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [352.47775, 372.08963, 128.98677, 37.588173]
+                scissor: [352.47778, 179.08966, 128.98677, 37.58817]
                 ignoreScissor: false
                 ignoreEvents: true
               text:

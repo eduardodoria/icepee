@@ -1,7 +1,6 @@
 #include "ButtonScript.h"
 
 #include "ButtonComponent.h"
-#include "IcePee.h"
 #include "Log.h"
 #include "SceneManager.h"
 
@@ -21,12 +20,8 @@ ButtonScript::~ButtonScript() {
 void ButtonScript::onButtonPress() {
     if (!isActive) return;
 
-    if (icePeeScript) {
-        icePeeScript->isActive = true;
-    }
-
     Log::print("Button '%s' pressed", getName().c_str());
-    SceneManager::addChildScene("Score Scene");
+    SceneManager::addChildScene("Level Scene");
     SceneManager::removeChildScene("Start Scene");
 }
 
