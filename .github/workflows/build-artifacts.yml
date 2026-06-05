@@ -172,6 +172,7 @@ jobs:
             cp "$site_html" "$site_dir/index.html"
           fi
           cp assets/logo.png "$site_dir/logo.png"
+          cp web/favicon.ico web/favicon-16x16.png web/favicon-32x32.png web/apple-touch-icon.png "$site_dir/"
           touch "$site_dir/.nojekyll"
 
           echo "site_dir=$site_dir" >> "$GITHUB_OUTPUT"
