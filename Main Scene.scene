@@ -50,7 +50,7 @@ cppScripts:
         ptrTypeName: doriax::Points
       - name: time
         isPtr: true
-        ptrTypeName: doriax::Text
+        ptrTypeName: doriax::Progressbar
       - name: score
         isPtr: true
         ptrTypeName: doriax::Text
@@ -222,8 +222,8 @@ entities:
               - name: time
                 displayName: Time
                 type: 9
-                ptrTypeName: doriax::Text
-                value: 102
+                ptrTypeName: doriax::Progressbar
+                value: 105
                 defaultValue: 0
                 sceneId: 7
               - name: score

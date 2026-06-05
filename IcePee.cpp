@@ -356,13 +356,15 @@ static void syncGameOverTexts(Text* bestScoreText, Text* messageText, int curren
     }
 }
 
-static void syncTimeText(Text* text, float remainingTimeSeconds) {
-    if (!text) {
+static constexpr float kRoundTimeSeconds = 15.0f;
+
+static void syncTimeProgressbar(Progressbar* progressbar, float remainingTimeSeconds) {
+    if (!progressbar) {
         return;
     }
 
-    const int displayedSeconds = static_cast<int>(std::ceil(std::max(0.0f, remainingTimeSeconds)));
-    text->setText("Time: " + std::to_string(displayedSeconds));
+    const float clampedRemaining = std::max(0.0f, remainingTimeSeconds);
+    progressbar->setValue(clampedRemaining / kRoundTimeSeconds);
 }
 
 static void fillWaterEntity(Scene* scene, const ParticlesComponent& particles, Entity waterEntity, float deltaTime, float& waterMaxScaleY) {
@@ -514,7 +516,7 @@ void IcePee::onUpdate() {
     const float deltaTime = Engine::getDeltatime();
     drunkSwayTime += deltaTime;
     remainingTimeSeconds = std::max(0.0f, remainingTimeSeconds - deltaTime);
-    syncTimeText(time, remainingTimeSeconds);
+    syncTimeProgressbar(time, remainingTimeSeconds);
     if (remainingTimeSeconds <= 0.0f) {
         isActive = false;
         if (pointSprites) pointSprites->setVisible(false);
@@ -631,7 +633,7 @@ void IcePee::resetGame() {
     particlesStarted = false;
 
     counter = 0;
-    remainingTimeSeconds = 15.0f;
+    remainingTimeSeconds = kRoundTimeSeconds;
     waterMaxScaleY = 0.0f;
     isActive = false;
 
@@ -689,6 +691,6 @@ void IcePee::resetGame() {
     }
 
     syncScoreText(score, counter);
-    syncTimeText(time, remainingTimeSeconds);
+    syncTimeProgressbar(time, remainingTimeSeconds);
 }
 

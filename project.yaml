@@ -48,7 +48,7 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.4844961
+      aspect: 1.5112474
       nearClip: 0.2
       farClip: 200
       position: [6.5175323, 3.0197914, 3.2910714]
@@ -98,14 +98,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-615.8481, -438.68372, 0]
+      target: [-187.03784, -232.17207, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.3540741
       nearClip: -10000
       farClip: 10000
-      position: [-615.8481, -438.68372, 1]
-      zoom: 3.138429
+      position: [-187.03784, -232.17207, 1]
+      zoom: 2.3591187
   - filepath: Game Over Scene.scene
     showAllJoints: false
     showAllBones: false

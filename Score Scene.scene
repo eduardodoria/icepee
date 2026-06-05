@@ -17,20 +17,21 @@ maxValues:
   maxSpriteFrames: 0
 shaderKeys:
   - 21474836482
+  - 21474836488
 entities:
   - type: Entity
-    entity: 103
+    entity: 104
     name: Container
     components:
       transform:
-        position: [0, 0, 0]
+        position: [916, 0, 0]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [0, 0, 0]
+        worldPosition: [916, 0, 0]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [916, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [916, 0, 0, 1]]
         normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
@@ -72,8 +73,8 @@ entities:
           min: [0, 0, 0]
           max: [0, 0, 0]
         worldAABB:
-          min: [0, 0, 0]
-          max: [0, 0, 0]
+          min: [916, 0, 0]
+          max: [916, 0, 0]
         texture: ~
         color: [1, 1, 1, 1]
         automaticFlipY: true
@@ -81,220 +82,16 @@ entities:
         pointerMoved: false
         focused: false
       uilayout:
-        width: 265
-        height: 110
-        anchorPointLeft: 0
-        anchorPointTop: 0
-        anchorPointRight: 0
-        anchorPointBottom: 0
-        anchorOffsetLeft: 0
-        anchorOffsetTop: 0
-        anchorOffsetRight: 265
-        anchorOffsetBottom: 110
-        positionOffset: [0, 0]
-        anchorPreset: 1
-        usingAnchors: true
-        panel: 0
-        containerBoxIndex: -1
-        scissor: [0, 0, 0, 0]
-        ignoreScissor: false
-        ignoreEvents: false
-      uicontainer:
-        type: vertical
-        useAllWrapSpace: false
-        wrapCellWidth: 0
-        wrapCellHeight: 0
-    children:
-      - type: Entity
-        entity: 102
-        name: Time
-        components:
-          transform:
-            position: [62.5, 34, 0]
-            rotation: [1, 0, 0, 0]
-            scale: [1, 1, 1]
-            worldPosition: [62.5, 34, 0]
-            worldRotation: [1, 0, 0, 0]
-            worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [62.5, 34, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [62.5, 34, 0, 1]]
-            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-            visible: true
-            billboardRotation: [1, 0, 0, 0]
-            billboard: false
-            fakeBillboard: false
-            cylindricalBillboard: false
-          ui:
-            buffer:
-              type: vertex_buffer
-              usage: dynamic
-              stride: 20
-              size: 640
-              count: 32
-              renderAttributes: true
-              instanceBuffer: false
-              attributes:
-                - type: position
-                  dataType: float
-                  bufferName: ""
-                  elements: 3
-                  offset: 0
-                  count: 32
-                  normalized: true
-                  perInstance: false
-                - type: texcoord1
-                  dataType: float
-                  bufferName: ""
-                  elements: 2
-                  offset: 12
-                  count: 32
-                  normalized: true
-                  perInstance: false
-              data: AAAAAFhV4UAAAAAAAIBBPwAApD0AALBBWFXhQAAAAAAAgEw/AACkPQAAsEGrKghCAAAAAACATD8AAAg+AAAAAKsqCEIAAAAAAIBBPwAACD4AAMBBWFXhQAAAAAAAgAI/AAAUPgAA6EFYVeFAAAAAAAAABT8AABQ+AADoQasqCEIAAAAAAAAFPwAASj4AAMBBqyoIQgAAAAAAgAI/AABKPgAABEKsqmBBAAAAAACAFj8AABQ+AAB0QqyqYEEAAAAAAIAkPwAAFD4AAHRCqyoIQgAAAAAAgCQ/AAA8PgAABEKrKghCAAAAAACAFj8AADw+AACAQqyqYEEAAAAAAADBPgAAFD4AAKRCrKpgQQAAAAAAANM+AAAUPgAApEKrKgxCAAAAAAAA0z4AAD4+AACAQqsqDEIAAAAAAADBPgAAPj4AAKhCrKpgQQAAAAAAAEY/AAAAOwAAskKsqmBBAAAAAACASD8AAAA7AACyQqsqDEIAAAAAAIBIPwAAMD0AAKhCqyoMQgAAAAAAAEY/AAAwPQAAtkKrKghCAAAAAAAAADsAAAA7AAC2QqsqCEIAAAAAAAAAOwAAADsAALZCqyoIQgAAAAAAAAA7AAAAOwAAtkKrKghCAAAAAAAAADsAAAA7AADKQlhV4UAAAAAAAAADPwAAADsAAO5CWFXhQAAAAAAAAAw/AAAAOwAA7kKrKgxCAAAAAAAADD8AAGg9AADKQqsqDEIAAAAAAAADPwAAaD0AAPZCWFXhQAAAAAAAANQ+AAAAOwAADENYVeFAAAAAAAAA5T4AAAA7AAAMQ6sqDEIAAAAAAADlPgAAaD0AAPZCqyoMQgAAAAAAANQ+AABoPQ==
-            indices:
-              type: index_buffer
-              usage: dynamic
-              stride: 2
-              size: 96
-              count: 48
-              renderAttributes: true
-              instanceBuffer: false
-              attributes:
-                - type: index
-                  dataType: unsigned_short
-                  bufferName: ""
-                  elements: 1
-                  offset: 0
-                  count: 48
-                  normalized: true
-                  perInstance: false
-              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8A
-            minBufferCount: 400
-            minIndicesCount: 600
-            primitiveType: triangles
-            vertexCount: 48
-            aabb:
-              min: [0, 0, 0]
-              max: [140, 35.041668, 0]
-            worldAABB:
-              min: [62.5, 34, 0]
-              max: [202.5, 69.04167, 0]
-            texture:
-              textureType: 2D
-              source: id
-              id: font|43
-              minFilter: linear
-              magFilter: linear
-              wrapU: repeat
-              wrapV: repeat
-              releaseDataAfterLoad: false
-            color: [1, 0.9322396, 0, 1]
-            automaticFlipY: true
-            flipY: false
-            pointerMoved: false
-            focused: false
-          uilayout:
-            width: 141
-            height: 43
-            anchorPointLeft: 0.5
-            anchorPointTop: 0.5
-            anchorPointRight: 0.5
-            anchorPointBottom: 0.5
-            anchorOffsetLeft: -70
-            anchorOffsetTop: -21
-            anchorOffsetRight: 71
-            anchorOffsetBottom: 22
-            positionOffset: [0, 0]
-            anchorPreset: 9
-            usingAnchors: true
-            panel: 0
-            containerBoxIndex: 0
-            scissor: [0, 0, 0, 0]
-            ignoreScissor: false
-            ignoreEvents: false
-          text:
-            font: ""
-            text: "Time: 30"
-            fontSize: 43
-            multiline: true
-            maxTextSize: 100
-            fixedWidth: false
-            fixedHeight: false
-            pivotBaseline: false
-            pivotCentered: false
-  - type: Entity
-    entity: 104
-    name: Container2
-    components:
-      transform:
-        position: [1015, 0, 0]
-        rotation: [1, 0, 0, 0]
-        scale: [1, 1, 1]
-        worldPosition: [1015, 0, 0]
-        worldRotation: [1, 0, 0, 0]
-        worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1015, 0, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1015, 0, 0, 1]]
-        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      ui:
-        buffer:
-          type: vertex_buffer
-          usage: immutable
-          stride: 0
-          size: 0
-          count: 0
-          renderAttributes: true
-          instanceBuffer: false
-          attributes: ~
-        indices:
-          type: index_buffer
-          usage: immutable
-          stride: 2
-          size: 0
-          count: 0
-          renderAttributes: true
-          instanceBuffer: false
-          attributes:
-            - type: index
-              dataType: unsigned_short
-              bufferName: ""
-              elements: 1
-              offset: 0
-              count: 0
-              normalized: true
-              perInstance: false
-        minBufferCount: 0
-        minIndicesCount: 0
-        primitiveType: triangles
-        vertexCount: 0
-        aabb:
-          min: [0, 0, 0]
-          max: [0, 0, 0]
-        worldAABB:
-          min: [1015, 0, 0]
-          max: [1015, 0, 0]
-        texture: ~
-        color: [1, 1, 1, 1]
-        automaticFlipY: true
-        flipY: false
-        pointerMoved: false
-        focused: false
-      uilayout:
-        width: 265
-        height: 110
+        width: 364
+        height: 142
         anchorPointLeft: 1
         anchorPointTop: 0
         anchorPointRight: 1
         anchorPointBottom: 0
-        anchorOffsetLeft: -265
+        anchorOffsetLeft: -364
         anchorOffsetTop: 0
         anchorOffsetRight: 0
-        anchorOffsetBottom: 110
+        anchorOffsetBottom: 142
         positionOffset: [0, 0]
         anchorPreset: 2
         usingAnchors: true
@@ -310,18 +107,253 @@ entities:
         wrapCellHeight: 0
     children:
       - type: Entity
+        entity: 105
+        name: Progressbar
+        components:
+          transform:
+            position: [25, 22.5, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [941, 22.5, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [25, 22.5, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [941, 22.5, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          ui:
+            buffer:
+              type: vertex_buffer
+              usage: dynamic
+              stride: 36
+              size: 576
+              count: 16
+              renderAttributes: true
+              instanceBuffer: false
+              attributes:
+                - type: position
+                  dataType: float
+                  bufferName: ""
+                  elements: 3
+                  offset: 0
+                  count: 16
+                  normalized: true
+                  perInstance: false
+                - type: texcoord1
+                  dataType: float
+                  bufferName: ""
+                  elements: 2
+                  offset: 12
+                  count: 16
+                  normalized: true
+                  perInstance: false
+                - type: color
+                  dataType: float
+                  bufferName: ""
+                  elements: 4
+                  offset: 20
+                  count: 16
+                  normalized: true
+                  perInstance: false
+              data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICdQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICdQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICdQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICdQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICdQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICdQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICdQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AICdQwAA2EEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAA2EEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+            indices:
+              type: index_buffer
+              usage: dynamic
+              stride: 2
+              size: 108
+              count: 54
+              renderAttributes: true
+              instanceBuffer: false
+              attributes:
+                - type: index
+                  dataType: unsigned_short
+                  bufferName: ""
+                  elements: 1
+                  offset: 0
+                  count: 54
+                  normalized: true
+                  perInstance: false
+              data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
+            minBufferCount: 0
+            minIndicesCount: 0
+            primitiveType: triangles
+            vertexCount: 54
+            aabb:
+              min: [0, 0, 0]
+              max: [315, 27, 0]
+            worldAABB:
+              min: [941, 22.5, 0]
+              max: [1256, 49.5, 0]
+            texture: ~
+            color: [1, 1, 1, 1]
+            automaticFlipY: true
+            flipY: false
+            pointerMoved: false
+            focused: false
+          progressbar:
+            fill: 106
+            type: horizontal
+            value: 1
+            fillMarginLeft: 2
+            fillMarginRight: 2
+            fillMarginTop: 2
+            fillMarginBottom: 2
+          uilayout:
+            width: 315
+            height: 27
+            anchorPointLeft: 0.5
+            anchorPointTop: 0.5
+            anchorPointRight: 0.5
+            anchorPointBottom: 0.5
+            anchorOffsetLeft: -157
+            anchorOffsetTop: -13
+            anchorOffsetRight: 158
+            anchorOffsetBottom: 14
+            positionOffset: [0, 0]
+            anchorPreset: 9
+            usingAnchors: true
+            panel: 0
+            containerBoxIndex: 0
+            scissor: [173.16074, 304.60284, 133.52444, 11.444952]
+            ignoreScissor: false
+            ignoreEvents: false
+          image:
+            patchMarginLeft: 0
+            patchMarginRight: 0
+            patchMarginTop: 0
+            patchMarginBottom: 0
+            textureScaleFactor: 0
+        children:
+          - type: Entity
+            entity: 106
+            name: Fill
+            components:
+              transform:
+                position: [2, 2, 0]
+                rotation: [1, 0, 0, 0]
+                scale: [1, 1, 1]
+                worldPosition: [943, 24.5, 0]
+                worldRotation: [1, 0, 0, 0]
+                worldScale: [1, 1, 1]
+                localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2, 2, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [943, 24.5, 0, 1]]
+                normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+                visible: true
+                billboardRotation: [1, 0, 0, 0]
+                billboard: false
+                fakeBillboard: false
+                cylindricalBillboard: false
+              ui:
+                buffer:
+                  type: vertex_buffer
+                  usage: dynamic
+                  stride: 36
+                  size: 576
+                  count: 16
+                  renderAttributes: true
+                  instanceBuffer: false
+                  attributes:
+                    - type: position
+                      dataType: float
+                      bufferName: ""
+                      elements: 3
+                      offset: 0
+                      count: 16
+                      normalized: true
+                      perInstance: false
+                    - type: texcoord1
+                      dataType: float
+                      bufferName: ""
+                      elements: 2
+                      offset: 12
+                      count: 16
+                      normalized: true
+                      perInstance: false
+                    - type: color
+                      dataType: float
+                      bufferName: ""
+                      elements: 4
+                      offset: 20
+                      count: 16
+                      normalized: true
+                      perInstance: false
+                  data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+                indices:
+                  type: index_buffer
+                  usage: dynamic
+                  stride: 2
+                  size: 108
+                  count: 54
+                  renderAttributes: true
+                  instanceBuffer: false
+                  attributes:
+                    - type: index
+                      dataType: unsigned_short
+                      bufferName: ""
+                      elements: 1
+                      offset: 0
+                      count: 54
+                      normalized: true
+                      perInstance: false
+                  data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
+                minBufferCount: 0
+                minIndicesCount: 0
+                primitiveType: triangles
+                vertexCount: 54
+                aabb:
+                  min: [0, 0, 0]
+                  max: [311, 23, 0]
+                worldAABB:
+                  min: [943, 24.5, 0]
+                  max: [1254, 47.5, 0]
+                texture: ~
+                color: [0.6090505, 0.5745193, 0.011706484, 1]
+                automaticFlipY: true
+                flipY: false
+                pointerMoved: false
+                focused: false
+              uilayout:
+                width: 311
+                height: 23
+                anchorPointLeft: 0
+                anchorPointTop: 0
+                anchorPointRight: 1
+                anchorPointBottom: 1
+                anchorOffsetLeft: 2
+                anchorOffsetTop: 2
+                anchorOffsetRight: -2
+                anchorOffsetBottom: -2
+                positionOffset: [0, 0]
+                anchorPreset: 0
+                usingAnchors: true
+                panel: 0
+                containerBoxIndex: -1
+                scissor: [174.00851, 305.45062, 131.8289, 9.749403]
+                ignoreScissor: false
+                ignoreEvents: true
+              image:
+                patchMarginLeft: 0
+                patchMarginRight: 0
+                patchMarginTop: 0
+                patchMarginBottom: 0
+                textureScaleFactor: 0
+      - type: Entity
         entity: 101
         name: Score
         components:
           transform:
-            position: [66.5, 34, 0]
+            position: [90, 76.5, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [1081.5, 34, 0]
+            worldPosition: [1006, 76.5, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [66.5, 34, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1081.5, 34, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [90, 76.5, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1006, 76.5, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -354,7 +386,7 @@ entities:
                   count: 32
                   normalized: true
                   perInstance: false
-              data: AACAP1hV4UAAAAAAAAA3PwAApD0AAKhBWFXhQAAAAAAAAEE/AACkPQAAqEGrKgxCAAAAAAAAQT8AAAo+AACAP6sqDEIAAAAAAAA3PwAACj4AALhBrKpgQQAAAAAAAJw+AAAUPgAAIEKsqmBBAAAAAAAArT4AABQ+AAAgQqsqDEIAAAAAAACtPgAAPj4AALhBqyoMQgAAAAAAAJw+AAA+PgAAKEKsqmBBAAAAAACALT8AABQ+AAB0QqyqYEEAAAAAAAA3PwAAFD4AAHRCqyoMQgAAAAAAADc/AAA+PgAAKEKrKgxCAAAAAACALT8AAD4+AACAQqyqYEEAAAAAAABKPwAAFD4AAJRCrKpgQQAAAAAAAE8/AAAUPgAAlEKrKghCAAAAAAAATz8AADw+AACAQqsqCEIAAAAAAABKPwAAPD4AAJZCrKpgQQAAAAAAAME+AAAUPgAAukKsqmBBAAAAAAAA0z4AABQ+AAC6QqsqDEIAAAAAAADTPgAAPj4AAJZCqyoMQgAAAAAAAME+AAA+PgAAwEKsqmBBAAAAAAAARj8AAAA7AADKQqyqYEEAAAAAAIBIPwAAADsAAMpCqyoMQgAAAAAAgEg/AAAwPQAAwEKrKgxCAAAAAAAARj8AADA9AADOQqsqCEIAAAAAAAAAOwAAADsAAM5CqyoIQgAAAAAAAAA7AAAAOwAAzkKrKghCAAAAAAAAADsAAAA7AADOQqsqCEIAAAAAAAAAOwAAADsAAORCWFXhQAAAAAAAANQ+AAAAOwAAA0NYVeFAAAAAAAAA5T4AAAA7AAADQ6sqDEIAAAAAAADlPgAAaD0AAORCqyoMQgAAAAAAANQ+AABoPQ==
+              data: AAAAQAAAKEEAAAAAAAA9PgAAYD0AAOhBAAAoQQAAAAAAAFg+AABgPQAA6EEAAEJCAAAAAAAAWD4AALw9AAAAQAAAQkIAAAAAAAA9PgAAvD0AAABCAACcQQAAAAAAgBQ/AABgPQAAYEIAAJxBAAAAAACAGj8AAGA9AABgQgAAQkIAAAAAAIAaPwAAqj0AAABCAABCQgAAAAAAgBQ/AACqPQAAbEIAAJxBAAAAAAAAVD8AAGA9AACoQgAAnEEAAAAAAEBaPwAAYD0AAKhCAABCQgAAAAAAQFo/AACqPQAAbEIAAEJCAAAAAAAAVD8AAKo9AACyQgAAnEEAAAAAAABnPwAAYD0AAM5CAACcQQAAAAAAgGo/AABgPQAAzkIAAD5CAAAAAACAaj8AAKg9AACyQgAAPkIAAAAAAABnPwAAqD0AANRCAACcQQAAAAAAACE/AABgPQAAAkMAAJxBAAAAAAAAJz8AAGA9AAACQwAAQkIAAAAAAAAnPwAAqj0AANRCAABCQgAAAAAAACE/AACqPQAABkMAAJxBAAAAAACABD8AAIA6AAANQwAAnEEAAAAAAEAGPwAAgDoAAA1DAABCQgAAAAAAQAY/AADwPAAABkMAAEJCAAAAAACABD8AAPA8AAAPQwAAPkIAAAAAAACAOgAAgDoAAA9DAAA+QgAAAAAAAIA6AACAOgAAD0MAAD5CAAAAAAAAgDoAAIA6AAAPQwAAPkIAAAAAAACAOgAAgDoAAB5DAAAoQQAAAAAAgI0+AACAOgAANkMAAChBAAAAAACAmT4AAIA6AAA2QwAAQkIAAAAAAICZPgAAHD0AAB5DAABCQgAAAAAAgI0+AAAcPQ==
             indices:
               type: index_buffer
               usage: dynamic
@@ -379,14 +411,14 @@ entities:
             vertexCount: 48
             aabb:
               min: [0, 0, 0]
-              max: [131, 35.041668, 0]
+              max: [182, 48.5, 0]
             worldAABB:
-              min: [1081.5, 34, 0]
-              max: [1212.5, 69.04167, 0]
+              min: [1006, 76.5, 0]
+              max: [1188, 125, 0]
             texture:
               textureType: 2D
               source: id
-              id: font|43
+              id: font|60
               minFilter: linear
               magFilter: linear
               wrapU: repeat
@@ -398,28 +430,28 @@ entities:
             pointerMoved: false
             focused: false
           uilayout:
-            width: 132
-            height: 43
+            width: 184
+            height: 60
             anchorPointLeft: 0.5
             anchorPointTop: 0.5
             anchorPointRight: 0.5
             anchorPointBottom: 0.5
-            anchorOffsetLeft: -66
-            anchorOffsetTop: -21
-            anchorOffsetRight: 66
-            anchorOffsetBottom: 22
+            anchorOffsetLeft: -92
+            anchorOffsetTop: -30
+            anchorOffsetRight: 92
+            anchorOffsetBottom: 30
             positionOffset: [0, 0]
             anchorPreset: 9
             usingAnchors: true
             panel: 0
-            containerBoxIndex: 0
+            containerBoxIndex: 1
             scissor: [0, 0, 0, 0]
             ignoreScissor: false
             ignoreEvents: false
           text:
             font: ""
             text: "Score: 0"
-            fontSize: 43
+            fontSize: 60
             multiline: true
             maxTextSize: 100
             fixedWidth: false

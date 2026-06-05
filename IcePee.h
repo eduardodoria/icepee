@@ -7,6 +7,7 @@
 #include "math/Vector2.h"
 #include "object/Points.h"
 #include "ScriptProperty.h"
+#include "object/ui/Progressbar.h"
 #include "object/ui/Text.h"
 
 class IcePee : public doriax::ScriptBase {
@@ -31,7 +32,7 @@ public:
     doriax::Points* pointSprites = nullptr;
 
     SPROPERTY("Time")
-    doriax::Text* time = nullptr;
+    doriax::Progressbar* time = nullptr;
 
     SPROPERTY("Score")
     doriax::Text* score = nullptr;
