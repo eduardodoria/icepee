@@ -404,11 +404,11 @@ entities:
                     pointerMoved: false
                     focused: false
                   button:
-                    label: 109
+                    label: 0
                     textureNormal:
                       textureType: 2D
                       source: path
-                      path: assets/Copo_Cerveja.png
+                      path: assets/Copo_agua.png
                       minFilter: linear
                       magFilter: linear
                       wrapU: repeat
@@ -438,7 +438,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [289.87274, 148.43292, 76.79165, 113.28131]
+                    scissor: [289.87274, 101.43295, 76.79165, 113.2813]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -482,14 +482,14 @@ entities:
                 name: EasyLabel
                 components:
                   transform:
-                    position: [284, 208, 0]
+                    position: [284, 264, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [284, 568, 0]
+                    worldPosition: [284, 624, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
-                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 208, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 568, 0, 1]]
+                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 264, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 624, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -549,8 +549,8 @@ entities:
                       min: [0, 0, 0]
                       max: [72, 39.666668, 0]
                     worldAABB:
-                      min: [284, 568, 0]
-                      max: [356, 607.6667, 0]
+                      min: [284, 624, 0]
+                      max: [356, 663.6667, 0]
                     texture:
                       textureType: 2D
                       source: id
@@ -569,15 +569,15 @@ entities:
                     width: 72
                     height: 40
                     anchorPointLeft: 0.5
-                    anchorPointTop: 0
+                    anchorPointTop: 0.5
                     anchorPointRight: 0.5
-                    anchorPointBottom: 0
+                    anchorPointBottom: 0.5
                     anchorOffsetLeft: -36
-                    anchorOffsetTop: 0
+                    anchorOffsetTop: -20
                     anchorOffsetRight: 36
-                    anchorOffsetBottom: 40
+                    anchorOffsetBottom: 20
                     positionOffset: [0, 0]
-                    anchorPreset: 6
+                    anchorPreset: 9
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 1
@@ -735,8 +735,16 @@ entities:
                     pointerMoved: false
                     focused: false
                   button:
-                    label: 106
-                    textureNormal: ~
+                    label: 0
+                    textureNormal:
+                      textureType: 2D
+                      source: path
+                      path: assets/Copo_Cerveja.png
+                      minFilter: linear
+                      magFilter: linear
+                      wrapU: repeat
+                      wrapV: repeat
+                      releaseDataAfterLoad: true
                     textureHovered: ~
                     texturePressed: ~
                     textureDisabled: ~
@@ -761,7 +769,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [631.89514, 148.70523, 89.31795, 112.736694]
+                    scissor: [631.89514, 101.70526, 89.31795, 112.73668]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -805,14 +813,14 @@ entities:
                 name: HardLabel
                 components:
                   transform:
-                    position: [284, 207, 0]
+                    position: [284, 263.5, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [924, 567, 0]
+                    worldPosition: [924, 623.5, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
-                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 207, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 567, 0, 1]]
+                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 263.5, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 623.5, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -872,8 +880,8 @@ entities:
                       min: [0, 0, 0]
                       max: [71, 32.666668, 0]
                     worldAABB:
-                      min: [924, 567, 0]
-                      max: [995, 599.6667, 0]
+                      min: [924, 623.5, 0]
+                      max: [995, 656.1667, 0]
                     texture:
                       textureType: 2D
                       source: id
@@ -892,15 +900,15 @@ entities:
                     width: 73
                     height: 40
                     anchorPointLeft: 0.5
-                    anchorPointTop: 0
+                    anchorPointTop: 0.5
                     anchorPointRight: 0.5
-                    anchorPointBottom: 0
+                    anchorPointBottom: 0.5
                     anchorOffsetLeft: -36
-                    anchorOffsetTop: 0
+                    anchorOffsetTop: -20
                     anchorOffsetRight: 37
-                    anchorOffsetBottom: 40
+                    anchorOffsetBottom: 20
                     positionOffset: [0, 0]
-                    anchorPreset: 6
+                    anchorPreset: 9
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 1

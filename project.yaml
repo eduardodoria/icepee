@@ -19,24 +19,10 @@ terrainEditor:
   normalizeBlendPaint: true
   heightMapStartAtMiddle: true
 tabs:
-  - type: codeeditor
-    filepath: IcePee.h
-  - type: codeeditor
-    filepath: IcePee.cpp
   - type: scene
     filepath: models/New Scene 5.scene
   - type: scene
     filepath: assets/New Scene 6.scene
-  - type: codeeditor
-    filepath: ButtonScript.h
-  - type: codeeditor
-    filepath: ButtonScript.cpp
-  - type: codeeditor
-    filepath: TryAgainScript.h
-  - type: codeeditor
-    filepath: models/gelo/geloMenor.mtl
-  - type: codeeditor
-    filepath: Background.bundle
   - type: scene
     filepath: Main Scene.scene
 scenes:
@@ -62,7 +48,7 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.7015985
+      aspect: 1.4844961
       nearClip: 0.2
       farClip: 200
       position: [6.5175323, 3.0197914, 3.2910714]
@@ -112,14 +98,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-50.997612, -367.34732, 0]
+      target: [-615.8481, -438.68372, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.3540741
       nearClip: -10000
       farClip: 10000
-      position: [-50.997612, -367.34732, 1]
-      zoom: 2.143589
+      position: [-615.8481, -438.68372, 1]
+      zoom: 3.138429
   - filepath: Game Over Scene.scene
     showAllJoints: false
     showAllBones: false

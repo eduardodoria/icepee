@@ -318,7 +318,7 @@ entities:
             texturePressed: ~
             textureDisabled: ~
             colorNormal: [1, 1, 1, 1]
-            colorHovered: [1, 1, 1, 1]
+            colorHovered: [0.64732397, 0.23981999, 0.23981999, 1]
             colorPressed: [0.17891622, 0.06628472, 0.06628472, 1]
             colorDisabled: [1, 1, 1, 1]
             disabled: false

@@ -23,4 +23,6 @@ public:
     virtual ~LevelScript();
 
     void onButtonPress();
+    void onPointerEnter(float x, float y);
+    void onPointerLeave(float x, float y);
 };
