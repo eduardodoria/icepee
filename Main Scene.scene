@@ -48,6 +48,9 @@ cppScripts:
       - name: pointSprites
         isPtr: true
         ptrTypeName: doriax::Points
+      - name: peeSound
+        isPtr: true
+        ptrTypeName: doriax::Sound
       - name: time
         isPtr: true
         ptrTypeName: doriax::Progressbar
@@ -55,6 +58,9 @@ cppScripts:
         isPtr: true
         ptrTypeName: doriax::Text
       - name: gameOverBestScore
+        isPtr: true
+        ptrTypeName: doriax::Text
+      - name: gameOverYourScore
         isPtr: true
         ptrTypeName: doriax::Text
       - name: gameOverMessage
@@ -219,6 +225,12 @@ entities:
                 ptrTypeName: doriax::Points
                 value: 115
                 defaultValue: 0
+              - name: peeSound
+                displayName: Pee Sound
+                type: 9
+                ptrTypeName: doriax::Sound
+                value: 119
+                defaultValue: 0
               - name: time
                 displayName: Time
                 type: 9
@@ -238,6 +250,13 @@ entities:
                 type: 9
                 ptrTypeName: doriax::Text
                 value: 105
+                defaultValue: 0
+                sceneId: 9
+              - name: gameOverYourScore
+                displayName: Game Over Your Score
+                type: 9
+                ptrTypeName: doriax::Text
+                value: 108
                 defaultValue: 0
                 sceneId: 9
               - name: gameOverMessage
@@ -2572,3 +2591,39 @@ entities:
             transparentSort: true
             useTarget: false
             autoResize: true
+  - type: Entity
+    entity: 119
+    name: PeeSound
+    components:
+      transform:
+        position: [0.4160142, -0.0335598, -0.055079937]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0.4160142, -0.0335598, -0.055079937]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0.4160142, -0.0335598, -0.055079937, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0.4160142, -0.0335598, -0.055079937, 1]]
+        normalMatrix: [[1, 0, 0, -0.4160142], [0, 1, 0, 0.0335598], [0, -0, 1, 0.055079937], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      sound:
+        state: stopped
+        filename: assets/flowing-water.mp3
+        enableClocked: false
+        volume: 10
+        speed: 1
+        pan: 0
+        looping: true
+        loopingPoint: 0
+        protectVoice: false
+        inaudibleBehaviorMustTick: false
+        inaudibleBehaviorKill: false
+        minDistance: 1
+        maxDistance: 1000
+        attenuationModel: no_attenuation
+        attenuationRolloffFactor: 1
+        dopplerFactor: 1

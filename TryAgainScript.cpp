@@ -16,12 +16,13 @@ TryAgainScript::~TryAgainScript() {
 }
 
 void TryAgainScript::onButtonPress() {
-    if (!isActive || !icePeeScript) return;
+    if (!isActive) return;
 
-    icePeeScript->resetGame();
-    icePeeScript->isActive = true;
+    if (icePeeScript) {
+        icePeeScript->isActive = false;
+    }
 
-    SceneManager::addChildScene("Score Scene");
+    SceneManager::addChildScene("Level Scene");
     SceneManager::removeChildScene("Game Over Scene");
 }
 

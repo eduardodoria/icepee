@@ -329,6 +329,22 @@ static void hideMeltedIce(Entity entity, Mesh& ice) {
     getIceMeltVisualStates().erase(entity);
 }
 
+static void startPeeSound(Sound* sound) {
+    if (!sound) {
+        return;
+    }
+
+    sound->play();
+}
+
+static void stopPeeSound(Sound* sound) {
+    if (!sound) {
+        return;
+    }
+
+    sound->stop();
+}
+
 static void syncScoreText(Text* text, int score) {
     if (!text) {
         return;
@@ -337,7 +353,16 @@ static void syncScoreText(Text* text, int score) {
     text->setText("Score: " + std::to_string(score));
 }
 
-static void syncGameOverTexts(Text* bestScoreText, Text* messageText, int currentScore) {
+static int getMaxScore(const std::vector<Entity>& iceEntities) {
+    return static_cast<int>(iceEntities.size()) * kScorePerIceEntity;
+}
+
+static void syncGameOverTexts(
+    Text* bestScoreText,
+    Text* yourScoreText,
+    Text* messageText,
+    int currentScore,
+    int maxScore) {
     const int storedBest = UserSettings::getIntegerForKey(kBestScoreKey, 0);
     const bool isNewBest = currentScore > storedBest;
 
@@ -346,9 +371,17 @@ static void syncGameOverTexts(Text* bestScoreText, Text* messageText, int curren
     }
 
     const int bestScore = isNewBest ? currentScore : storedBest;
+    const bool reachedMaxScore = maxScore > 0 && currentScore >= maxScore;
 
     if (bestScoreText) {
-        bestScoreText->setText("Best: " + std::to_string(bestScore));
+        bestScoreText->setText("Best score: " + std::to_string(bestScore));
+    }
+
+    if (yourScoreText) {
+        yourScoreText->setVisible(!reachedMaxScore);
+        if (!reachedMaxScore) {
+            yourScoreText->setText("Your score: " + std::to_string(currentScore));
+        }
     }
 
     if (messageText) {
@@ -507,8 +540,17 @@ void IcePee::onUpdate() {
     cacheResetState(*this);
 
     if (!isActive) {
+        if (wasGameActive) {
+            stopPeeSound(peeSound);
+            wasGameActive = false;
+        }
         if (pointSprites) pointSprites->setVisible(false);
         return;
+    }
+
+    if (!wasGameActive) {
+        startPeeSound(peeSound);
+        wasGameActive = true;
     }
 
     if (pointSprites) pointSprites->setVisible(true);
@@ -519,11 +561,18 @@ void IcePee::onUpdate() {
     syncTimeProgressbar(time, remainingTimeSeconds);
     if (remainingTimeSeconds <= 0.0f) {
         isActive = false;
+        stopPeeSound(peeSound);
+        wasGameActive = false;
         if (pointSprites) pointSprites->setVisible(false);
         if (particlesEntity != NULL_ENTITY && scene->findComponent<ParticlesComponent>(particlesEntity)) {
             Particles(scene, particlesEntity).stop();
         }
-        syncGameOverTexts(gameOverBestScore, gameOverMessage, counter);
+        syncGameOverTexts(
+            gameOverBestScore,
+            gameOverYourScore,
+            gameOverMessage,
+            counter,
+            getMaxScore(iceEntities));
         SceneManager::addChildScene("Game Over Scene");
         SceneManager::removeChildScene("Score Scene");
         return;
@@ -636,6 +685,8 @@ void IcePee::resetGame() {
     remainingTimeSeconds = kRoundTimeSeconds;
     waterMaxScaleY = 0.0f;
     isActive = false;
+    stopPeeSound(peeSound);
+    wasGameActive = false;
 
     iceEntities.clear();
     for (const MeshResetState& iceState : resetState.iceStates) {

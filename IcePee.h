@@ -7,6 +7,7 @@
 #include "math/Vector2.h"
 #include "object/Points.h"
 #include "ScriptProperty.h"
+#include "object/sound/Sound.h"
 #include "object/ui/Progressbar.h"
 #include "object/ui/Text.h"
 
@@ -31,6 +32,9 @@ public:
     SPROPERTY("Point Sprites")
     doriax::Points* pointSprites = nullptr;
 
+    SPROPERTY("Pee Sound")
+    doriax::Sound* peeSound = nullptr;
+
     SPROPERTY("Time")
     doriax::Progressbar* time = nullptr;
 
@@ -39,6 +43,9 @@ public:
 
     SPROPERTY("Game Over Best Score")
     doriax::Text* gameOverBestScore = nullptr;
+
+    SPROPERTY("Game Over Your Score")
+    doriax::Text* gameOverYourScore = nullptr;
 
     SPROPERTY("Game Over Message")
     doriax::Text* gameOverMessage = nullptr;
@@ -64,6 +71,7 @@ public:
     std::vector<doriax::Entity> iceEntities;
     bool iceEntitiesCached = false;
     float remainingTimeSeconds = 15.0f;
+    bool wasGameActive = false;
 
     IcePee(doriax::Scene* scene, doriax::Entity entity);
     ~IcePee();
