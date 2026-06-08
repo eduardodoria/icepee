@@ -13,16 +13,16 @@ class IcePee;
 class ButtonScript : public doriax::Object {
 public:
     // Example properties
-    SPROPERTY("Is Active")
+    DPROPERTY("Is Active")
     bool isActive = true;
 
-    SPROPERTY("Speed")
+    DPROPERTY("Speed")
     float speed = 5.0f;
 
-    SPROPERTY("Target Position")
+    DPROPERTY("Target Position")
     doriax::Vector3 targetPosition = doriax::Vector3(0, 0, 0);
 
-    SPROPERTY("Ice Pee Script")
+    DPROPERTY("Ice Pee Script")
     IcePee* icePeeScript = nullptr;
 
     ButtonScript(doriax::Scene* scene, doriax::Entity entity);

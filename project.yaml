@@ -1,6 +1,6 @@
 name: IcePee
 nextSceneId: 10
-selectedScene: 10
+selectedScene: 9
 canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
@@ -23,8 +23,12 @@ tabs:
     filepath: models/New Scene 5.scene
   - type: scene
     filepath: assets/New Scene 6.scene
+  - type: codeeditor
+    filepath: ButtonScript.cpp
+  - type: codeeditor
+    filepath: ButtonScript.h
   - type: scene
-    filepath: Level Scene.scene
+    filepath: Game Over Scene.scene
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
@@ -48,7 +52,7 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 2.6975138
+      aspect: 1.4988585
       nearClip: 0.2
       farClip: 200
       position: [6.5175323, 3.0197914, 3.2910714]
@@ -125,14 +129,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-413.84915, -322.2915, 0]
+      target: [-49.190636, -99.855675, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.4135473
       nearClip: -10000
       farClip: 10000
-      position: [-413.84915, -322.2915, 1]
-      zoom: 2.527391
+      position: [-49.190636, -99.855675, 1]
+      zoom: 1.0879588
   - filepath: Level Scene.scene
     showAllJoints: false
     showAllBones: false
@@ -152,11 +156,11 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-282.24606, -193.2019, 0]
+      target: [-540.6658, -277.0342, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.7367725
       nearClip: -10000
       farClip: 10000
-      position: [-282.24606, -193.2019, 1]
-      zoom: 1.836137
+      position: [-540.6658, -277.0342, 1]
+      zoom: 2.1775136

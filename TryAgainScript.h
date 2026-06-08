@@ -8,10 +8,10 @@ class IcePee;
 
 class TryAgainScript : public doriax::Object {
 public:
-    SPROPERTY("Is Active")
+    DPROPERTY("Is Active")
     bool isActive = true;
     
-    SPROPERTY("Ice Pee Script")
+    DPROPERTY("Ice Pee Script")
     IcePee* icePeeScript = nullptr;
 
     TryAgainScript(doriax::Scene* scene, doriax::Entity entity);

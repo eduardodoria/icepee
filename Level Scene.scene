@@ -404,7 +404,7 @@ entities:
                     pointerMoved: false
                     focused: false
                   button:
-                    label: 0
+                    label: 104
                     textureNormal:
                       textureType: 2D
                       source: path
@@ -438,7 +438,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [272.98947, 259.3278, 110.5582, 163.38649]
+                    scissor: [348.86844, 180.677, 93.22559, 137.77182]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -735,7 +735,7 @@ entities:
                     pointerMoved: false
                     focused: false
                   button:
-                    label: 0
+                    label: 105
                     textureNormal:
                       textureType: 2D
                       source: path
@@ -769,7 +769,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [611.74414, 258.23856, 130.16457, 164.47574]
+                    scissor: [634.5154, 179.75851, 109.75822, 138.69029]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:

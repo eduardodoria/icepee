@@ -14,40 +14,40 @@
 class IcePee : public doriax::ScriptBase {
 public:
     // Example properties - you can add more!
-    SPROPERTY("Speed")
+    DPROPERTY("Speed")
     float speed = 5.0f;
 
-    SPROPERTY("Drunk Sway Amount")
+    DPROPERTY("Drunk Sway Amount")
     float drunkSwayAmount = 1.0f;
 
-    SPROPERTY("Drunk Sway Speed")
+    DPROPERTY("Drunk Sway Speed")
     float drunkSwaySpeed = 1.0f;
 
-    SPROPERTY("Is Active")
+    DPROPERTY("Is Active")
     bool isActive = false;
 
-    SPROPERTY("Counter")
+    DPROPERTY("Counter")
     int counter = 0;
 
-    SPROPERTY("Point Sprites")
+    DPROPERTY("Point Sprites")
     doriax::Points* pointSprites = nullptr;
 
-    SPROPERTY("Pee Sound")
+    DPROPERTY("Pee Sound")
     doriax::Sound* peeSound = nullptr;
 
-    SPROPERTY("Time")
+    DPROPERTY("Time")
     doriax::Progressbar* time = nullptr;
 
-    SPROPERTY("Score")
+    DPROPERTY("Score")
     doriax::Text* score = nullptr;
 
-    SPROPERTY("Game Over Best Score")
+    DPROPERTY("Game Over Best Score")
     doriax::Text* gameOverBestScore = nullptr;
 
-    SPROPERTY("Game Over Your Score")
+    DPROPERTY("Game Over Your Score")
     doriax::Text* gameOverYourScore = nullptr;
 
-    SPROPERTY("Game Over Message")
+    DPROPERTY("Game Over Message")
     doriax::Text* gameOverMessage = nullptr;
 
     doriax::Vector2 lastMousePosition;
