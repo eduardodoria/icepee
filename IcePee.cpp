@@ -579,7 +579,7 @@ void IcePee::onUpdate() {
     }
 
     Vector2 mousePosition = Input::getMousePosition();
-    bool isDragging = Input::isMousePressed(S_MOUSE_BUTTON_LEFT);
+    bool isDragging = Input::isMousePressed(D_MOUSE_BUTTON_LEFT);
 
     if (isDragging && wasDragging) {
         float deltaX = mousePosition.x - lastMousePosition.x;

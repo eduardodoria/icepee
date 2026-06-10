@@ -1,6 +1,6 @@
 name: IcePee
 nextSceneId: 10
-selectedScene: 9
+selectedScene: 1
 canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
@@ -28,7 +28,7 @@ tabs:
   - type: codeeditor
     filepath: ButtonScript.h
   - type: scene
-    filepath: Game Over Scene.scene
+    filepath: Main Scene.scene
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
