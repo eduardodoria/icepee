@@ -6,6 +6,16 @@ scene:
   lightState: off
   globalIlluminationIntensity: 0.1
   globalIlluminationColor: [1, 1, 1]
+  ssaoEnabled: false
+  ssaoRadius: 0.5
+  ssaoIntensity: 1
+  ssaoBias: 0.025
+  ssrEnabled: false
+  ssrMaxDistance: 8
+  ssrThickness: 0.5
+  ssrMaxSteps: 48
+  ssrIntensity: 1
+  ssrBlur: 0
   enableUIEvents: not_set
 sceneType: scene_ui
 mainCamera: 0
@@ -19,6 +29,9 @@ shaderKeys:
   - 21474836482
   - 21474836488
   - 21474836489
+  - 25769803778
+  - 25769803784
+  - 25769803785
 cppScripts:
   - path: ButtonScript.cpp
     headerPath: ButtonScript.h
@@ -37,7 +50,7 @@ bundles:
   - Background.bundle
 entities:
   - type: Entity
-    entity: 101
+    entity: 1001
     name: Background
     components:
       transform:
@@ -59,7 +72,7 @@ entities:
         name: Background
         path: Background.bundle
   - type: Entity
-    entity: 104
+    entity: 1004
     name: Container
     components:
       transform:
@@ -79,7 +92,7 @@ entities:
         cylindricalBillboard: false
       uilayout:
         width: 1280
-        height: 720
+        height: 608
         anchorPointLeft: 0
         anchorPointTop: 0
         anchorPointRight: 1
@@ -103,7 +116,7 @@ entities:
         wrapCellHeight: 0
     children:
       - type: Entity
-        entity: 105
+        entity: 1005
         name: Image
         components:
           transform:
@@ -214,7 +227,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 0
-            scissor: [401.98907, 246.1774, 198.26358, 198.26358]
+            scissor: [407.6289, 0, 389.7422, 390.16776]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -224,18 +237,18 @@ entities:
             patchMarginBottom: 0
             textureScaleFactor: 0
       - type: Entity
-        entity: 103
+        entity: 1003
         name: Button
         components:
           transform:
-            position: [440, 513, 0]
+            position: [440, 457, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [440, 513, 0]
+            worldPosition: [440, 457, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 513, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 513, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 457, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 457, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -303,16 +316,16 @@ entities:
               min: [0, 0, 0]
               max: [401, 108, 0]
             worldAABB:
-              min: [440, 513, 0]
-              max: [841, 621, 0]
+              min: [440, 457, 0]
+              max: [841, 565, 0]
             texture: ~
-            color: [1, 1, 1, 1]
+            color: [0.64732397, 0.23981999, 0.23981999, 1]
             automaticFlipY: true
             flipY: false
             pointerMoved: false
-            focused: false
+            focused: true
           button:
-            label: 103
+            label: 1003
             textureNormal: ~
             textureHovered: ~
             texturePressed: ~
@@ -338,7 +351,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 1
-            scissor: [405.34134, 147.0456, 192.03792, 51.720936]
+            scissor: [414.21875, 430.69244, 377.5039, 101.78289]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -374,23 +387,23 @@ entities:
                     displayName: Ice Pee Script
                     type: 9
                     ptrTypeName: IcePee
-                    value: 108
+                    value: 1008
                     defaultValue: 0
                     sceneId: 1
         children:
           - type: Entity
-            entity: 106
+            entity: 1006
             name: Label
             components:
               transform:
                 position: [131.5, 16, 0]
                 rotation: [1, 0, 0, 0]
                 scale: [1, 1, 1]
-                worldPosition: [571.5, 529, 0]
+                worldPosition: [571.5, 473, 0]
                 worldRotation: [1, 0, 0, 0]
                 worldScale: [1, 1, 1]
                 localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [131.5, 16, 0, 1]]
-                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [571.5, 529, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [571.5, 473, 0, 1]]
                 normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                 visible: true
                 billboardRotation: [1, 0, 0, 0]
@@ -450,8 +463,8 @@ entities:
                   min: [0, 0, 0]
                   max: [136, 61.166664, 0]
                 worldAABB:
-                  min: [571.5, 529, 0]
-                  max: [707.5, 590.1667, 0]
+                  min: [571.5, 473, 0]
+                  max: [707.5, 534.1667, 0]
                 texture:
                   textureType: 2D
                   source: id
@@ -482,7 +495,7 @@ entities:
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [405.34134, 147.0456, 192.03792, 51.720936]
+                scissor: [414.21875, 430.69244, 377.5039, 101.78289]
                 ignoreScissor: false
                 ignoreEvents: true
               text:

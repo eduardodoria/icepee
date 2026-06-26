@@ -6,6 +6,16 @@ scene:
   lightState: off
   globalIlluminationIntensity: 0.1
   globalIlluminationColor: [1, 1, 1]
+  ssaoEnabled: false
+  ssaoRadius: 0.5
+  ssaoIntensity: 1
+  ssaoBias: 0.025
+  ssrEnabled: false
+  ssrMaxDistance: 8
+  ssrThickness: 0.5
+  ssrMaxSteps: 48
+  ssrIntensity: 1
+  ssrBlur: 0
   enableUIEvents: not_set
 sceneType: scene_ui
 mainCamera: 0
@@ -18,9 +28,11 @@ maxValues:
 shaderKeys:
   - 21474836482
   - 21474836488
+  - 25769803778
+  - 25769803784
 entities:
   - type: Entity
-    entity: 104
+    entity: 1004
     name: Container
     components:
       transform:
@@ -107,7 +119,7 @@ entities:
         wrapCellHeight: 0
     children:
       - type: Entity
-        entity: 105
+        entity: 1005
         name: Progressbar
         components:
           transform:
@@ -195,9 +207,9 @@ entities:
             pointerMoved: false
             focused: false
           progressbar:
-            fill: 106
+            fill: 1006
             type: horizontal
-            value: 1
+            value: 0.8429956
             fillMarginLeft: 2
             fillMarginRight: 2
             fillMarginTop: 2
@@ -218,7 +230,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 0
-            scissor: [173.16074, 304.60284, 133.52444, 11.444952]
+            scissor: [941, 22.5, 315, 27]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -229,7 +241,7 @@ entities:
             textureScaleFactor: 0
         children:
           - type: Entity
-            entity: 106
+            entity: 1006
             name: Fill
             components:
               transform:
@@ -281,7 +293,7 @@ entities:
                       count: 16
                       normalized: true
                       perInstance: false
-                  data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AICbQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+                  data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
                 indices:
                   type: index_buffer
                   usage: dynamic
@@ -306,10 +318,10 @@ entities:
                 vertexCount: 54
                 aabb:
                   min: [0, 0, 0]
-                  max: [311, 23, 0]
+                  max: [264, 23, 0]
                 worldAABB:
                   min: [943, 24.5, 0]
-                  max: [1254, 47.5, 0]
+                  max: [1207, 47.5, 0]
                 texture: ~
                 color: [0.6090505, 0.5745193, 0.011706484, 1]
                 automaticFlipY: true
@@ -317,22 +329,22 @@ entities:
                 pointerMoved: false
                 focused: false
               uilayout:
-                width: 311
+                width: 264
                 height: 23
                 anchorPointLeft: 0
                 anchorPointTop: 0
-                anchorPointRight: 1
+                anchorPointRight: 0.8429956
                 anchorPointBottom: 1
                 anchorOffsetLeft: 2
                 anchorOffsetTop: 2
-                anchorOffsetRight: -2
+                anchorOffsetRight: 0
                 anchorOffsetBottom: -2
                 positionOffset: [0, 0]
                 anchorPreset: 0
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [174.00851, 305.45062, 131.8289, 9.749403]
+                scissor: [943, 24.5, 264, 23]
                 ignoreScissor: false
                 ignoreEvents: true
               image:
@@ -342,18 +354,18 @@ entities:
                 patchMarginBottom: 0
                 textureScaleFactor: 0
       - type: Entity
-        entity: 101
+        entity: 1001
         name: Score
         components:
           transform:
-            position: [90, 76.5, 0]
+            position: [76, 76.5, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [1006, 76.5, 0]
+            worldPosition: [992, 76.5, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [90, 76.5, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1006, 76.5, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [76, 76.5, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [992, 76.5, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -365,8 +377,8 @@ entities:
               type: vertex_buffer
               usage: dynamic
               stride: 20
-              size: 640
-              count: 32
+              size: 720
+              count: 36
               renderAttributes: true
               instanceBuffer: false
               attributes:
@@ -375,7 +387,7 @@ entities:
                   bufferName: ""
                   elements: 3
                   offset: 0
-                  count: 32
+                  count: 36
                   normalized: true
                   perInstance: false
                 - type: texcoord1
@@ -383,16 +395,16 @@ entities:
                   bufferName: ""
                   elements: 2
                   offset: 12
-                  count: 32
+                  count: 36
                   normalized: true
                   perInstance: false
-              data: AAAAQAAAKEEAAAAAAAA9PgAAYD0AAOhBAAAoQQAAAAAAAFg+AABgPQAA6EEAAEJCAAAAAAAAWD4AALw9AAAAQAAAQkIAAAAAAAA9PgAAvD0AAABCAACcQQAAAAAAgBQ/AABgPQAAYEIAAJxBAAAAAACAGj8AAGA9AABgQgAAQkIAAAAAAIAaPwAAqj0AAABCAABCQgAAAAAAgBQ/AACqPQAAbEIAAJxBAAAAAAAAVD8AAGA9AACoQgAAnEEAAAAAAEBaPwAAYD0AAKhCAABCQgAAAAAAQFo/AACqPQAAbEIAAEJCAAAAAAAAVD8AAKo9AACyQgAAnEEAAAAAAABnPwAAYD0AAM5CAACcQQAAAAAAgGo/AABgPQAAzkIAAD5CAAAAAACAaj8AAKg9AACyQgAAPkIAAAAAAABnPwAAqD0AANRCAACcQQAAAAAAACE/AABgPQAAAkMAAJxBAAAAAAAAJz8AAGA9AAACQwAAQkIAAAAAAAAnPwAAqj0AANRCAABCQgAAAAAAACE/AACqPQAABkMAAJxBAAAAAACABD8AAIA6AAANQwAAnEEAAAAAAEAGPwAAgDoAAA1DAABCQgAAAAAAQAY/AADwPAAABkMAAEJCAAAAAACABD8AAPA8AAAPQwAAPkIAAAAAAACAOgAAgDoAAA9DAAA+QgAAAAAAAIA6AACAOgAAD0MAAD5CAAAAAAAAgDoAAIA6AAAPQwAAPkIAAAAAAACAOgAAgDoAAB5DAAAoQQAAAAAAgI0+AACAOgAANkMAAChBAAAAAACAmT4AAIA6AAA2QwAAQkIAAAAAAICZPgAAHD0AAB5DAABCQgAAAAAAgI0+AAAcPQ==
+              data: AAAAQAAAKEEAAAAAAAA9PgAAYD0AAOhBAAAoQQAAAAAAAFg+AABgPQAA6EEAAEJCAAAAAAAAWD4AALw9AAAAQAAAQkIAAAAAAAA9PgAAvD0AAABCAACcQQAAAAAAgBQ/AABgPQAAYEIAAJxBAAAAAACAGj8AAGA9AABgQgAAQkIAAAAAAIAaPwAAqj0AAABCAABCQgAAAAAAgBQ/AACqPQAAbEIAAJxBAAAAAAAAVD8AAGA9AACoQgAAnEEAAAAAAEBaPwAAYD0AAKhCAABCQgAAAAAAQFo/AACqPQAAbEIAAEJCAAAAAAAAVD8AAKo9AACyQgAAnEEAAAAAAABnPwAAYD0AAM5CAACcQQAAAAAAgGo/AABgPQAAzkIAAD5CAAAAAACAaj8AAKg9AACyQgAAPkIAAAAAAABnPwAAqD0AANRCAACcQQAAAAAAACE/AABgPQAAAkMAAJxBAAAAAAAAJz8AAGA9AAACQwAAQkIAAAAAAAAnPwAAqj0AANRCAABCQgAAAAAAACE/AACqPQAABkMAAJxBAAAAAACABD8AAIA6AAANQwAAnEEAAAAAAEAGPwAAgDoAAA1DAABCQgAAAAAAQAY/AADwPAAABkMAAEJCAAAAAACABD8AAPA8AAAPQwAAPkIAAAAAAACAOgAAgDoAAA9DAAA+QgAAAAAAAIA6AACAOgAAD0MAAD5CAAAAAAAAgDoAAIA6AAAPQwAAPkIAAAAAAACAOgAAgDoAAB5DAAAoQQAAAAAAAPA+AACAOgAANkMAAChBAAAAAAAA/D4AAIA6AAA2QwAAQkIAAAAAAAD8PgAAHD0AAB5DAABCQgAAAAAAAPA+AAAcPQAAO0MAAChBAAAAAAAArz4AAIA6AABTQwAAKEEAAAAAAAC7PgAAgDoAAFNDAABCQgAAAAAAALs+AAAcPQAAO0MAAEJCAAAAAAAArz4AABw9
             indices:
               type: index_buffer
               usage: dynamic
               stride: 2
-              size: 96
-              count: 48
+              size: 108
+              count: 54
               renderAttributes: true
               instanceBuffer: false
               attributes:
@@ -401,20 +413,20 @@ entities:
                   bufferName: ""
                   elements: 1
                   offset: 0
-                  count: 48
+                  count: 54
                   normalized: true
                   perInstance: false
-              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8A
+              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMA
             minBufferCount: 400
             minIndicesCount: 600
             primitiveType: triangles
-            vertexCount: 48
+            vertexCount: 54
             aabb:
               min: [0, 0, 0]
-              max: [182, 48.5, 0]
+              max: [211, 48.5, 0]
             worldAABB:
-              min: [1006, 76.5, 0]
-              max: [1188, 125, 0]
+              min: [992, 76.5, 0]
+              max: [1203, 125, 0]
             texture:
               textureType: 2D
               source: id
@@ -430,15 +442,15 @@ entities:
             pointerMoved: false
             focused: false
           uilayout:
-            width: 184
+            width: 213
             height: 60
             anchorPointLeft: 0.5
             anchorPointTop: 0.5
             anchorPointRight: 0.5
             anchorPointBottom: 0.5
-            anchorOffsetLeft: -92
+            anchorOffsetLeft: -106
             anchorOffsetTop: -30
-            anchorOffsetRight: 92
+            anchorOffsetRight: 107
             anchorOffsetBottom: 30
             positionOffset: [0, 0]
             anchorPreset: 9
@@ -450,7 +462,7 @@ entities:
             ignoreEvents: false
           text:
             font: ""
-            text: "Score: 0"
+            text: "Score: 83"
             fontSize: 60
             multiline: true
             maxTextSize: 100

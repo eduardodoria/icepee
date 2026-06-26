@@ -6,9 +6,19 @@ scene:
   lightState: on
   globalIlluminationIntensity: 0.2
   globalIlluminationColor: [1, 1, 1]
+  ssaoEnabled: true
+  ssaoRadius: 0.5
+  ssaoIntensity: 1
+  ssaoBias: 0.025
+  ssrEnabled: true
+  ssrMaxDistance: 8
+  ssrThickness: 0.5
+  ssrMaxSteps: 48
+  ssrIntensity: 1
+  ssrBlur: 0
   enableUIEvents: not_set
 sceneType: scene_3d
-mainCamera: 104
+mainCamera: 1004
 maxValues:
   maxSubmeshes: 1
   maxTilemapTilesRect: 0
@@ -20,7 +30,12 @@ shaderKeys:
   - 8589934842
   - 8589935736
   - 8589935738
+  - 8592031994
+  - 8592032888
+  - 8592032890
   - 17179869184
+  - 21474836482
+  - 21474836483
 childScenes:
   - id: 2
     startActive: true
@@ -68,13 +83,13 @@ cppScripts:
         ptrTypeName: doriax::Text
 entities:
   - type: Entity
-    entity: 116
+    entity: 1016
     name: Particles
     components:
       action:
         state: Stopped
         speed: 1
-        target: 115
+        target: 1015
         ownedTarget: false
       particles:
         maxParticles: 2000
@@ -183,7 +198,7 @@ entities:
           toScale: [1, 1, 1]
           function: LINEAR
   - type: Entity
-    entity: 108
+    entity: 1008
     name: IcePee Script
     components:
       script:
@@ -223,51 +238,51 @@ entities:
                 displayName: Point Sprites
                 type: 9
                 ptrTypeName: doriax::Points
-                value: 115
+                value: 1015
                 defaultValue: 0
               - name: peeSound
                 displayName: Pee Sound
                 type: 9
                 ptrTypeName: doriax::Sound
-                value: 119
+                value: 1019
                 defaultValue: 0
               - name: time
                 displayName: Time
                 type: 9
                 ptrTypeName: doriax::Progressbar
-                value: 105
+                value: 1005
                 defaultValue: 0
                 sceneId: 7
               - name: score
                 displayName: Score
                 type: 9
                 ptrTypeName: doriax::Text
-                value: 101
+                value: 1001
                 defaultValue: 0
                 sceneId: 7
               - name: gameOverBestScore
                 displayName: Game Over Best Score
                 type: 9
                 ptrTypeName: doriax::Text
-                value: 105
+                value: 1005
                 defaultValue: 0
                 sceneId: 9
               - name: gameOverYourScore
                 displayName: Game Over Your Score
                 type: 9
                 ptrTypeName: doriax::Text
-                value: 108
+                value: 1008
                 defaultValue: 0
                 sceneId: 9
               - name: gameOverMessage
                 displayName: Game Over Message
                 type: 9
                 ptrTypeName: doriax::Text
-                value: 104
+                value: 1004
                 defaultValue: 0
                 sceneId: 9
   - type: Entity
-    entity: 101
+    entity: 1001
     name: Sun
     components:
       transform:
@@ -301,7 +316,7 @@ entities:
         shadowCameraNearFar: [0.2, 100]
         numShadowCascades: 2
   - type: Entity
-    entity: 103
+    entity: 1003
     name: Plane
     components:
       transform:
@@ -397,6 +412,11 @@ entities:
                 wrapU: repeat
                 wrapV: repeat
                 releaseDataAfterLoad: true
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -404,6 +424,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: false
             hasTangent: false
             hasVertexColor4: true
@@ -496,6 +517,7 @@ entities:
           min: [-2.9802322e-07, -4.9999995, -5]
           max: [2.9802322e-07, 4.9999995, 5]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -503,7 +525,7 @@ entities:
         cullingMode: back
         windingOrder: ccw
   - type: Entity
-    entity: 102
+    entity: 1002
     name: micitorio
     components:
       transform:
@@ -537,6 +559,11 @@ entities:
                 wrapU: repeat
                 wrapV: repeat
                 releaseDataAfterLoad: true
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -544,6 +571,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: false
             hasTangent: false
             hasVertexColor4: true
@@ -552,77 +580,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -636,6 +593,7 @@ entities:
           min: [-0.000498116, -0.7514176, -0.4990219]
           max: [0.8253338, 1.1507342, 0.4990219]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -662,12 +620,12 @@ entities:
             bottomRadius: 0.5
             density: 1000
             source: entity_mesh
-            sourceEntity: 102
+            sourceEntity: 1002
             samplesSize: 0
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 105
+    entity: 1005
     name: gelo
     components:
       transform:
@@ -695,7 +653,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -704,7 +662,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -713,12 +671,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -726,6 +689,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -734,77 +698,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -818,6 +711,7 @@ entities:
           min: [0.5159224, 0.58403593, -0.05953985]
           max: [0.6023394, 0.72478807, 0.026876796]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -849,7 +743,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 112
+    entity: 1012
     name: gelo 7
     components:
       transform:
@@ -877,7 +771,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -886,7 +780,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -895,12 +789,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -908,6 +807,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -916,77 +816,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -1000,6 +829,7 @@ entities:
           min: [0.34560964, 0.7194121, -0.1036568]
           max: [0.44997358, 0.89064133, 0.07099376]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -1031,7 +861,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 113
+    entity: 1013
     name: gelo 8
     components:
       transform:
@@ -1059,7 +889,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1068,7 +898,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1077,12 +907,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1090,6 +925,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -1098,77 +934,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -1182,6 +947,7 @@ entities:
           min: [0.30540246, 0.7291857, -0.23822561]
           max: [0.4901808, 0.8808677, -0.09375123]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -1213,7 +979,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 114
+    entity: 1014
     name: gelo 9
     components:
       transform:
@@ -1241,7 +1007,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1250,7 +1016,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1259,12 +1025,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1272,6 +1043,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -1280,77 +1052,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -1364,6 +1065,7 @@ entities:
           min: [0.31969994, 0.7185832, 0.04380487]
           max: [0.4758833, 0.8914702, 0.22519737]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -1395,7 +1097,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 106
+    entity: 1006
     name: gelo 2
     components:
       transform:
@@ -1423,7 +1125,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1432,7 +1134,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1441,12 +1143,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1454,6 +1161,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -1462,77 +1170,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -1546,6 +1183,7 @@ entities:
           min: [0.34868783, 0.5774119, 0.10495854]
           max: [0.5290075, 0.7314122, 0.22486031]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -1577,7 +1215,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 107
+    entity: 1007
     name: gelo 3
     components:
       transform:
@@ -1605,7 +1243,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1614,7 +1252,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1623,12 +1261,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1636,6 +1279,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -1644,77 +1288,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -1728,6 +1301,7 @@ entities:
           min: [0.39563918, 0.5718604, -0.2562383]
           max: [0.48205614, 0.7369637, -0.11102322]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -1759,7 +1333,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 109
+    entity: 1009
     name: gelo 4
     components:
       transform:
@@ -1787,7 +1361,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1796,7 +1370,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1805,12 +1379,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -1818,6 +1397,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -1826,77 +1406,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -1910,6 +1419,7 @@ entities:
           min: [0.19014657, 0.5614673, -0.26992252]
           max: [0.3429619, 0.7473568, -0.09733902]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -1941,7 +1451,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 110
+    entity: 1010
     name: gelo 5
     components:
       transform:
@@ -1969,7 +1479,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1978,7 +1488,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1987,12 +1497,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -2000,6 +1515,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -2008,77 +1524,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -2092,6 +1537,7 @@ entities:
           min: [0.18334082, 0.5718604, -0.11738789]
           max: [0.34976766, 0.7369637, 0.04285574]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -2123,7 +1569,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 111
+    entity: 1011
     name: gelo 6
     components:
       transform:
@@ -2151,7 +1597,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|baseColorTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -2160,7 +1606,7 @@ entities:
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|emissiveTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -2169,12 +1615,17 @@ entities:
               normalTexture:
                 textureType: 2D
                 source: id
-                id: models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2|models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|normalTexture
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
                 releaseDataAfterLoad: false
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -2182,6 +1633,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
             hasVertexColor4: false
@@ -2190,77 +1642,6 @@ entities:
             hasMorphTarget: false
             hasMorphNormal: false
             hasMorphTangent: false
-        bonesMatrix:
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         normAdjustJoint: 1
         normAdjustWeight: 1
         morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -2274,6 +1655,7 @@ entities:
           min: [0.19748873, 0.5620162, 0.046133623]
           max: [0.33561975, 0.7468079, 0.19134879]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -2305,7 +1687,7 @@ entities:
             vertices: ~
             indices: ~
   - type: Entity
-    entity: 117
+    entity: 1017
     name: water
     components:
       transform:
@@ -2392,6 +1774,11 @@ entities:
               metallicFactor: 1
               roughnessFactor: 1
               emissiveFactor: [0, 0, 0]
+              baseColorTexCoord: 0
+              metallicRoughnessTexCoord: 0
+              occlusionTexCoord: 0
+              emissiveTexCoord: 0
+              normalTexCoord: 0
               name: ""
             textureRect: [0, 0, 1, 1]
             primitiveType: triangles
@@ -2399,6 +1786,7 @@ entities:
             faceCulling: true
             textureShadow: false
             hasTexCoord1: true
+            hasTexCoord2: false
             hasNormalMap: false
             hasTangent: false
             hasVertexColor4: true
@@ -2491,6 +1879,7 @@ entities:
           min: [-0.107019424, -0.1766009, -0.39555442]
           max: [0.6899574, -0.1249111, 0.39555442]
         receiveLights: true
+        receiveIBL: false
         castShadows: true
         receiveShadows: true
         shadowsBillboard: true
@@ -2498,7 +1887,7 @@ entities:
         cullingMode: back
         windingOrder: ccw
   - type: Entity
-    entity: 118
+    entity: 1018
     name: Actor
     components:
       transform:
@@ -2518,7 +1907,7 @@ entities:
         cylindricalBillboard: false
     children:
       - type: Entity
-        entity: 115
+        entity: 1015
         name: PointSprites
         components:
           transform:
@@ -2557,19 +1946,19 @@ entities:
                 textureRect: [0, 0, 1, 1]
                 visible: true
       - type: Entity
-        entity: 104
+        entity: 1004
         name: Camera
         components:
           transform:
-            position: [3.0144753, 1.895914, 0]
+            position: [2.9647565, 1.8765606, 0]
             rotation: [0.6928161, -0.14144136, 0.6928164, 0.1414415]
-            scale: [0.99999994, 0.9999999, 0.99999964]
-            worldPosition: [3.0144753, 1.895914, 0]
+            scale: [0.99999994, 0.9999999, 0.9999996]
+            worldPosition: [2.9647565, 1.8765606, 0]
             worldRotation: [0.6928161, -0.14144136, 0.6928164, 0.1414415]
-            worldScale: [0.99999994, 0.9999999, 0.99999964]
-            localMatrix: [[-4.7683713e-07, 1.0430812e-07, -0.99999994, 0], [-0.3919716, 0.9199772, 2.8312203e-07, 0], [0.91997695, 0.3919715, -3.5762775e-07, 0], [3.0144753, 1.895914, 0, 1]]
-            modelMatrix: [[-4.7683713e-07, 1.0430812e-07, -0.99999994, 0], [-0.3919716, 0.9199772, 2.8312203e-07, 0], [0.91997695, 0.3919715, -3.5762775e-07, 0], [3.0144753, 1.895914, 0, 1]]
-            normalMatrix: [[-4.399854e-07, 1.202859e-07, -1.0000001, 1.0982733e-06], [-0.3919717, 0.9199774, 2.828678e-07, -0.562609], [0.91997766, 0.3919718, -3.9779368e-07, -3.5163949], [0, 0, 0, 1]]
+            worldScale: [0.99999994, 0.9999999, 0.9999996]
+            localMatrix: [[-4.7683713e-07, 1.0430812e-07, -0.99999994, 0], [-0.3919716, 0.9199772, 2.8312203e-07, 0], [0.91997695, 0.3919715, -3.5762773e-07, 0], [2.9647565, 1.8765606, 0, 1]]
+            modelMatrix: [[-4.7683713e-07, 1.0430812e-07, -0.99999994, 0], [-0.3919716, 0.9199772, 2.8312203e-07, 0], [0.91997695, 0.3919715, -3.5762773e-07, 0], [2.9647565, 1.8765606, 0, 1]]
+            normalMatrix: [[-4.3998537e-07, 1.2028592e-07, -1.0000001, 1.0787257e-06], [-0.3919717, 0.9199774, 2.828678e-07, -0.5642927], [0.91997766, 0.3919718, -3.9779368e-07, -3.4630687], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
             billboard: false
@@ -2592,7 +1981,7 @@ entities:
             useTarget: false
             autoResize: true
   - type: Entity
-    entity: 119
+    entity: 1019
     name: PeeSound
     components:
       transform:

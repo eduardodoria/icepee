@@ -20,15 +20,21 @@ terrainEditor:
   heightMapStartAtMiddle: true
 tabs:
   - type: scene
-    filepath: models/New Scene 5.scene
-  - type: scene
-    filepath: assets/New Scene 6.scene
+    filepath: Main Scene.scene
+  - type: codeeditor
+    filepath: IcePee.h
+  - type: codeeditor
+    filepath: IcePee.cpp
+  - type: codeeditor
+    filepath: ButtonScript.h
   - type: codeeditor
     filepath: ButtonScript.cpp
   - type: codeeditor
-    filepath: ButtonScript.h
+    filepath: LevelScript.h
   - type: scene
-    filepath: Main Scene.scene
+    filepath: models/New Scene 5.scene
+  - type: scene
+    filepath: assets/New Scene 6.scene
 scenes:
   - filepath: Main Scene.scene
     showAllJoints: false
@@ -52,7 +58,7 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 1.4988585
+      aspect: 2.2994652
       nearClip: 0.2
       farClip: 200
       position: [6.5175323, 3.0197914, 3.2910714]
@@ -129,14 +135,14 @@ scenes:
     rotationSnapDegrees: 15
     editorCamera:
       type: camera_ui
-      target: [-49.190636, -99.855675, 0]
+      target: [-298.2484, -316.93604, 0]
       up: [0, 1, 0]
       yfov: 0.75
       aspect: 1.4135473
       nearClip: -10000
       farClip: 10000
-      position: [-49.190636, -99.855675, 1]
-      zoom: 1.0879588
+      position: [-298.2484, -316.93604, 1]
+      zoom: 1.5928806
   - filepath: Level Scene.scene
     showAllJoints: false
     showAllBones: false

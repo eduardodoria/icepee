@@ -18,6 +18,22 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(DORIAX_EDITOR_PLUGIN "Build as Doriax Editor plugin" OFF)
 if(DORIAX_EDITOR_PLUGIN)
     add_compile_definitions(DORIAX_EDITOR_PLUGIN)
+    # The editor links its own engine build, which is compiled as a shared
+    # library with editor-specific data layouts. The plugin must match both:
+    #  - DORIAX_SHARED makes DORIAX_API resolve to __declspec(dllimport) so
+    #    static members such as Engine::onUpdate link against the import lib on MSVC.
+    #  - DORIAX_EDITOR keeps HybridArray (and other editor-only layouts)
+    #    ABI-compatible across the DLL boundary.
+    add_compile_definitions(DORIAX_SHARED DORIAX_EDITOR)
+    if(MSVC)
+        # Match the editor engine's CRT (it builds DORIAX_SHARED with the
+        # dynamic runtime) so std::string/std::vector cross the plugin<->engine
+        # DLL boundary on a single shared CRT heap. A static (/MT) or
+        # debug/release-mismatched runtime here corrupts memory and crashes on
+        # play. The editor builds the plugin with the configuration matching
+        # its own, so this expression resolves to the same runtime.
+        set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+    endif()
 endif()
 
 if (NOT DORIAX_EDITOR_PLUGIN)
@@ -121,8 +137,10 @@ target_include_directories(IcePee ${DORIAX_LIB_SYSTEM} PRIVATE
 # libdoriax is searched in DORIAX_LIB_DIR; by default it points to the Doriax editor executable directory.
 if(NOT DEFINED DORIAX_LIB_DIR OR DORIAX_LIB_DIR STREQUAL "")
     set(DORIAX_LIB_DIR "/home/eduardo/Development/doriax/build")
-    # Must be the same as the editor's library to not ODR violation / ABI mismatch
-    add_compile_definitions(DORIAX_EDITOR)
+    # Default target is the editor's own engine build (shared, editor layouts).
+    # Match its macros so symbols link (DORIAX_SHARED -> dllimport on MSVC) and
+    # data layouts stay ABI-compatible (DORIAX_EDITOR), avoiding ODR/ABI mismatch.
+    add_compile_definitions(DORIAX_SHARED DORIAX_EDITOR)
 endif()
 
 # Find doriax library in specified location
@@ -135,10 +153,20 @@ target_link_libraries(IcePee PRIVATE ${DORIAX_LIB} ${PLATFORM_LIBS})
 
 # Set compile options based on compiler and platform
 if(MSVC)
-    target_compile_options(IcePee PRIVATE /W4 /EHsc)
+    # C4251/C4275: exported engine classes (DORIAX_API -> dllimport) expose STL
+    # members (std::vector, std::string, FunctionSubscribe, ...). This is safe
+    # here because the engine DLL and this plugin use the same dynamic CRT/STL,
+    # so suppress the dll-interface warnings that would otherwise flood the build.
+    target_compile_options(IcePee PRIVATE /W4 /EHsc /wd4251 /wd4275)
 else()
     target_compile_options(IcePee PRIVATE -Wall -Wextra -fPIC)
-    target_link_options(IcePee PRIVATE -Wl,-z,defs,--no-undefined)
+    # Error on unresolved symbols at link time. Apple ld does this by default;
+    # GNU ld needs '-z defs --no-undefined' and MinGW only understands '--no-undefined'.
+    if(WIN32)
+        target_link_options(IcePee PRIVATE -Wl,--no-undefined)
+    elseif(NOT APPLE)
+        target_link_options(IcePee PRIVATE -Wl,-z,defs,--no-undefined)
+    endif()
 endif()
 
 # Set properties for the shared library

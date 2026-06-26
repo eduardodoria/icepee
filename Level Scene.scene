@@ -6,6 +6,16 @@ scene:
   lightState: off
   globalIlluminationIntensity: 0.1
   globalIlluminationColor: [1, 1, 1]
+  ssaoEnabled: false
+  ssaoRadius: 0.5
+  ssaoIntensity: 1
+  ssaoBias: 0.025
+  ssrEnabled: false
+  ssrMaxDistance: 8
+  ssrThickness: 0.5
+  ssrMaxSteps: 48
+  ssrIntensity: 1
+  ssrBlur: 0
   enableUIEvents: not_set
 sceneType: scene_ui
 mainCamera: 0
@@ -19,6 +29,9 @@ shaderKeys:
   - 21474836482
   - 21474836488
   - 21474836489
+  - 25769803778
+  - 25769803784
+  - 25769803785
 cppScripts:
   - path: LevelScript.cpp
     headerPath: LevelScript.h
@@ -37,7 +50,7 @@ bundles:
   - Background.bundle
 entities:
   - type: Entity
-    entity: 102
+    entity: 1002
     name: Background
     components:
       transform:
@@ -59,7 +72,7 @@ entities:
         name: Background
         path: Background.bundle
   - type: Entity
-    entity: 103
+    entity: 1003
     name: Container
     components:
       transform:
@@ -79,7 +92,7 @@ entities:
         cylindricalBillboard: false
       uilayout:
         width: 1280
-        height: 720
+        height: 608
         anchorPointLeft: 0
         anchorPointTop: 0
         anchorPointRight: 1
@@ -103,18 +116,18 @@ entities:
         wrapCellHeight: 0
     children:
       - type: Entity
-        entity: 110
+        entity: 1010
         name: Text
         components:
           transform:
-            position: [198, 108, 0]
+            position: [198, 80, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [198, 108, 0]
+            worldPosition: [198, 80, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [198, 108, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [198, 108, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [198, 80, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [198, 80, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -174,8 +187,8 @@ entities:
               min: [0, 0, 0]
               max: [876, 141, 0]
             worldAABB:
-              min: [198, 108, 0]
-              max: [1074, 249, 0]
+              min: [198, 80, 0]
+              max: [1074, 221, 0]
             texture:
               textureType: 2D
               source: id
@@ -220,18 +233,18 @@ entities:
             pivotBaseline: false
             pivotCentered: false
       - type: Entity
-        entity: 111
+        entity: 1011
         name: Container 2
         components:
           transform:
-            position: [0, 360, 0]
+            position: [0, 304, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [0, 360, 0]
+            worldPosition: [0, 304, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 360, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 360, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 304, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 304, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -240,7 +253,7 @@ entities:
             cylindricalBillboard: false
           uilayout:
             width: 1280
-            height: 360
+            height: 304
             anchorPointLeft: 0
             anchorPointTop: 0
             anchorPointRight: 1
@@ -264,18 +277,18 @@ entities:
             wrapCellHeight: 0
         children:
           - type: Entity
-            entity: 112
+            entity: 1012
             name: Container 3
             components:
               transform:
                 position: [0, 0, 0]
                 rotation: [1, 0, 0, 0]
                 scale: [1, 1, 1]
-                worldPosition: [0, 360, 0]
+                worldPosition: [0, 304, 0]
                 worldRotation: [1, 0, 0, 0]
                 worldScale: [1, 1, 1]
                 localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 360, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 304, 0, 1]]
                 normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                 visible: true
                 billboardRotation: [1, 0, 0, 0]
@@ -284,7 +297,7 @@ entities:
                 cylindricalBillboard: false
               uilayout:
                 width: 640
-                height: 360
+                height: 304
                 anchorPointLeft: 0
                 anchorPointTop: 0
                 anchorPointRight: 1
@@ -308,18 +321,18 @@ entities:
                 wrapCellHeight: 0
             children:
               - type: Entity
-                entity: 109
+                entity: 1009
                 name: WaterGlass
                 components:
                   transform:
                     position: [219, 0, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [219, 360, 0]
+                    worldPosition: [219, 304, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
                     localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [219, 0, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [219, 360, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [219, 304, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -387,8 +400,8 @@ entities:
                       min: [0, 0, 0]
                       max: [203, 300, 0]
                     worldAABB:
-                      min: [219, 360, 0]
-                      max: [422, 660, 0]
+                      min: [219, 304, 0]
+                      max: [422, 604, 0]
                     texture:
                       textureType: 2D
                       source: path
@@ -404,7 +417,7 @@ entities:
                     pointerMoved: false
                     focused: false
                   button:
-                    label: 104
+                    label: 1004
                     textureNormal:
                       textureType: 2D
                       source: path
@@ -438,7 +451,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [348.86844, 180.677, 93.22559, 137.77182]
+                    scissor: [206.16797, 286.5, 191.10547, 282.73026]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -464,7 +477,7 @@ entities:
                             displayName: Ice Pee Script
                             type: 9
                             ptrTypeName: IcePee
-                            value: 108
+                            value: 1008
                             defaultValue: 0
                             sceneId: 1
                           - name: drunkSwayAmount
@@ -478,18 +491,18 @@ entities:
                             value: 0.5
                             defaultValue: 1
               - type: Entity
-                entity: 114
+                entity: 1014
                 name: EasyLabel
                 components:
                   transform:
                     position: [284, 300, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [284, 660, 0]
+                    worldPosition: [284, 604, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
                     localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 300, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 660, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 604, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -549,8 +562,8 @@ entities:
                       min: [0, 0, 0]
                       max: [72, 39.666668, 0]
                     worldAABB:
-                      min: [284, 660, 0]
-                      max: [356, 699.6667, 0]
+                      min: [284, 604, 0]
+                      max: [356, 643.6667, 0]
                     texture:
                       textureType: 2D
                       source: id
@@ -595,18 +608,18 @@ entities:
                     pivotBaseline: false
                     pivotCentered: false
           - type: Entity
-            entity: 113
+            entity: 1013
             name: Container 4
             components:
               transform:
                 position: [640, 0, 0]
                 rotation: [1, 0, 0, 0]
                 scale: [1, 1, 1]
-                worldPosition: [640, 360, 0]
+                worldPosition: [640, 304, 0]
                 worldRotation: [1, 0, 0, 0]
                 worldScale: [1, 1, 1]
                 localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [640, 0, 0, 1]]
-                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [640, 360, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [640, 304, 0, 1]]
                 normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                 visible: true
                 billboardRotation: [1, 0, 0, 0]
@@ -615,7 +628,7 @@ entities:
                 cylindricalBillboard: false
               uilayout:
                 width: 640
-                height: 360
+                height: 304
                 anchorPointLeft: 0
                 anchorPointTop: 0
                 anchorPointRight: 1
@@ -639,18 +652,18 @@ entities:
                 wrapCellHeight: 0
             children:
               - type: Entity
-                entity: 106
+                entity: 1006
                 name: BeerGlass
                 components:
                   transform:
                     position: [201, 0, 0]
                     rotation: [1, 0, 0, 0]
-                    scale: [1, 1, 1]
-                    worldPosition: [841, 360, 0]
+                    scale: [1.1, 1.1, 1.1]
+                    worldPosition: [841, 304, 0]
                     worldRotation: [1, 0, 0, 0]
-                    worldScale: [1, 1, 1]
-                    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [201, 0, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [841, 360, 0, 1]]
+                    worldScale: [1.1, 1.1, 1.1]
+                    localMatrix: [[1.1, 0, 0, 0], [0, 1.1, 0, 0], [0, 0, 1.1, 0], [201, 0, 0, 1]]
+                    modelMatrix: [[1.1, 0, 0, 0], [0, 1.1, 0, 0], [0, 0, 1.1, 0], [841, 304, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -718,8 +731,8 @@ entities:
                       min: [0, 0, 0]
                       max: [239, 302, 0]
                     worldAABB:
-                      min: [841, 360, 0]
-                      max: [1080, 662, 0]
+                      min: [841, 304, 0]
+                      max: [1103.9, 636.2, 0]
                     texture:
                       textureType: 2D
                       source: path
@@ -733,9 +746,9 @@ entities:
                     automaticFlipY: true
                     flipY: false
                     pointerMoved: false
-                    focused: false
+                    focused: true
                   button:
-                    label: 105
+                    label: 1005
                     textureNormal:
                       textureType: 2D
                       source: path
@@ -769,7 +782,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [634.5154, 179.75851, 109.75822, 138.69029]
+                    scissor: [791.72266, 286.5, 247.49571, 313.07663]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -795,7 +808,7 @@ entities:
                             displayName: Ice Pee Script
                             type: 9
                             ptrTypeName: IcePee
-                            value: 108
+                            value: 1008
                             defaultValue: 0
                             sceneId: 1
                           - name: drunkSwayAmount
@@ -809,18 +822,18 @@ entities:
                             value: 2
                             defaultValue: 1
               - type: Entity
-                entity: 115
+                entity: 1015
                 name: HardLabel
                 components:
                   transform:
                     position: [284, 302, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [924, 662, 0]
+                    worldPosition: [924, 606, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
                     localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 302, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 662, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 606, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -880,8 +893,8 @@ entities:
                       min: [0, 0, 0]
                       max: [71, 32.666668, 0]
                     worldAABB:
-                      min: [924, 662, 0]
-                      max: [995, 694.6667, 0]
+                      min: [924, 606, 0]
+                      max: [995, 638.6667, 0]
                     texture:
                       textureType: 2D
                       source: id
