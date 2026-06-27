@@ -6,11 +6,11 @@ scene:
   lightState: on
   globalIlluminationIntensity: 0.2
   globalIlluminationColor: [1, 1, 1]
-  ssaoEnabled: true
+  ssaoEnabled: false
   ssaoRadius: 0.5
   ssaoIntensity: 1
   ssaoBias: 0.025
-  ssrEnabled: true
+  ssrEnabled: false
   ssrMaxDistance: 8
   ssrThickness: 0.5
   ssrMaxSteps: 48
