@@ -2,10 +2,13 @@ id: 9
 name: Game Over Scene
 scene:
   backgroundColor: [0.525, 0.525, 0.525, 1]
-  shadowsPCF: true
+  shadowQuality: low
   lightState: off
   globalIlluminationIntensity: 0.1
   globalIlluminationColor: [1, 1, 1]
+  ambientLight2DIntensity: 1
+  ambientLight2DColor: [1, 1, 1]
+  shadow2DQuality: low
   ssaoEnabled: false
   ssaoRadius: 0.5
   ssaoIntensity: 1
@@ -16,6 +19,12 @@ scene:
   ssrMaxSteps: 48
   ssrIntensity: 1
   ssrBlur: 0
+  gravity2D: [0, -9.81]
+  gravity3D: [0, -9.81, 0]
+  fixedResolutionEnabled: false
+  fixedResolutionWidth: 640
+  fixedResolutionHeight: 360
+  fixedResolutionFilter: nearest
   enableUIEvents: not_set
 sceneType: scene_ui
 mainCamera: 0
@@ -139,7 +148,7 @@ entities:
         anchorOffsetRight: 0
         anchorOffsetBottom: 0
         positionOffset: [0, 0]
-        anchorPreset: 16
+        anchorPreset: FULL_LAYOUT
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
@@ -226,15 +235,7 @@ entities:
             worldAABB:
               min: [444, 32, 0]
               max: [833, 118.666664, 0]
-            texture:
-              textureType: 2D
-              source: id
-              id: font|88
-              minFilter: linear
-              magFilter: linear
-              wrapU: repeat
-              wrapV: repeat
-              releaseDataAfterLoad: false
+            texture: ~
             color: [0.941761, 0.90027446, 0.09603942, 1]
             automaticFlipY: true
             flipY: false
@@ -252,7 +253,7 @@ entities:
             anchorOffsetRight: 197
             anchorOffsetBottom: 44
             positionOffset: [0, 0]
-            anchorPreset: 9
+            anchorPreset: CENTER
             usingAnchors: true
             panel: 0
             containerBoxIndex: 0
@@ -343,15 +344,7 @@ entities:
             worldAABB:
               min: [470, 246, 0]
               max: [809, 292.91666, 0]
-            texture:
-              textureType: 2D
-              source: id
-              id: font|58
-              minFilter: linear
-              magFilter: linear
-              wrapU: repeat
-              wrapV: repeat
-              releaseDataAfterLoad: false
+            texture: ~
             color: [0.9322396, 0.008958948, 0.008958948, 1]
             automaticFlipY: true
             flipY: false
@@ -369,7 +362,7 @@ entities:
             anchorOffsetRight: 171
             anchorOffsetBottom: 0
             positionOffset: [0, 0]
-            anchorPreset: 8
+            anchorPreset: CENTER_BOTTOM
             usingAnchors: true
             panel: 0
             containerBoxIndex: 1
@@ -460,15 +453,7 @@ entities:
             worldAABB:
               min: [513, 304, 0]
               max: [767, 339.04166, 0]
-            texture:
-              textureType: 2D
-              source: id
-              id: font|43
-              minFilter: linear
-              magFilter: linear
-              wrapU: repeat
-              wrapV: repeat
-              releaseDataAfterLoad: false
+            texture: ~
             color: [0.6242073, 0.05677966, 0.05677966, 1]
             automaticFlipY: true
             flipY: false
@@ -486,7 +471,7 @@ entities:
             anchorOffsetRight: 128
             anchorOffsetBottom: 43
             positionOffset: [0, 0]
-            anchorPreset: 6
+            anchorPreset: CENTER_TOP
             usingAnchors: true
             panel: 0
             containerBoxIndex: 2
@@ -614,7 +599,7 @@ entities:
             anchorOffsetRight: 163
             anchorOffsetBottom: 48
             positionOffset: [0, 0]
-            anchorPreset: 9
+            anchorPreset: CENTER
             usingAnchors: true
             panel: 0
             containerBoxIndex: 3
@@ -637,12 +622,12 @@ entities:
                 properties:
                   - name: isActive
                     displayName: Is Active
-                    type: 0
+                    type: Bool
                     value: true
                     defaultValue: true
                   - name: icePeeScript
                     displayName: Ice Pee Script
-                    type: 9
+                    type: EntityReference
                     ptrTypeName: IcePee
                     value: 1008
                     defaultValue: 0
@@ -722,15 +707,7 @@ entities:
                 worldAABB:
                   min: [525, 499.5, 0]
                   max: [753, 564.75, 0]
-                texture:
-                  textureType: 2D
-                  source: id
-                  id: font|66
-                  minFilter: linear
-                  magFilter: linear
-                  wrapU: repeat
-                  wrapV: repeat
-                  releaseDataAfterLoad: false
+                texture: ~
                 color: [0, 0, 0, 1]
                 automaticFlipY: true
                 flipY: false
@@ -748,7 +725,7 @@ entities:
                 anchorOffsetRight: 115
                 anchorOffsetBottom: 33
                 positionOffset: [0, 0]
-                anchorPreset: 9
+                anchorPreset: CENTER
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1

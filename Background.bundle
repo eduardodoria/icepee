@@ -98,7 +98,7 @@ components:
     anchorOffsetRight: 0
     anchorOffsetBottom: 0
     positionOffset: [0, 0]
-    anchorPreset: 16
+    anchorPreset: FULL_LAYOUT
     usingAnchors: true
     panel: 0
     containerBoxIndex: -1

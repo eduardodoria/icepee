@@ -5,32 +5,28 @@ canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
 textureStrategy: resize
+vsync: true
+windowMode: windowed
+windowWidth: 1280
+windowHeight: 720
+windowResizable: true
 luaDir: .
 startSceneId: 1
 terrainEditor:
-  brushMode: 0
-  brushShape: 0
-  brushFalloff: 0
+  brushMode: Raise
+  brushShape: Circle
+  brushFalloff: Smooth
   brushSize: 4
-  brushStrength: 0.04
+  brushStrength: 0.3
   flattenHeight: 0.5
   heightMapResolution: 512
   blendMapResolution: 512
   normalizeBlendPaint: true
   heightMapStartAtMiddle: true
+  flattenPickOnStroke: true
 tabs:
   - type: scene
     filepath: Main Scene.scene
-  - type: codeeditor
-    filepath: IcePee.h
-  - type: codeeditor
-    filepath: IcePee.cpp
-  - type: codeeditor
-    filepath: ButtonScript.h
-  - type: codeeditor
-    filepath: ButtonScript.cpp
-  - type: codeeditor
-    filepath: LevelScript.h
   - type: scene
     filepath: models/New Scene 5.scene
   - type: scene
@@ -47,6 +43,7 @@ scenes:
     showOrigin: true
     showGrid3D: true
     hideSelectionOutline: false
+    disableFaceCulling: false
     showGrid2D: false
     gridSpacing2D: 50
     gridSpacing3D: 1
@@ -58,7 +55,7 @@ scenes:
       target: [1.1674706, 0.49569443, -0.35838825]
       up: [0, 1, 0]
       yfov: 0.75
-      aspect: 2.2994652
+      aspect: 2.8211508
       nearClip: 0.2
       farClip: 200
       position: [6.5175323, 3.0197914, 3.2910714]
@@ -73,6 +70,7 @@ scenes:
     showOrigin: true
     showGrid3D: true
     hideSelectionOutline: false
+    disableFaceCulling: false
     showGrid2D: false
     gridSpacing2D: 50
     gridSpacing3D: 1
@@ -100,6 +98,7 @@ scenes:
     showOrigin: true
     showGrid3D: true
     hideSelectionOutline: false
+    disableFaceCulling: false
     showGrid2D: false
     gridSpacing2D: 50
     gridSpacing3D: 1
@@ -127,6 +126,7 @@ scenes:
     showOrigin: true
     showGrid3D: true
     hideSelectionOutline: false
+    disableFaceCulling: false
     showGrid2D: false
     gridSpacing2D: 50
     gridSpacing3D: 1
@@ -154,6 +154,7 @@ scenes:
     showOrigin: true
     showGrid3D: true
     hideSelectionOutline: false
+    disableFaceCulling: false
     showGrid2D: false
     gridSpacing2D: 50
     gridSpacing3D: 1

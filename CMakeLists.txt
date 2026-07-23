@@ -3,6 +3,12 @@
 cmake_minimum_required(VERSION 3.15)
 project(IcePee)
 
+# Editor-resolved parallel build job limit, supplied via -D on every editor
+# configure. Declared here so it is documented and so CMake does not warn
+# about an unused variable on generators that do not consume it (only the
+# MSVC branch below reads it). Empty or 0 means no per-file compile limit.
+set(DORIAX_PARALLEL_BUILD_JOBS "" CACHE STRING "Editor-resolved parallel build job limit")
+
 set(PROJECT_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 set(INTERNAL_DIR ${PROJECT_ROOT}/.doriax)
 
@@ -37,8 +43,8 @@ if(DORIAX_EDITOR_PLUGIN)
 endif()
 
 if (NOT DORIAX_EDITOR_PLUGIN)
-    add_definitions("-DDEFAULT_WINDOW_WIDTH=960")
-    add_definitions("-DDEFAULT_WINDOW_HEIGHT=540")
+    add_definitions("-DDEFAULT_WINDOW_WIDTH=1280")
+    add_definitions("-DDEFAULT_WINDOW_HEIGHT=720")
 
     set(COMPILE_ZLIB OFF)
     set(IS_ARM OFF)
@@ -132,6 +138,7 @@ target_include_directories(IcePee ${DORIAX_LIB_SYSTEM} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/subsystem
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/texture
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/util
+    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/platform/glfw # GamepadMappings.h for PlatformEditor
 )
 
 # libdoriax is searched in DORIAX_LIB_DIR; by default it points to the Doriax editor executable directory.
@@ -143,8 +150,12 @@ if(NOT DEFINED DORIAX_LIB_DIR OR DORIAX_LIB_DIR STREQUAL "")
     add_compile_definitions(DORIAX_SHARED DORIAX_EDITOR)
 endif()
 
-# Find doriax library in specified location
-find_library(DORIAX_LIB doriax PATHS ${DORIAX_LIB_DIR} NO_DEFAULT_PATH)
+# Find doriax library in specified location. find_library() caches its
+# result, so a stale DORIAX_LIB from a previous configure (e.g. before the
+# editor/engine install moved) would otherwise stick around unchanged;
+# force a fresh search on every configure instead.
+unset(DORIAX_LIB CACHE)
+find_library(DORIAX_LIB NAMES doriax PATHS "${DORIAX_LIB_DIR}" NO_DEFAULT_PATH)
 if(NOT DORIAX_LIB)
     message(FATAL_ERROR "Doriax library not found in ${DORIAX_LIB_DIR}")
 endif()
@@ -157,7 +168,13 @@ if(MSVC)
     # members (std::vector, std::string, FunctionSubscribe, ...). This is safe
     # here because the engine DLL and this plugin use the same dynamic CRT/STL,
     # so suppress the dll-interface warnings that would otherwise flood the build.
-    target_compile_options(IcePee PRIVATE /W4 /EHsc /wd4251 /wd4275)
+    # MSBuild's /m only parallelizes projects. /MP applies the editor-resolved
+    # limit to translation units within this single-target plugin project.
+    if(DEFINED DORIAX_PARALLEL_BUILD_JOBS AND DORIAX_PARALLEL_BUILD_JOBS GREATER 0)
+        target_compile_options(IcePee PRIVATE /W4 /EHsc /MP${DORIAX_PARALLEL_BUILD_JOBS} /wd4251 /wd4275)
+    else()
+        target_compile_options(IcePee PRIVATE /W4 /EHsc /MP /wd4251 /wd4275)
+    endif()
 else()
     target_compile_options(IcePee PRIVATE -Wall -Wextra -fPIC)
     # Error on unresolved symbols at link time. Apple ld does this by default;

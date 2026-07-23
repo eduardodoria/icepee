@@ -2,10 +2,13 @@ id: 1
 name: Main Scene
 scene:
   backgroundColor: [0.25, 0.45, 0.65, 1]
-  shadowsPCF: true
+  shadowQuality: high
   lightState: on
   globalIlluminationIntensity: 0.2
   globalIlluminationColor: [1, 1, 1]
+  ambientLight2DIntensity: 1
+  ambientLight2DColor: [1, 1, 1]
+  shadow2DQuality: high
   ssaoEnabled: false
   ssaoRadius: 0.5
   ssaoIntensity: 1
@@ -16,6 +19,12 @@ scene:
   ssrMaxSteps: 48
   ssrIntensity: 1
   ssrBlur: 0
+  gravity2D: [0, -9.81]
+  gravity3D: [0, -9.81, 0]
+  fixedResolutionEnabled: false
+  fixedResolutionWidth: 640
+  fixedResolutionHeight: 360
+  fixedResolutionFilter: nearest
   enableUIEvents: not_set
 sceneType: scene_3d
 mainCamera: 1004
@@ -27,12 +36,12 @@ maxValues:
   maxSpriteFrames: 0
 shaderKeys:
   - 5
-  - 8589934842
-  - 8589935736
-  - 8589935738
-  - 8592031994
-  - 8592032888
-  - 8592032890
+  - 8589934810
+  - 8589935704
+  - 8589935706
+  - 8592031962
+  - 8592032856
+  - 8592032858
   - 17179869184
   - 21474836482
   - 21474836483
@@ -103,7 +112,7 @@ entities:
           minLife: 10
           maxLife: 10
         positionInitializer:
-          shape: 0
+          shape: Box
           minPosition: [0, 0, 0]
           maxPosition: [0, 0, 0]
           radius: 1
@@ -211,72 +220,72 @@ entities:
             properties:
               - name: speed
                 displayName: Speed
-                type: 2
+                type: Float
                 value: 5
                 defaultValue: 5
               - name: drunkSwayAmount
                 displayName: Drunk Sway Amount
-                type: 2
+                type: Float
                 value: 1
                 defaultValue: 1
               - name: drunkSwaySpeed
                 displayName: Drunk Sway Speed
-                type: 2
+                type: Float
                 value: 1
                 defaultValue: 1
               - name: isActive
                 displayName: Is Active
-                type: 0
+                type: Bool
                 value: false
                 defaultValue: false
               - name: counter
                 displayName: Counter
-                type: 1
+                type: Int
                 value: 0
                 defaultValue: 0
               - name: pointSprites
                 displayName: Point Sprites
-                type: 9
+                type: EntityReference
                 ptrTypeName: doriax::Points
                 value: 1015
                 defaultValue: 0
               - name: peeSound
                 displayName: Pee Sound
-                type: 9
+                type: EntityReference
                 ptrTypeName: doriax::Sound
                 value: 1019
                 defaultValue: 0
               - name: time
                 displayName: Time
-                type: 9
+                type: EntityReference
                 ptrTypeName: doriax::Progressbar
                 value: 1005
                 defaultValue: 0
                 sceneId: 7
               - name: score
                 displayName: Score
-                type: 9
+                type: EntityReference
                 ptrTypeName: doriax::Text
                 value: 1001
                 defaultValue: 0
                 sceneId: 7
               - name: gameOverBestScore
                 displayName: Game Over Best Score
-                type: 9
+                type: EntityReference
                 ptrTypeName: doriax::Text
                 value: 1005
                 defaultValue: 0
                 sceneId: 9
               - name: gameOverYourScore
                 displayName: Game Over Your Score
-                type: 9
+                type: EntityReference
                 ptrTypeName: doriax::Text
                 value: 1008
                 defaultValue: 0
                 sceneId: 9
               - name: gameOverMessage
                 displayName: Game Over Message
-                type: 9
+                type: EntityReference
                 ptrTypeName: doriax::Text
                 value: 1004
                 defaultValue: 0
@@ -1980,6 +1989,9 @@ entities:
             transparentSort: true
             useTarget: false
             autoResize: true
+            framebufferWidth: 512
+            framebufferHeight: 512
+            framebufferFilter: linear
   - type: Entity
     entity: 1019
     name: PeeSound
