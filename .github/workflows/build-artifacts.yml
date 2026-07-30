@@ -12,10 +12,6 @@ permissions:
 
 env:
   APP_NAME: IcePee
-  DORIAX_REPO_OWNER: doriaxengine
-  DORIAX_REPO_NAME: doriax
-  DORIAX_WORKFLOW_FILE: cmake.yml
-  DORIAX_REF: main
   EMSDK_VERSION: 5.0.6
   EXPORT_DIR: .ci-build/export
   BUILD_DIR: .ci-build/build
@@ -34,13 +30,10 @@ jobs:
         include:
           - os: ubuntu-latest
             platform: linux
-            doriax_artifact: ubuntu_gcc
           - os: windows-latest
             platform: windows
-            doriax_artifact: windows_msvc
           - os: macos-latest
             platform: macos
-            doriax_artifact: macos_clang
 
     steps:
       - name: Checkout
@@ -59,14 +52,14 @@ jobs:
 
       - name: Download Doriax editor
         id: editor
-        uses: ./.github/actions/download-doriax-editor
+        uses: doriaxengine/download-doriax-editor@v1
         with:
-          artifact: ${{ matrix.doriax_artifact }}
+          platform: ${{ matrix.platform }}
           github-token: ${{ github.token }}
 
       - name: Export project
         env:
-          EDITOR_PATH: ${{ steps.editor.outputs.editor_path }}
+          EDITOR_PATH: ${{ steps.editor.outputs.editor-path }}
         run: |
           mkdir -p .ci-build
           if [[ "$RUNNER_OS" == 'macOS' ]]; then
@@ -129,14 +122,14 @@ jobs:
 
       - name: Download Doriax editor
         id: editor
-        uses: ./.github/actions/download-doriax-editor
+        uses: doriaxengine/download-doriax-editor@v1
         with:
-          artifact: ubuntu_gcc
+          platform: linux
           github-token: ${{ github.token }}
 
       - name: Export project
         env:
-          EDITOR_PATH: ${{ steps.editor.outputs.editor_path }}
+          EDITOR_PATH: ${{ steps.editor.outputs.editor-path }}
         run: |
           mkdir -p .ci-build
           "$EDITOR_PATH" export \
