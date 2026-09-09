@@ -34,11 +34,17 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 0
   maxSpriteFrames: 0
+  maxBones: 0
 shaderKeys:
-  - 21474836482
-  - 21474836488
-  - 25769803778
-  - 25769803784
+  - type: gbuffer
+    properties: 2
+  - type: gbuffer
+    properties: 8
+  - type: ui
+    properties: 2
+  - type: ui
+    properties: 8
+  - type: blit
 cppScripts:
   - path: TryAgainScript.cpp
     headerPath: TryAgainScript.h
@@ -138,7 +144,7 @@ entities:
         focused: false
       uilayout:
         width: 1280
-        height: 608
+        height: 700
         anchorPointLeft: 0
         anchorPointTop: 0
         anchorPointRight: 1
@@ -166,14 +172,14 @@ entities:
         name: Message
         components:
           transform:
-            position: [444, 32, 0]
+            position: [443, 43.5, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [444, 32, 0]
+            worldPosition: [443, 43.5, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [444, 32, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [444, 32, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [443, 43.5, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [443, 43.5, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -206,7 +212,7 @@ entities:
                   count: 48
                   normalized: true
                   perInstance: false
-              data: AADAQKiqekEAAAAAAACiPgAAoj0AAEBCqKp6QQAAAAAAALc+AACiPQAAQEJVVYtCAAAAAAAAtz4AAAc+AADAQFVVi0IAAAAAAACiPgAABz4AAEhCVFXlQQAAAAAAgKI+AAATPgAAqkJUVeVBAAAAAAAAtD4AABM+AACqQlVVjUIAAAAAAAC0PgAAPT4AAEhCVVWNQgAAAAAAgKI+AAA9PgAAtEJUVeVBAAAAAACAoj4AABM+AAD6QlRV5UEAAAAAAAC0PgAAEz4AAPpCVVWNQgAAAAAAALQ+AAA9PgAAtEJVVY1CAAAAAACAoj4AAD0+AAAEQ1RV5UEAAAAAAIAjPwAAEz4AACZDVFXlQQAAAAAAACw/AAATPgAAJkNVVatCAAAAAAAALD8AAEw+AAAEQ1VVq0IAAAAAAIAjPwAATD4AAClDVVWLQgAAAAAAAIA6AACAOgAAKUNVVYtCAAAAAAAAgDoAAIA6AAApQ1VVi0IAAAAAAACAOgAAgDoAAClDVVWLQgAAAAAAAIA6AACAOgAAO0NUVZ1BAAAAAADAQj8AABM+AABRQ1RVnUEAAAAAAEBIPwAAEz4AAFFDVVWNQgAAAAAAQEg/AABGPgAAO0NVVY1CAAAAAADAQj8AAEY+AABZQ1RV5UEAAAAAAAA1PwAAEz4AAG1DVFXlQQAAAAAAADo/AAATPgAAbUNVVYtCAAAAAAAAOj8AADw+AABZQ1VVi0IAAAAAAAA1PwAAPD4AAG1DVFXtQQAAAAAAgHA/AAATPgAAiENUVe1BAAAAAABAeT8AABM+AACIQ1VVrUIAAAAAAEB5PwAATD4AAG1DVVWtQgAAAAAAgHA/AABMPgAAi0OoqmpBAAAAAAAA5D4AABM+AICPQ6iqakEAAAAAAIDoPgAAEz4AgI9DVVWLQgAAAAAAgOg+AABKPgAAi0NVVYtCAAAAAAAA5D4AAEo+AACUQ1RV5UEAAAAAAMARPwAAEz4AAKRDVFXlQQAAAAAAwBk/AAATPgAApENVVYtCAAAAAADAGT8AADw+AACUQ1VVi0IAAAAAAMARPwAAPD4AgKdDVFXlQQAAAAAAgME+AAATPgAAuUNUVeVBAAAAAAAA0z4AABM+AAC5Q1VVq0IAAAAAAADTPgAATD4AgKdDVVWrQgAAAAAAgME+AABMPgAAvkOoqnpBAAAAAAAAADsAAIA6AIDCQ6iqekEAAAAAAAAwPAAAgDoAgMJDVVWNQgAAAAAAADA8AABgPQAAvkNVVY1CAAAAAAAAADsAAGA9
+              data: AADAQKiqekEAAAAAAAAAAAAAAAAAAEBCqKp6QQAAAAAAAKg9AAAAAAAAQEJVVYtCAAAAAAAAqD0AANg9AADAQFVVi0IAAAAAAAAAAAAA2D0AAERCVFXlQQAAAAAAAKw9AAAAAAAAqEJUVeVBAAAAAAAAHD4AAAAAAACoQlVVjUIAAAAAAAAcPgAAqD0AAERCVVWNQgAAAAAAAKw9AACoPQAAskJUVeVBAAAAAAAArD0AAAAAAAD4QlRV5UEAAAAAAAAcPgAAAAAAAPhCVVWNQgAAAAAAABw+AACoPQAAskJVVY1CAAAAAAAArD0AAKg9AAADQ1RV5UEAAAAAAAAAAAAA3D0AACVDVFXlQQAAAAAAAIg9AADcPQAAJUNVVatCAAAAAAAAiD0AAGA+AAADQ1VVq0IAAAAAAAAAAAAAYD4AAChDVVWLQgAAAAAAAAAAAAAAAAAAKENVVYtCAAAAAAAAAAAAAAAAAAAoQ1VVi0IAAAAAAAAAAAAAAAAAAChDVVWLQgAAAAAAAAAAAAAAAAAAO0NUVZ1BAAAAAAAAHj4AAAAAAABRQ1RVnUEAAAAAAABKPgAAAAAAAFFDVVWNQgAAAAAAAEo+AADMPQAAO0NVVY1CAAAAAAAAHj4AAMw9AABYQ1RV5UEAAAAAAABMPgAAAAAAAGxDVFXlQQAAAAAAAHQ+AAAAAAAAbENVVYtCAAAAAAAAdD4AAKQ9AABYQ1VVi0IAAAAAAABMPgAApD0AAG1DVFXtQQAAAAAAAIw9AADcPQAAiENUVe1BAAAAAAAADD4AANw9AACIQ1VVrUIAAAAAAAAMPgAAYD4AAG1DVVWtQgAAAAAAAIw9AABgPgAAi0OoqmpBAAAAAAAADj4AANw9AICPQ6iqakEAAAAAAAAgPgAA3D0AgI9DVVWLQgAAAAAAACA+AABcPgAAi0NVVYtCAAAAAAAADj4AAFw+AACUQ1RV5UEAAAAAAAB2PgAAAAAAAKRDVFXlQQAAAAAAAJs+AAAAAAAApENVVYtCAAAAAAAAmz4AAKQ9AACUQ1VVi0IAAAAAAAB2PgAApD0AAKhDVFXlQQAAAAAAACI+AADcPQCAuUNUVeVBAAAAAAAAaD4AANw9AIC5Q1VVq0IAAAAAAABoPgAAYD4AAKhDVVWrQgAAAAAAACI+AABgPgAAvkOoqnpBAAAAAAAAaj4AANw9AIDCQ6iqekEAAAAAAAB8PgAA3D0AgMJDVVWNQgAAAAAAAHw+AABcPgAAvkNVVY1CAAAAAAAAaj4AAFw+
             indices:
               type: index_buffer
               usage: dynamic
@@ -233,22 +239,30 @@ entities:
               min: [0, 0, 0]
               max: [389, 86.666664, 0]
             worldAABB:
-              min: [444, 32, 0]
-              max: [833, 118.666664, 0]
-            texture: ~
+              min: [443, 43.5, 0]
+              max: [832, 130.16666, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|88#12
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
             color: [0.941761, 0.90027446, 0.09603942, 1]
             automaticFlipY: true
             flipY: false
             pointerMoved: false
             focused: false
           uilayout:
-            width: 393
+            width: 394
             height: 88
             anchorPointLeft: 0.5
             anchorPointTop: 0.5
             anchorPointRight: 0.5
             anchorPointBottom: 0.5
-            anchorOffsetLeft: -196
+            anchorOffsetLeft: -197
             anchorOffsetTop: -44
             anchorOffsetRight: 197
             anchorOffsetBottom: 44
@@ -261,7 +275,7 @@ entities:
             ignoreScissor: false
             ignoreEvents: false
           text:
-            font: ""
+            font: []
             text: Keep trying!
             fontSize: 88
             multiline: true
@@ -275,14 +289,14 @@ entities:
         name: BestScore
         components:
           transform:
-            position: [470, 246, 0]
+            position: [470, 292, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [470, 246, 0]
+            worldPosition: [470, 292, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [470, 246, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [470, 246, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [470, 292, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [470, 292, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -315,7 +329,7 @@ entities:
                   count: 60
                   normalized: true
                   perInstance: false
-              data: AACAQKiqHkEAAAAAAEAtPwAAgDoAAOhBqKoeQQAAAAAAgDM/AACAOgAA6EGqqjdCAAAAAACAMz8AABQ9AACAQKqqN0IAAAAAAEAtPwAAFD0AAARCVFWXQQAAAAAAABM/AABYPQAAYEJUVZdBAAAAAADAGD8AAFg9AABgQqqqO0IAAAAAAMAYPwAApD0AAARCqqo7QgAAAAAAABM/AACkPQAAbEJUVZdBAAAAAAAAWz8AAFg9AACiQlRVl0EAAAAAAIBgPwAAWD0AAKJCqqo7QgAAAAAAgGA/AACkPQAAbEKqqjtCAAAAAAAAWz8AAKQ9AACmQqiqTkEAAAAAAMBgPwAAWD0AAMRCqKpOQQAAAAAAgGQ/AABYPQAAxEKqqjtCAAAAAACAZD8AALA9AACmQqqqO0IAAAAAAMBgPwAAsD0AAMZCqqo3QgAAAAAAAIA6AACAOgAAxkKqqjdCAAAAAAAAgDoAAIA6AADGQqqqN0IAAAAAAACAOgAAgDoAAMZCqqo3QgAAAAAAAIA6AACAOgAA4kJUVZdBAAAAAAAAWz8AAFg9AAAHQ1RVl0EAAAAAAIBgPwAAWD0AAAdDqqo7QgAAAAAAgGA/AACkPQAA4kKqqjtCAAAAAAAAWz8AAKQ9AAAKQ1RVl0EAAAAAAAAHPwAAWD0AACFDVFWXQQAAAAAAwAw/AABYPQAAIUOqqjtCAAAAAADADD8AAKQ9AAAKQ6qqO0IAAAAAAAAHPwAApD0AACRDVFWXQQAAAAAAwEQ/AABYPQAAPUNUVZdBAAAAAAAASz8AAFg9AAA9Q6qqO0IAAAAAAABLPwAApD0AACRDqqo7QgAAAAAAwEQ/AACkPQAAQkNUVZdBAAAAAABAVz8AAFg9AABQQ1RVl0EAAAAAAMBaPwAAWD0AAFBDqqo3QgAAAAAAwFo/AACiPQAAQkOqqjdCAAAAAABAVz8AAKI9AABRQ1RVl0EAAAAAAAATPwAAWD0AAGhDVFWXQQAAAAAAwBg/AABYPQAAaEOqqjtCAAAAAADAGD8AAKQ9AABRQ6qqO0IAAAAAAAATPwAApD0AAG1DVFWXQQAAAAAAQAA/AACAOgAAc0NUVZdBAAAAAADAAT8AAIA6AABzQ6qqO0IAAAAAAMABPwAA6DwAAG1Dqqo7QgAAAAAAQAA/AADoPAAAdkOqqjdCAAAAAAAAgDoAAIA6AAB2Q6qqN0IAAAAAAACAOgAAgDoAAHZDqqo3QgAAAAAAAIA6AACAOgAAdkOqqjdCAAAAAAAAgDoAAIA6AICCQ6iqHkEAAAAAAADPPgAAgDoAAI5DqKoeQQAAAAAAgNo+AACAOgAAjkOqqjtCAAAAAACA2j4AABg9AICCQ6qqO0IAAAAAAADPPgAAGD0AgJBDqKoeQQAAAAAAAM8+AACAOgAAnEOoqh5BAAAAAACA2j4AAIA6AACcQ6qqO0IAAAAAAIDaPgAAGD0AgJBDqqo7QgAAAAAAAM8+AAAYPQCAnUOoqh5BAAAAAAAAnT4AAIA6AICpQ6iqHkEAAAAAAACpPgAAgDoAgKlDqqo3QgAAAAAAAKk+AAAUPQCAnUOqqjdCAAAAAAAAnT4AABQ9
+              data: AACAQKiqHkEAAAAAAAAAAAAAAAAAAOhBqKoeQQAAAAAAAEg9AAAAAAAA6EGqqjdCAAAAAAAASD0AAJA9AACAQKqqN0IAAAAAAAAAAAAAkD0AAARCVFWXQQAAAAAAAFA9AAAAAAAAYEJUVZdBAAAAAAAAxD0AAAAAAABgQqqqO0IAAAAAAADEPQAAYD0AAARCqqo7QgAAAAAAAFA9AABgPQAAbEJUVZdBAAAAAAAAyD0AAAAAAACiQlRVl0EAAAAAAAAQPgAAAAAAAKJCqqo7QgAAAAAAABA+AABgPQAAbEKqqjtCAAAAAAAAyD0AAGA9AACmQqiqTkEAAAAAAAASPgAAAAAAAMRCqKpOQQAAAAAAADA+AAAAAAAAxEKqqjtCAAAAAAAAMD4AAIg9AACmQqqqO0IAAAAAAAASPgAAiD0AAMZCqqo3QgAAAAAAAAAAAAAAAAAAxkKqqjdCAAAAAAAAAAAAAAAAAADGQqqqN0IAAAAAAAAAAAAAAAAAAMZCqqo3QgAAAAAAAAAAAAAAAAAA4kJUVZdBAAAAAAAAyD0AAAAAAAAHQ1RVl0EAAAAAAAAQPgAAAAAAAAdDqqo7QgAAAAAAABA+AABgPQAA4kKqqjtCAAAAAAAAyD0AAGA9AAALQ1RVl0EAAAAAAAAyPgAAAAAAACJDVFWXQQAAAAAAAGA+AAAAAAAAIkOqqjtCAAAAAAAAYD4AAGA9AAALQ6qqO0IAAAAAAAAyPgAAYD0AACVDVFWXQQAAAAAAAGI+AAAAAAAAPkNUVZdBAAAAAAAAij4AAAAAAAA+Q6qqO0IAAAAAAACKPgAAYD0AACVDqqo7QgAAAAAAAGI+AABgPQAAQkNUVZdBAAAAAAAAiz4AAAAAAABQQ1RVl0EAAAAAAACZPgAAAAAAAFBDqqo3QgAAAAAAAJk+AABYPQAAQkOqqjdCAAAAAAAAiz4AAFg9AABRQ1RVl0EAAAAAAABQPQAAAAAAAGhDVFWXQQAAAAAAAMQ9AAAAAAAAaEOqqjtCAAAAAAAAxD0AAGA9AABRQ6qqO0IAAAAAAABQPQAAYD0AAGxDVFWXQQAAAAAAAJo+AAAAAAAAckNUVZdBAAAAAAAAoD4AAAAAAAByQ6qqO0IAAAAAAACgPgAAYD0AAGxDqqo7QgAAAAAAAJo+AABgPQAAdUOqqjdCAAAAAAAAAAAAAAAAAAB1Q6qqN0IAAAAAAAAAAAAAAAAAAHVDqqo3QgAAAAAAAAAAAAAAAAAAdUOqqjdCAAAAAAAAAAAAAAAAAICCQ6iqHkEAAAAAAAAAAAAAlD0AAI5DqKoeQQAAAAAAADg9AACUPQAAjkOqqjtCAAAAAAAAOD0AABQ+AICCQ6qqO0IAAAAAAAAAAAAAFD4AAI9DqKoeQQAAAAAAAKE+AAAAAAAAnEOoqh5BAAAAAAAAuz4AAAAAAACcQ6qqN0IAAAAAAAC7PgAAkD0AAI9Dqqo3QgAAAAAAAKE+AACQPQCAnkOoqh5BAAAAAAAAvD4AAAAAAIClQ6iqHkEAAAAAAADKPgAAAAAAgKVDqqo3QgAAAAAAAMo+AACQPQCAnkOqqjdCAAAAAAAAvD4AAJA9
             indices:
               type: index_buffer
               usage: dynamic
@@ -340,11 +354,19 @@ entities:
             vertexCount: 90
             aabb:
               min: [0, 0, 0]
-              max: [339, 46.916664, 0]
+              max: [331, 46.916664, 0]
             worldAABB:
-              min: [470, 246, 0]
-              max: [809, 292.91666, 0]
-            texture: ~
+              min: [470, 292, 0]
+              max: [801, 338.91666, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|58#13
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
             color: [0.9322396, 0.008958948, 0.008958948, 1]
             automaticFlipY: true
             flipY: false
@@ -370,8 +392,8 @@ entities:
             ignoreScissor: false
             ignoreEvents: false
           text:
-            font: ""
-            text: "Best score: 662"
+            font: []
+            text: "Best score: 641"
             fontSize: 58
             multiline: true
             maxTextSize: 100
@@ -384,14 +406,14 @@ entities:
         name: YourScore
         components:
           transform:
-            position: [513, 304, 0]
+            position: [513, 350, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [513, 304, 0]
+            worldPosition: [513, 350, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [513, 304, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [513, 304, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [513, 350, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [513, 350, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -424,7 +446,7 @@ entities:
                   count: 60
                   normalized: true
                   perInstance: false
-              data: AAAAAFhV4UAAAAAAAAAAOwAAFD4AALBBWFXhQAAAAAAAADg9AAAUPgAAsEGrKghCAAAAAAAAOD0AAEo+AAAAAKsqCEIAAAAAAAAAOwAASj4AALhBrKpgQQAAAAAAgC0/AAAUPgAAKEKsqmBBAAAAAAAANz8AABQ+AAAoQqsqDEIAAAAAAAA3PwAAPj4AALhBqyoMQgAAAAAAgC0/AAA+PgAANEKsqmBBAAAAAACAXj8AABQ+AAB0QqyqYEEAAAAAAIBmPwAAFD4AAHRCqyoMQgAAAAAAgGY/AAA+PgAANEKrKgxCAAAAAACAXj8AAD4+AACCQqyqYEEAAAAAAABKPwAAFD4AAJZCrKpgQQAAAAAAAE8/AAAUPgAAlkKrKghCAAAAAAAATz8AADw+AACCQqsqCEIAAAAAAABKPwAAPD4AAJhCqyoIQgAAAAAAAAA7AAAAOwAAmEKrKghCAAAAAAAAADsAAAA7AACYQqsqCEIAAAAAAAAAOwAAADsAAJhCqyoIQgAAAAAAAAA7AAAAOwAArEKsqmBBAAAAAACATz8AABQ+AADOQqyqYEEAAAAAAABYPwAAFD4AAM5CqyoMQgAAAAAAAFg/AAA+PgAArEKrKgxCAAAAAACATz8AAD4+AADSQqyqYEEAAAAAAACcPgAAFD4AAPRCrKpgQQAAAAAAAK0+AAAUPgAA9EKrKgxCAAAAAAAArT4AAD4+AADSQqsqDEIAAAAAAACcPgAAPj4AAPhCrKpgQQAAAAAAgC0/AAAUPgAAD0OsqmBBAAAAAAAANz8AABQ+AAAPQ6sqDEIAAAAAAAA3PwAAPj4AAPhCqyoMQgAAAAAAgC0/AAA+PgAAEkOsqmBBAAAAAAAASj8AABQ+AAAcQ6yqYEEAAAAAAABPPwAAFD4AABxDqyoIQgAAAAAAAE8/AAA8PgAAEkOrKghCAAAAAAAASj8AADw+AAAdQ6yqYEEAAAAAAADBPgAAFD4AAC9DrKpgQQAAAAAAANM+AAAUPgAAL0OrKgxCAAAAAAAA0z4AAD4+AAAdQ6sqDEIAAAAAAADBPgAAPj4AADJDrKpgQQAAAAAAAEY/AAAAOwAAN0OsqmBBAAAAAACASD8AAAA7AAA3Q6sqDEIAAAAAAIBIPwAAMD0AADJDqyoMQgAAAAAAAEY/AAAwPQAAOEOrKghCAAAAAAAAADsAAAA7AAA4Q6sqCEIAAAAAAAAAOwAAADsAADhDqyoIQgAAAAAAAAA7AAAAOwAAOEOrKghCAAAAAAAAADsAAAA7AABEQ1hV4UAAAAAAAAAXPwAAADsAAFZDWFXhQAAAAAAAACA/AAAAOwAAVkOrKgxCAAAAAAAAID8AAGg9AABEQ6sqDEIAAAAAAAAXPwAAaD0AAFdDWFXhQAAAAAAAgDw/AAAAOwAAaUNYVeFAAAAAAACART8AAAA7AABpQ6sqDEIAAAAAAIBFPwAAaD0AAFdDqyoMQgAAAAAAgDw/AABoPQAAbUNYVeFAAAAAAACAID8AAAA7AAB+Q1hV4UAAAAAAAAApPwAAADsAAH5DqyoMQgAAAAAAACk/AABoPQAAbUOrKgxCAAAAAACAID8AAGg9
+              data: AAAAAFhV4UAAAAAAAAAAAAAAAAAAALBBWFXhQAAAAAAAADA9AAAAAAAAsEGrKghCAAAAAAAAMD0AAFg9AAAAAKsqCEIAAAAAAAAAAAAAWD0AALBBrKpgQQAAAAAAADg9AAAAAAAAJEKsqmBBAAAAAAAAqD0AAAAAAAAkQqsqDEIAAAAAAACoPQAAKD0AALBBqyoMQgAAAAAAADg9AAAoPQAAMEKsqmBBAAAAAAAArD0AAAAAAABwQqyqYEEAAAAAAADsPQAAAAAAAHBCqyoMQgAAAAAAAOw9AAAoPQAAMEKrKgxCAAAAAAAArD0AACg9AACAQqyqYEEAAAAAAADwPQAAAAAAAJRCrKpgQQAAAAAAAAw+AAAAAAAAlEKrKghCAAAAAAAADD4AACA9AACAQqsqCEIAAAAAAADwPQAAID0AAJRCqyoIQgAAAAAAAAAAAAAAAAAAlEKrKghCAAAAAAAAAAAAAAAAAACUQqsqCEIAAAAAAAAAAAAAAAAAAJRCqyoIQgAAAAAAAAAAAAAAAAAAqkKsqmBBAAAAAAAADj4AAAAAAADMQqyqYEEAAAAAAAAwPgAAAAAAAMxCqyoMQgAAAAAAADA+AAAoPQAAqkKrKgxCAAAAAAAADj4AACg9AADQQqyqYEEAAAAAAAAyPgAAAAAAAPRCrKpgQQAAAAAAAFY+AAAAAAAA9EKrKgxCAAAAAAAAVj4AACg9AADQQqsqDEIAAAAAAAAyPgAAKD0AAPZCrKpgQQAAAAAAADg9AAAAAAAADkOsqmBBAAAAAAAAqD0AAAAAAAAOQ6sqDEIAAAAAAACoPQAAKD0AAPZCqyoMQgAAAAAAADg9AAAoPQAAEUOsqmBBAAAAAAAA8D0AAAAAAAAbQ6yqYEEAAAAAAAAMPgAAAAAAABtDqyoIQgAAAAAAAAw+AAAgPQAAEUOrKghCAAAAAAAA8D0AACA9AAAcQ6yqYEEAAAAAAABYPgAAAAAAAC5DrKpgQQAAAAAAAHw+AAAAAAAALkOrKgxCAAAAAAAAfD4AACg9AAAcQ6sqDEIAAAAAAABYPgAAKD0AADBDrKpgQQAAAAAAAH4+AAAAAAAANUOsqmBBAAAAAAAAhD4AAAAAAAA1Q6sqDEIAAAAAAACEPgAAKD0AADBDqyoMQgAAAAAAAH4+AAAoPQAAN0OrKghCAAAAAAAAAAAAAAAAAAA3Q6sqCEIAAAAAAAAAAAAAAAAAADdDqyoIQgAAAAAAAAAAAAAAAAAAN0OrKghCAAAAAAAAAAAAAAAAAABBQ1hV4UAAAAAAAAAAAAAAYD0AAFNDWFXhQAAAAAAAABA9AABgPQAAU0OrKgxCAAAAAAAAED0AAOA9AABBQ6sqDEIAAAAAAAAAAAAA4D0AAFdDWFXhQAAAAAAAABg9AABgPQAAaUNYVeFAAAAAAAAAlD0AAGA9AABpQ6sqDEIAAAAAAACUPQAA4D0AAFdDqyoMQgAAAAAAABg9AADgPQAAbENYVeFAAAAAAAAAhT4AAAAAAAB3Q1hV4UAAAAAAAACQPgAAAAAAAHdDqyoIQgAAAAAAAJA+AABYPQAAbEOrKghCAAAAAAAAhT4AAFg9
             indices:
               type: index_buffer
               usage: dynamic
@@ -449,18 +471,26 @@ entities:
             vertexCount: 90
             aabb:
               min: [0, 0, 0]
-              max: [254, 35.041668, 0]
+              max: [247, 35.041668, 0]
             worldAABB:
-              min: [513, 304, 0]
-              max: [767, 339.04166, 0]
-            texture: ~
+              min: [513, 350, 0]
+              max: [760, 385.04166, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|43#13
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
             color: [0.6242073, 0.05677966, 0.05677966, 1]
             automaticFlipY: true
             flipY: false
             pointerMoved: false
             focused: false
           uilayout:
-            width: 255
+            width: 254
             height: 43
             anchorPointLeft: 0.5
             anchorPointTop: 0
@@ -468,7 +498,7 @@ entities:
             anchorPointBottom: 0
             anchorOffsetLeft: -127
             anchorOffsetTop: 0
-            anchorOffsetRight: 128
+            anchorOffsetRight: 127
             anchorOffsetBottom: 43
             positionOffset: [0, 0]
             anchorPreset: CENTER_TOP
@@ -479,8 +509,8 @@ entities:
             ignoreScissor: false
             ignoreEvents: false
           text:
-            font: ""
-            text: "Your score: 596"
+            font: []
+            text: "Your score: 351"
             fontSize: 43
             multiline: true
             maxTextSize: 100
@@ -493,14 +523,14 @@ entities:
         name: TryAgainButton
         components:
           transform:
-            position: [477, 485, 0]
+            position: [477, 565.5, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [477, 485, 0]
+            worldPosition: [477, 565.5, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [477, 485, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [477, 485, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [477, 565.5, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [477, 565.5, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -568,8 +598,8 @@ entities:
               min: [0, 0, 0]
               max: [326, 95, 0]
             worldAABB:
-              min: [477, 485, 0]
-              max: [803, 580, 0]
+              min: [477, 565.5, 0]
+              max: [803, 660.5, 0]
             texture: ~
             color: [1, 1, 1, 1]
             automaticFlipY: true
@@ -603,7 +633,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 3
-            scissor: [449.05078, 457.0806, 306.89844, 89.53125]
+            scissor: [424.08282, 503.295, 289.8344, 84.55002]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -614,7 +644,7 @@ entities:
             textureScaleFactor: 0
           script:
             scripts:
-              - type: subclass
+              - type: cpp
                 path: TryAgainScript.cpp
                 headerPath: TryAgainScript.h
                 className: TryAgainScript
@@ -638,14 +668,14 @@ entities:
             name: Label
             components:
               transform:
-                position: [48, 14.5, 0]
+                position: [49, 14.5, 0]
                 rotation: [1, 0, 0, 0]
                 scale: [1, 1, 1]
-                worldPosition: [525, 499.5, 0]
+                worldPosition: [526, 580, 0]
                 worldRotation: [1, 0, 0, 0]
                 worldScale: [1, 1, 1]
-                localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [48, 14.5, 0, 1]]
-                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [525, 499.5, 0, 1]]
+                localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [49, 14.5, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [526, 580, 0, 1]]
                 normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                 visible: true
                 billboardRotation: [1, 0, 0, 0]
@@ -678,7 +708,7 @@ entities:
                       count: 36
                       normalized: true
                       perInstance: false
-                  data: AACAPwAANEEAAAAAAACiPgAAdD0AAARCAAA0QQAAAAAAALI+AAB0PQAABEIAAFFCAAAAAAAAsj4AAMw9AACAPwAAUUIAAAAAAACiPgAAzD0AABRCAACqQQAAAAAAAKg9AADqPQAAVEIAAKpBAAAAAAAAyD0AAOo9AABUQgAAUUIAAAAAAADIPQAAFD4AABRCAABRQgAAAAAAAKg9AAAUPgAAVEIAALJBAAAAAAAAhj4AAOo9AACeQgAAskEAAAAAAACTPgAA6j0AAJ5CAICCQgAAAAAAAJM+AAAgPgAAVEIAgIJCAAAAAAAAhj4AACA+AACeQgAAUUIAAAAAAACAOgAAgDoAAJ5CAABRQgAAAAAAAIA6AACAOgAAnkIAAFFCAAAAAAAAgDoAAIA6AACeQgAAUUIAAAAAAACAOgAAgDoAAL5CAACqQQAAAAAAACs/AAB0PQAA8kIAAKpBAAAAAACAMT8AAHQ9AADyQgAAVUIAAAAAAIAxPwAAuj0AAL5CAABVQgAAAAAAACs/AAC6PQAA/EIAAKpBAAAAAAAAUj8AAHQ9AAAYQwAAqkEAAAAAAIBYPwAAdD0AABhDAICAQgAAAAAAgFg/AADQPQAA/EIAgIBCAAAAAAAAUj8AANA9AAAdQwAAqkEAAAAAAAArPwAAdD0AADdDAACqQQAAAAAAgDE/AAB0PQAAN0MAAFVCAAAAAACAMT8AALo9AAAdQwAAVUIAAAAAAAArPwAAuj0AAD1DAAA0QQAAAAAAQF8/AAB0PQAAREMAADRBAAAAAAAAYT8AAHQ9AABEQwAAUUIAAAAAAABhPwAAzD0AAD1DAABRQgAAAAAAQF8/AADMPQAAS0MAAKpBAAAAAAAAeD8AAHQ9AABkQwAAqkEAAAAAAEB+PwAAdD0AAGRDAABRQgAAAAAAQH4/AAC4PQAAS0MAAFFCAAAAAAAAeD8AALg9
+                  data: AACAPwAANEEAAAAAAAAAAAAAAAAAAARCAAA0QQAAAAAAAIA9AAAAAAAABEIAAFFCAAAAAAAAgD0AAKQ9AACAPwAAUUIAAAAAAAAAAAAApD0AAAxCAACqQQAAAAAAAIQ9AAAAAAAATEIAAKpBAAAAAAAAxD0AAAAAAABMQgAAUUIAAAAAAADEPQAAeD0AAAxCAABRQgAAAAAAAIQ9AAB4PQAATEIAALJBAAAAAAAAAAAAAKg9AACaQgAAskEAAAAAAABQPQAAqD0AAJpCAICCQgAAAAAAAFA9AAAqPgAATEIAgIJCAAAAAAAAAAAAACo+AACcQgAAUUIAAAAAAAAAAAAAAAAAAJxCAABRQgAAAAAAAAAAAAAAAAAAnEIAAFFCAAAAAAAAAAAAAAAAAACcQgAAUUIAAAAAAAAAAAAAAAAAALxCAACqQQAAAAAAAMg9AAAAAAAA8EIAAKpBAAAAAAAAGD4AAAAAAADwQgAAVUIAAAAAAAAYPgAAgD0AALxCAABVQgAAAAAAAMg9AACAPQAA+EIAAKpBAAAAAAAAWD0AAKg9AAAWQwAAqkEAAAAAAADUPQAAqD0AABZDAICAQgAAAAAAANQ9AAAqPgAA+EIAgIBCAAAAAAAAWD0AACo+AAAcQwAAqkEAAAAAAADIPQAAAAAAADZDAACqQQAAAAAAABg+AAAAAAAANkMAAFVCAAAAAAAAGD4AAIA9AAAcQwAAVUIAAAAAAADIPQAAgD0AADxDAAA0QQAAAAAAABo+AAAAAAAAQ0MAADRBAAAAAAAAKD4AAAAAAABDQwAAUUIAAAAAAAAoPgAApD0AADxDAABRQgAAAAAAABo+AACkPQAASUMAAKpBAAAAAAAAKj4AAAAAAABiQwAAqkEAAAAAAABcPgAAAAAAAGJDAABRQgAAAAAAAFw+AAB4PQAASUMAAFFCAAAAAAAAKj4AAHg9
                 indices:
                   type: index_buffer
                   usage: dynamic
@@ -703,24 +733,32 @@ entities:
                 vertexCount: 54
                 aabb:
                   min: [0, 0, 0]
-                  max: [228, 65.25, 0]
+                  max: [226, 65.25, 0]
                 worldAABB:
-                  min: [525, 499.5, 0]
-                  max: [753, 564.75, 0]
-                texture: ~
+                  min: [526, 580, 0]
+                  max: [752, 645.25, 0]
+                texture:
+                  textureType: 2D
+                  source: id
+                  id: font|66#9
+                  minFilter: linear
+                  magFilter: linear
+                  wrapU: repeat
+                  wrapV: repeat
+                  releaseDataAfterLoad: false
                 color: [0, 0, 0, 1]
                 automaticFlipY: true
                 flipY: false
                 pointerMoved: false
                 focused: false
               uilayout:
-                width: 230
+                width: 229
                 height: 66
                 anchorPointLeft: 0.5
                 anchorPointTop: 0.5
                 anchorPointRight: 0.5
                 anchorPointBottom: 0.5
-                anchorOffsetLeft: -115
+                anchorOffsetLeft: -114
                 anchorOffsetTop: -33
                 anchorOffsetRight: 115
                 anchorOffsetBottom: 33
@@ -729,11 +767,11 @@ entities:
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [449.05078, 457.0806, 306.89844, 89.53125]
+                scissor: [424.08282, 503.295, 289.8344, 84.55002]
                 ignoreScissor: false
                 ignoreEvents: true
               text:
-                font: ""
+                font: []
                 text: Try again
                 fontSize: 66
                 multiline: true

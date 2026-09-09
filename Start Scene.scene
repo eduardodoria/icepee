@@ -34,13 +34,21 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 0
   maxSpriteFrames: 0
+  maxBones: 0
 shaderKeys:
-  - 21474836482
-  - 21474836488
-  - 21474836489
-  - 25769803778
-  - 25769803784
-  - 25769803785
+  - type: gbuffer
+    properties: 2
+  - type: gbuffer
+    properties: 8
+  - type: gbuffer
+    properties: 9
+  - type: ui
+    properties: 2
+  - type: ui
+    properties: 8
+  - type: ui
+    properties: 9
+  - type: blit
 cppScripts:
   - path: ButtonScript.cpp
     headerPath: ButtonScript.h
@@ -101,7 +109,7 @@ entities:
         cylindricalBillboard: false
       uilayout:
         width: 1280
-        height: 608
+        height: 700
         anchorPointLeft: 0
         anchorPointTop: 0
         anchorPointRight: 1
@@ -236,7 +244,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 0
-            scissor: [407.6289, 0, 389.7422, 390.16776]
+            scissor: [384.96405, 0, 368.07184, 368.46]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -250,14 +258,14 @@ entities:
         name: Button
         components:
           transform:
-            position: [440, 457, 0]
+            position: [440, 503, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [440, 457, 0]
+            worldPosition: [440, 503, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 457, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 457, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 503, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 503, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -325,8 +333,8 @@ entities:
               min: [0, 0, 0]
               max: [401, 108, 0]
             worldAABB:
-              min: [440, 457, 0]
-              max: [841, 565, 0]
+              min: [440, 503, 0]
+              max: [841, 611, 0]
             texture: ~
             color: [0.64732397, 0.23981999, 0.23981999, 1]
             automaticFlipY: true
@@ -339,7 +347,7 @@ entities:
             textureHovered: ~
             texturePressed: ~
             textureDisabled: ~
-            colorNormal: [1, 1, 1, 1]
+            colorNormal: [0.64732397, 0.23981999, 0.23981999, 1]
             colorHovered: [0.64732397, 0.23981999, 0.23981999, 1]
             colorPressed: [0.17891622, 0.06628472, 0.06628472, 1]
             colorDisabled: [1, 1, 1, 1]
@@ -360,7 +368,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 1
-            scissor: [414.21875, 430.69244, 377.5039, 101.78289]
+            scissor: [391.1875, 447.66998, 356.5141, 96.119995]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -371,7 +379,7 @@ entities:
             textureScaleFactor: 0
           script:
             scripts:
-              - type: subclass
+              - type: cpp
                 path: ButtonScript.cpp
                 headerPath: ButtonScript.h
                 className: ButtonScript
@@ -408,11 +416,11 @@ entities:
                 position: [131.5, 16, 0]
                 rotation: [1, 0, 0, 0]
                 scale: [1, 1, 1]
-                worldPosition: [571.5, 473, 0]
+                worldPosition: [571.5, 519, 0]
                 worldRotation: [1, 0, 0, 0]
                 worldScale: [1, 1, 1]
                 localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [131.5, 16, 0, 1]]
-                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [571.5, 473, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [571.5, 519, 0, 1]]
                 normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                 visible: true
                 billboardRotation: [1, 0, 0, 0]
@@ -445,7 +453,7 @@ entities:
                       count: 20
                       normalized: true
                       perInstance: false
-                  data: AAAAQKiqUkEAAAAAAIDePgAAjD0AABRCqKpSQQAAAAAAAPA+AACMPQAAFEKqqnRCAAAAAAAA8D4AAOw9AAAAQKqqdEIAAAAAAIDePgAA7D0AABhCVFWJQQAAAAAAAMc+AAAGPgAAZEJUVYlBAAAAAACA0D4AAAY+AABkQqqqdEIAAAAAAIDQPgAAMj4AABhCqqp0QgAAAAAAAMc+AAAyPgAAfEJUVclBAAAAAACAXz8AAIw9AAC4QlRVyUEAAAAAAMBmPwAAjD0AALhCqqp0QgAAAAAAwGY/AADUPQAAfEKqqnRCAAAAAACAXz8AANQ9AADGQlRVyUEAAAAAAICvPgAABj4AAOhCVFXJQQAAAAAAALg+AAAGPgAA6EKqqnBCAAAAAAAAuD4AACk+AADGQqqqcEIAAAAAAICvPgAAKT4AAOpCVFWJQQAAAAAAAMc+AAAGPgAACENUVYlBAAAAAACA0D4AAAY+AAAIQ6qqdEIAAAAAAIDQPgAAMj4AAOpCqqp0QgAAAAAAAMc+AAAyPg==
+                  data: AAAAQKiqUkEAAAAAAAAAAAAAAAAAABRCqKpSQQAAAAAAAIw9AAAAAAAAFEKqqnRCAAAAAAAAjD0AAMA9AAAAQKqqdEIAAAAAAAAAAAAAwD0AABxCVFWJQQAAAAAAAJA9AAAAAAAAaEJUVYlBAAAAAAAA3D0AAAAAAABoQqqqdEIAAAAAAADcPQAAsD0AABxCqqp0QgAAAAAAAJA9AACwPQAAfEJUVclBAAAAAAAA4D0AAAAAAAC4QlRVyUEAAAAAAAAqPgAAAAAAALhCqqp0QgAAAAAAACo+AACQPQAAfEKqqnRCAAAAAAAA4D0AAJA9AADGQlRVyUEAAAAAAAAsPgAAAAAAAOpCVFXJQQAAAAAAAFA+AAAAAAAA6kKqqnBCAAAAAAAAUD4AAIw9AADGQqqqcEIAAAAAAAAsPgAAjD0AAO5CVFWJQQAAAAAAAJA9AAAAAAAACkNUVYlBAAAAAAAA3D0AAAAAAAAKQ6qqdEIAAAAAAADcPQAAsD0AAO5Cqqp0QgAAAAAAAJA9AACwPQ==
                 indices:
                   type: index_buffer
                   usage: dynamic
@@ -470,18 +478,26 @@ entities:
                 vertexCount: 30
                 aabb:
                   min: [0, 0, 0]
-                  max: [136, 61.166664, 0]
+                  max: [138, 61.166664, 0]
                 worldAABB:
-                  min: [571.5, 473, 0]
-                  max: [707.5, 534.1667, 0]
-                texture: ~
+                  min: [571.5, 519, 0]
+                  max: [709.5, 580.1667, 0]
+                texture:
+                  textureType: 2D
+                  source: id
+                  id: font|76#5
+                  minFilter: linear
+                  magFilter: linear
+                  wrapU: repeat
+                  wrapV: repeat
+                  releaseDataAfterLoad: false
                 color: [0, 0, 0, 1]
                 automaticFlipY: true
                 flipY: false
                 pointerMoved: false
                 focused: false
               uilayout:
-                width: 138
+                width: 139
                 height: 76
                 anchorPointLeft: 0.5
                 anchorPointTop: 0.5
@@ -489,18 +505,18 @@ entities:
                 anchorPointBottom: 0.5
                 anchorOffsetLeft: -69
                 anchorOffsetTop: -38
-                anchorOffsetRight: 69
+                anchorOffsetRight: 70
                 anchorOffsetBottom: 38
                 positionOffset: [0, 0]
                 anchorPreset: CENTER
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [414.21875, 430.69244, 377.5039, 101.78289]
+                scissor: [391.1875, 447.66998, 356.5141, 96.119995]
                 ignoreScissor: false
                 ignoreEvents: true
               text:
-                font: ""
+                font: []
                 text: Start
                 fontSize: 76
                 multiline: true

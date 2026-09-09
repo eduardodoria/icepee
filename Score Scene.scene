@@ -34,11 +34,17 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 0
   maxSpriteFrames: 0
+  maxBones: 0
 shaderKeys:
-  - 21474836482
-  - 21474836488
-  - 25769803778
-  - 25769803784
+  - type: gbuffer
+    properties: 2
+  - type: gbuffer
+    properties: 8
+  - type: ui
+    properties: 2
+  - type: ui
+    properties: 8
+  - type: blit
 entities:
   - type: Entity
     entity: 1004
@@ -218,7 +224,7 @@ entities:
           progressbar:
             fill: 1006
             type: horizontal
-            value: 0.8429956
+            value: 0.89102256
             fillMarginLeft: 2
             fillMarginRight: 2
             fillMarginTop: 2
@@ -239,7 +245,7 @@ entities:
             usingAnchors: true
             panel: 0
             containerBoxIndex: 0
-            scissor: [941, 22.5, 315, 27]
+            scissor: [941, 22.499992, 197, 27]
             ignoreScissor: false
             ignoreEvents: false
           image:
@@ -302,7 +308,7 @@ entities:
                       count: 16
                       normalized: true
                       perInstance: false
-                  data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACEQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+                  data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICLQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICLQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICLQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICLQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AICLQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICLQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AICLQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AICLQwAAuEEAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAuEEAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
                 indices:
                   type: index_buffer
                   usage: dynamic
@@ -327,10 +333,10 @@ entities:
                 vertexCount: 54
                 aabb:
                   min: [0, 0, 0]
-                  max: [264, 23, 0]
+                  max: [279, 23, 0]
                 worldAABB:
                   min: [943, 24.5, 0]
-                  max: [1207, 47.5, 0]
+                  max: [1222, 47.5, 0]
                 texture: ~
                 color: [0.6090505, 0.5745193, 0.011706484, 1]
                 automaticFlipY: true
@@ -338,11 +344,11 @@ entities:
                 pointerMoved: false
                 focused: false
               uilayout:
-                width: 264
+                width: 279
                 height: 23
                 anchorPointLeft: 0
                 anchorPointTop: 0
-                anchorPointRight: 0.8429956
+                anchorPointRight: 0.89102256
                 anchorPointBottom: 1
                 anchorOffsetLeft: 2
                 anchorOffsetTop: 2
@@ -353,7 +359,7 @@ entities:
                 usingAnchors: true
                 panel: 0
                 containerBoxIndex: -1
-                scissor: [943, 24.5, 264, 23]
+                scissor: [943.00006, 24.499994, 194.99994, 22.999998]
                 ignoreScissor: false
                 ignoreEvents: true
               image:
@@ -367,14 +373,14 @@ entities:
         name: Score
         components:
           transform:
-            position: [76, 76.5, 0]
+            position: [90, 76.5, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [992, 76.5, 0]
+            worldPosition: [1006, 76.5, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [76, 76.5, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [992, 76.5, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [90, 76.5, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1006, 76.5, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -386,8 +392,8 @@ entities:
               type: vertex_buffer
               usage: dynamic
               stride: 20
-              size: 720
-              count: 36
+              size: 640
+              count: 32
               renderAttributes: true
               instanceBuffer: false
               attributes:
@@ -396,7 +402,7 @@ entities:
                   bufferName: ""
                   elements: 3
                   offset: 0
-                  count: 36
+                  count: 32
                   normalized: true
                   perInstance: false
                 - type: texcoord1
@@ -404,16 +410,16 @@ entities:
                   bufferName: ""
                   elements: 2
                   offset: 12
-                  count: 36
+                  count: 32
                   normalized: true
                   perInstance: false
-              data: AAAAQAAAKEEAAAAAAAA9PgAAYD0AAOhBAAAoQQAAAAAAAFg+AABgPQAA6EEAAEJCAAAAAAAAWD4AALw9AAAAQAAAQkIAAAAAAAA9PgAAvD0AAABCAACcQQAAAAAAgBQ/AABgPQAAYEIAAJxBAAAAAACAGj8AAGA9AABgQgAAQkIAAAAAAIAaPwAAqj0AAABCAABCQgAAAAAAgBQ/AACqPQAAbEIAAJxBAAAAAAAAVD8AAGA9AACoQgAAnEEAAAAAAEBaPwAAYD0AAKhCAABCQgAAAAAAQFo/AACqPQAAbEIAAEJCAAAAAAAAVD8AAKo9AACyQgAAnEEAAAAAAABnPwAAYD0AAM5CAACcQQAAAAAAgGo/AABgPQAAzkIAAD5CAAAAAACAaj8AAKg9AACyQgAAPkIAAAAAAABnPwAAqD0AANRCAACcQQAAAAAAACE/AABgPQAAAkMAAJxBAAAAAAAAJz8AAGA9AAACQwAAQkIAAAAAAAAnPwAAqj0AANRCAABCQgAAAAAAACE/AACqPQAABkMAAJxBAAAAAACABD8AAIA6AAANQwAAnEEAAAAAAEAGPwAAgDoAAA1DAABCQgAAAAAAQAY/AADwPAAABkMAAEJCAAAAAACABD8AAPA8AAAPQwAAPkIAAAAAAACAOgAAgDoAAA9DAAA+QgAAAAAAAIA6AACAOgAAD0MAAD5CAAAAAAAAgDoAAIA6AAAPQwAAPkIAAAAAAACAOgAAgDoAAB5DAAAoQQAAAAAAAPA+AACAOgAANkMAAChBAAAAAAAA/D4AAIA6AAA2QwAAQkIAAAAAAAD8PgAAHD0AAB5DAABCQgAAAAAAAPA+AAAcPQAAO0MAAChBAAAAAAAArz4AAIA6AABTQwAAKEEAAAAAAAC7PgAAgDoAAFNDAABCQgAAAAAAALs+AAAcPQAAO0MAAEJCAAAAAAAArz4AABw9
+              data: AAAAQAAAKEEAAAAAAAAAAAAAAAAAAOhBAAAoQQAAAAAAAFg9AAAAAAAA6EEAAEJCAAAAAAAAWD0AAJg9AAAAQAAAQkIAAAAAAAAAAAAAmD0AAABCAACcQQAAAAAAAGA9AAAAAAAAYEIAAJxBAAAAAAAA0D0AAAAAAABgQgAAQkIAAAAAAADQPQAAaD0AAABCAABCQgAAAAAAAGA9AABoPQAAbEIAAJxBAAAAAAAA1D0AAAAAAACoQgAAnEEAAAAAAAAcPgAAAAAAAKhCAABCQgAAAAAAABw+AABoPQAAbEIAAEJCAAAAAAAA1D0AAGg9AACyQgAAnEEAAAAAAAAePgAAAAAAAM5CAACcQQAAAAAAADo+AAAAAAAAzkIAAD5CAAAAAAAAOj4AAGA9AACyQgAAPkIAAAAAAAAePgAAYD0AANJCAACcQQAAAAAAADw+AAAAAAAAAUMAAJxBAAAAAAAAbD4AAAAAAAABQwAAQkIAAAAAAABsPgAAaD0AANJCAABCQgAAAAAAADw+AABoPQAABUMAAJxBAAAAAAAAbj4AAAAAAAAMQwAAnEEAAAAAAAB8PgAAAAAAAAxDAABCQgAAAAAAAHw+AABoPQAABUMAAEJCAAAAAAAAbj4AAGg9AAAPQwAAPkIAAAAAAAAAAAAAAAAAAA9DAAA+QgAAAAAAAAAAAAAAAAAAD0MAAD5CAAAAAAAAAAAAAAAAAAAPQwAAPkIAAAAAAAAAAAAAAAAAAB5DAAAoQQAAAAAAAH4+AAAAAAAANkMAAChBAAAAAAAAlz4AAAAAAAA2QwAAQkIAAAAAAACXPgAAmD0AAB5DAABCQgAAAAAAAH4+AACYPQ==
             indices:
               type: index_buffer
               usage: dynamic
               stride: 2
-              size: 108
-              count: 54
+              size: 96
+              count: 48
               renderAttributes: true
               instanceBuffer: false
               attributes:
@@ -422,36 +428,44 @@ entities:
                   bufferName: ""
                   elements: 1
                   offset: 0
-                  count: 54
+                  count: 48
                   normalized: true
                   perInstance: false
-              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMA
+              data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8A
             minBufferCount: 400
             minIndicesCount: 600
             primitiveType: triangles
-            vertexCount: 54
+            vertexCount: 48
             aabb:
               min: [0, 0, 0]
-              max: [211, 48.5, 0]
+              max: [182, 48.5, 0]
             worldAABB:
-              min: [992, 76.5, 0]
-              max: [1203, 125, 0]
-            texture: ~
+              min: [1006, 76.5, 0]
+              max: [1188, 125, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|60#18
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
             color: [1, 0.9322396, 0, 1]
             automaticFlipY: true
             flipY: false
             pointerMoved: false
             focused: false
           uilayout:
-            width: 213
+            width: 184
             height: 60
             anchorPointLeft: 0.5
             anchorPointTop: 0.5
             anchorPointRight: 0.5
             anchorPointBottom: 0.5
-            anchorOffsetLeft: -106
+            anchorOffsetLeft: -92
             anchorOffsetTop: -30
-            anchorOffsetRight: 107
+            anchorOffsetRight: 92
             anchorOffsetBottom: 30
             positionOffset: [0, 0]
             anchorPreset: CENTER
@@ -462,8 +476,8 @@ entities:
             ignoreScissor: false
             ignoreEvents: false
           text:
-            font: ""
-            text: "Score: 83"
+            font: []
+            text: "Score: 0"
             fontSize: 60
             multiline: true
             maxTextSize: 100

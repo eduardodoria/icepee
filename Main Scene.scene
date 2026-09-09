@@ -34,17 +34,36 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 4
   maxSpriteFrames: 0
+  maxBones: 128
 shaderKeys:
-  - 5
-  - 8589934810
-  - 8589935704
-  - 8589935706
-  - 8592031962
-  - 8592032856
-  - 8592032858
-  - 17179869184
-  - 21474836482
-  - 21474836483
+  - type: points
+    properties: 5
+  - type: mesh
+    properties: 218
+  - type: mesh
+    properties: 1112
+  - type: mesh
+    properties: 1114
+  - type: mesh
+    properties: 2097370
+  - type: mesh
+    properties: 2098264
+  - type: mesh
+    properties: 2098266
+  - type: mesh
+    properties: 16778330
+  - type: mesh
+    properties: 33554650
+  - type: depth
+  - type: depth
+    properties: 1
+  - type: depth
+    properties: 129
+  - type: gbuffer
+    properties: 2
+  - type: gbuffer
+    properties: 3
+  - type: blit
 childScenes:
   - id: 2
     startActive: true
@@ -212,7 +231,7 @@ entities:
     components:
       script:
         scripts:
-          - type: script_class
+          - type: cpp
             path: IcePee.cpp
             headerPath: IcePee.h
             className: IcePee
@@ -318,6 +337,7 @@ entities:
         intensity: 4
         innerConeCos: 0.76604444
         outerConeCos: 0.64278764
+        spotMask: ~
         shadows: true
         automaticShadowCamera: true
         shadowBias: 0.001
@@ -411,6 +431,8 @@ entities:
               baseColorFactor: [1, 1, 1, 1]
               metallicFactor: 1
               roughnessFactor: 1
+              alphaCutoff: 0.5
+              alphaMode: AUTO
               emissiveFactor: [0, 0, 0]
               baseColorTexture:
                 textureType: 2D
@@ -436,6 +458,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: false
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: true
             hasTextureRect: false
             hasSkinning: false
@@ -443,6 +466,64 @@ entities:
             hasMorphNormal: false
             hasMorphTangent: false
         bonesMatrix:
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
           - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
           - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
           - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
@@ -529,6 +610,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -558,6 +640,8 @@ entities:
               baseColorFactor: [0.6, 0.6, 0.6, 1]
               metallicFactor: 0
               roughnessFactor: 0.75
+              alphaCutoff: 0.5
+              alphaMode: MASK
               emissiveFactor: [0, 0, 0]
               baseColorTexture:
                 textureType: 2D
@@ -578,11 +662,12 @@ entities:
             primitiveType: triangles
             vertexCount: 57264
             faceCulling: true
-            textureShadow: false
+            textureShadow: true
             hasTexCoord1: true
             hasTexCoord2: false
             hasNormalMap: false
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: true
             hasTextureRect: false
             hasSkinning: false
@@ -605,6 +690,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -615,6 +701,7 @@ entities:
       body3d:
         type: static
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: mesh
@@ -658,34 +745,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -701,6 +790,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -723,6 +813,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -733,6 +824,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -776,34 +868,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -819,6 +913,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -841,6 +936,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -851,6 +947,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -894,34 +991,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -937,6 +1036,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -959,6 +1059,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -969,6 +1070,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -1012,34 +1114,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -1055,6 +1159,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -1077,6 +1182,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -1087,6 +1193,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -1130,34 +1237,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -1173,6 +1282,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -1195,6 +1305,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -1205,6 +1316,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -1248,34 +1360,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -1291,6 +1405,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -1313,6 +1428,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -1323,6 +1439,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -1366,34 +1483,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -1409,6 +1528,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -1431,6 +1551,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -1441,6 +1562,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -1484,34 +1606,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -1527,6 +1651,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -1549,6 +1674,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -1559,6 +1685,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -1602,34 +1729,36 @@ entities:
               baseColorFactor: [0.8, 0.8, 0.8, 1]
               metallicFactor: 0
               roughnessFactor: 0.5
+              alphaCutoff: 0.5
+              alphaMode: ALPHA_OPAQUE
               emissiveFactor: [1, 1, 1]
               baseColorTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|0
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|0|s0
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               emissiveTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|1
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|1|s1
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               normalTexture:
                 textureType: 2D
                 source: id
-                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-texture|2
+                id: /home/eduardo/Development/icepee/models/gelo/Meshy_AI_Blue_Ice_Vessel_0501060006_texture.glb|gltf-image|2|s2
                 minFilter: linear_mipmap_linear
                 magFilter: linear
                 wrapU: clamp_to_edge
                 wrapV: clamp_to_edge
-                releaseDataAfterLoad: false
+                releaseDataAfterLoad: true
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
               occlusionTexCoord: 0
@@ -1645,6 +1774,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: true
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: false
             hasTextureRect: false
             hasSkinning: false
@@ -1667,6 +1797,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: false
         cullingMode: back
@@ -1677,6 +1808,7 @@ entities:
       body3d:
         type: dynamic
         motionQuality: discrete
+        sensor: false
         numShapes: 1
         shapes:
           - type: capsule
@@ -1782,6 +1914,8 @@ entities:
               baseColorFactor: [0.941761, 0.9108369, 0.22360297, 0.56950676]
               metallicFactor: 1
               roughnessFactor: 1
+              alphaCutoff: 0.5
+              alphaMode: AUTO
               emissiveFactor: [0, 0, 0]
               baseColorTexCoord: 0
               metallicRoughnessTexCoord: 0
@@ -1798,6 +1932,7 @@ entities:
             hasTexCoord2: false
             hasNormalMap: false
             hasTangent: false
+            hasVertexColor3: false
             hasVertexColor4: true
             hasTextureRect: false
             hasSkinning: false
@@ -1805,6 +1940,64 @@ entities:
             hasMorphNormal: false
             hasMorphTangent: false
         bonesMatrix:
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+          - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
           - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
           - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
           - [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
@@ -1891,6 +2084,7 @@ entities:
         receiveIBL: false
         castShadows: true
         receiveShadows: true
+        renderInReflectionProbes: true
         shadowsBillboard: true
         transparent: true
         cullingMode: back

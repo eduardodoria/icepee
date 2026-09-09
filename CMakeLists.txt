@@ -16,6 +16,8 @@ set(INTERNAL_DIR ${PROJECT_ROOT}/.doriax)
 # Local engine API source used by this editor build: /home/eduardo/Development/doriax/build/engine
 # Full engine + editor source (including YAML serialization for *.scene/*.bundle/project.yaml): https://github.com/doriaxengine/doriax
 
+set(DORIAX_API_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api)
+
 # Specify C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -31,38 +33,140 @@ if(DORIAX_EDITOR_PLUGIN)
     #  - DORIAX_EDITOR keeps HybridArray (and other editor-only layouts)
     #    ABI-compatible across the DLL boundary.
     add_compile_definitions(DORIAX_SHARED DORIAX_EDITOR)
-    if(MSVC)
-        # Match the editor engine's CRT (it builds DORIAX_SHARED with the
-        # dynamic runtime) so std::string/std::vector cross the plugin<->engine
-        # DLL boundary on a single shared CRT heap. A static (/MT) or
-        # debug/release-mismatched runtime here corrupts memory and crashes on
-        # play. The editor builds the plugin with the configuration matching
-        # its own, so this expression resolves to the same runtime.
-        set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
-    endif()
+endif()
+
+# Every translation unit linking the engine DLL needs the CRT that DLL was built
+# with: debug and release STL disagree on std::string/std::vector layout and use
+# separate heaps, and an import library carries no /FAILIFMISMATCH records, so
+# the linker cannot catch the mismatch. The build type cannot pick it either,
+# since IDEs default to Debug, so it follows the editor that generated this file.
+if(MSVC AND NOT DEFINED CMAKE_MSVC_RUNTIME_LIBRARY)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebugDLL")
 endif()
 
 if (NOT DORIAX_EDITOR_PLUGIN)
+    add_definitions("-DDORIAX_VSYNC_ENABLED=1")
     add_definitions("-DDEFAULT_WINDOW_WIDTH=1280")
     add_definitions("-DDEFAULT_WINDOW_HEIGHT=720")
+    add_definitions("-DDORIAX_WINDOW_MODE=0")
+    add_definitions("-DDORIAX_WINDOW_RESIZABLE=1")
+    add_definitions("-DDORIAX_WINDOW_TITLE=\"IcePee\"")
 
     set(COMPILE_ZLIB OFF)
     set(IS_ARM OFF)
 
-    add_definitions("-DSOKOL_GLCORE")
     add_definitions("-DWITH_MINIAUDIO") # For SoLoud
 
+    add_definitions("-DDORIAX_ASSET_PATH=\"/home/eduardo/Development/icepee\"")
+    add_definitions("-DDORIAX_LUA_PATH=\"/home/eduardo/Development/icepee\"")
+    add_definitions("-DDORIAX_SHADER_PATH=\"/home/eduardo/.cache/doriax/shaders/v24\"")
+
     list(APPEND PLATFORM_SOURCE
-        ${INTERNAL_DIR}/generated/PlatformEditor.cpp
         ${INTERNAL_DIR}/generated/main.cpp
     )
 
+    # Each desktop OS uses the same native application backend as the editor,
+    # compiled from the engine API snapshot in ${INTERNAL_DIR}/engine-api.
+    if(NOT DORIAX_GRAPHIC_BACKEND)
+        set(DORIAX_GRAPHIC_BACKEND "glcore")
+    endif()
+
+
+    # FindVulkan reads the VULKAN_SDK environment variable the SDK installer sets
+    macro(doriax_find_vulkan)
+        # sokol_gfx binds every resource through VK_EXT_descriptor_buffer, which
+        # MoltenVK does not implement, so the build only fails at device selection
+        if(APPLE)
+            message(WARNING "DORIAX_GRAPHIC_BACKEND=vulkan runs on MoltenVK here, which does not implement VK_EXT_descriptor_buffer: this build will fail at startup unless the driver provides it. DORIAX_GRAPHIC_BACKEND=metal is the working macOS backend.")
+        endif()
+
+        # An app started from the Dock inherits no shell environment, so on macOS
+        # the SDK is also looked for where its installer unpacks it
+        if(APPLE AND NOT DEFINED ENV{VULKAN_SDK})
+            file(GLOB doriaxVulkanSdkDirs "$ENV{HOME}/VulkanSDK/*/macOS")
+            if(doriaxVulkanSdkDirs)
+                list(SORT doriaxVulkanSdkDirs)
+                list(POP_BACK doriaxVulkanSdkDirs doriaxVulkanSdkNewest)
+                set(ENV{VULKAN_SDK} "${doriaxVulkanSdkNewest}")
+            endif()
+        endif()
+        find_package(Vulkan QUIET)
+        if(NOT Vulkan_FOUND)
+            message(FATAL_ERROR "DORIAX_GRAPHIC_BACKEND=vulkan needs the Vulkan SDK (https://vulkan.lunarg.com/sdk/home), and VULKAN_SDK is not set here. If it is installed outside the default location, restart the shell or editor this build was started from with VULKAN_SDK in its environment: Windows only gives the variable to processes started after the installer ran. Otherwise use DORIAX_GRAPHIC_BACKEND=glcore, or metal on macOS.")
+        endif()
+    endmacro()
+
+    set(DORIAX_PLATFORM_DIR ${DORIAX_API_DIR}/platform)
+    include_directories(${DORIAX_PLATFORM_DIR}/win ${DORIAX_PLATFORM_DIR}/linux ${DORIAX_PLATFORM_DIR}/mac ${DORIAX_PLATFORM_DIR}/apple ${DORIAX_PLATFORM_DIR}/common)
+
     if(WIN32)
-        list(APPEND PLATFORM_LIBS opengl32 gdi32 user32 shell32 glfw)
+        list(APPEND PLATFORM_SOURCE
+            ${DORIAX_PLATFORM_DIR}/win/DoriaxWin.cpp
+            ${DORIAX_PLATFORM_DIR}/win/WindowWin.cpp
+            ${DORIAX_PLATFORM_DIR}/win/SystemWin.cpp
+            ${DORIAX_PLATFORM_DIR}/win/WinInputRouter.cpp
+            ${DORIAX_PLATFORM_DIR}/win/GamepadWin.cpp
+        )
+        list(APPEND PLATFORM_LIBS gdi32 user32 shell32)
+        if(DORIAX_GRAPHIC_BACKEND STREQUAL "vulkan")
+            add_definitions("-DSOKOL_VULKAN")
+            add_definitions("-DVK_USE_PLATFORM_WIN32_KHR")
+            list(APPEND PLATFORM_SOURCE ${DORIAX_PLATFORM_DIR}/common/VulkanContext.cpp)
+            doriax_find_vulkan()
+            list(APPEND PLATFORM_LIBS Vulkan::Vulkan)
+        else()
+            add_definitions("-DSOKOL_GLCORE")
+            list(APPEND PLATFORM_LIBS opengl32)
+        endif()
     elseif(APPLE)
-        list(APPEND PLATFORM_LIBS glfw "-framework OpenGL" "-framework Cocoa" "-framework IOKit" "-framework CoreVideo" "-framework CoreFoundation")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fobjc-arc")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fobjc-arc")
+        list(APPEND PLATFORM_SOURCE
+            ${DORIAX_PLATFORM_DIR}/apple/DoriaxGameController.mm
+            ${DORIAX_PLATFORM_DIR}/mac/DoriaxMac.mm
+            ${DORIAX_PLATFORM_DIR}/mac/WindowMac.mm
+            ${DORIAX_PLATFORM_DIR}/mac/SystemMac.mm
+            ${DORIAX_PLATFORM_DIR}/mac/MacInputRouter.mm
+            ${DORIAX_PLATFORM_DIR}/mac/main.mm
+        )
+        list(APPEND PLATFORM_LIBS "-framework Cocoa" "-framework QuartzCore" "-framework GameController")
+        # MTKView has no GL or Vulkan drawable, so those get views of their own
+        if(DORIAX_GRAPHIC_BACKEND STREQUAL "glcore")
+            add_definitions("-DSOKOL_GLCORE")
+            list(APPEND PLATFORM_SOURCE ${DORIAX_PLATFORM_DIR}/mac/MacViewGL.mm)
+            list(APPEND PLATFORM_LIBS "-framework OpenGL")
+        elseif(DORIAX_GRAPHIC_BACKEND STREQUAL "vulkan")
+            add_definitions("-DSOKOL_VULKAN")
+            add_definitions("-DVK_USE_PLATFORM_METAL_EXT")
+            list(APPEND PLATFORM_SOURCE ${DORIAX_PLATFORM_DIR}/mac/MacViewVulkan.mm ${DORIAX_PLATFORM_DIR}/common/VulkanContext.cpp)
+            doriax_find_vulkan()
+            list(APPEND PLATFORM_LIBS Vulkan::Vulkan)
+        else()
+            add_definitions("-DSOKOL_METAL")
+            list(APPEND PLATFORM_SOURCE ${DORIAX_PLATFORM_DIR}/mac/MacViewMetal.mm)
+            list(APPEND PLATFORM_LIBS "-framework Metal" "-framework MetalKit")
+        endif()
     else()
-        list(APPEND PLATFORM_LIBS GL dl m glfw)
+        find_package(X11 REQUIRED)
+        list(APPEND PLATFORM_SOURCE
+            ${DORIAX_PLATFORM_DIR}/linux/DoriaxLinux.cpp
+            ${DORIAX_PLATFORM_DIR}/linux/WindowLinux.cpp
+            ${DORIAX_PLATFORM_DIR}/linux/SystemLinux.cpp
+            ${DORIAX_PLATFORM_DIR}/linux/LinuxInputRouter.cpp
+            ${DORIAX_PLATFORM_DIR}/linux/GamepadLinux.cpp
+            ${DORIAX_PLATFORM_DIR}/linux/GamepadDB.cpp
+        )
+        list(APPEND PLATFORM_LIBS X11::X11 dl m)
+        if(DORIAX_GRAPHIC_BACKEND STREQUAL "vulkan")
+            add_definitions("-DSOKOL_VULKAN")
+            add_definitions("-DVK_USE_PLATFORM_XLIB_KHR")
+            list(APPEND PLATFORM_SOURCE ${DORIAX_PLATFORM_DIR}/common/VulkanContext.cpp)
+            doriax_find_vulkan()
+            list(APPEND PLATFORM_LIBS Vulkan::Vulkan)
+        else()
+            add_definitions("-DSOKOL_GLCORE")
+            list(APPEND PLATFORM_LIBS GL)
+        endif()
     endif()
 endif() 
 
@@ -119,6 +223,7 @@ target_include_directories(IcePee ${DORIAX_LIB_SYSTEM} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/renders
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/action
+    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/action/keyframe
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/buffer
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/component
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/ecs
@@ -138,7 +243,6 @@ target_include_directories(IcePee ${DORIAX_LIB_SYSTEM} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/subsystem
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/texture
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/util
-    ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/platform/glfw # GamepadMappings.h for PlatformEditor
 )
 
 # libdoriax is searched in DORIAX_LIB_DIR; by default it points to the Doriax editor executable directory.
@@ -170,10 +274,12 @@ if(MSVC)
     # so suppress the dll-interface warnings that would otherwise flood the build.
     # MSBuild's /m only parallelizes projects. /MP applies the editor-resolved
     # limit to translation units within this single-target plugin project.
+    # /utf-8: generated sources embed UTF-8 literals and carry no BOM, so
+    # MSVC would otherwise decode them in the active code page.
     if(DEFINED DORIAX_PARALLEL_BUILD_JOBS AND DORIAX_PARALLEL_BUILD_JOBS GREATER 0)
-        target_compile_options(IcePee PRIVATE /W4 /EHsc /MP${DORIAX_PARALLEL_BUILD_JOBS} /wd4251 /wd4275)
+        target_compile_options(IcePee PRIVATE /W4 /EHsc /utf-8 /MP${DORIAX_PARALLEL_BUILD_JOBS} /wd4251 /wd4275)
     else()
-        target_compile_options(IcePee PRIVATE /W4 /EHsc /MP /wd4251 /wd4275)
+        target_compile_options(IcePee PRIVATE /W4 /EHsc /utf-8 /MP /wd4251 /wd4275)
     endif()
 else()
     target_compile_options(IcePee PRIVATE -Wall -Wextra -fPIC)
@@ -199,3 +305,29 @@ set_target_properties(IcePee PROPERTIES
     OUTPUT_NAME "IcePee"
     PREFIX ""
 )
+
+# The engine DLL lives next to the editor, and Windows searches only the
+# executable directory and PATH, so a standalone build needs its own copy or
+# it dies with STATUS_DLL_NOT_FOUND before main(). The other desktops get
+# DORIAX_LIB_DIR in the build rpath from CMake.
+if(WIN32 AND NOT DORIAX_EDITOR_PLUGIN)
+    # Same reason as DORIAX_LIB above: never reuse a cached path
+    unset(DORIAX_RUNTIME_LIB CACHE)
+    find_file(DORIAX_RUNTIME_LIB NAMES doriax.dll PATHS "${DORIAX_LIB_DIR}" NO_DEFAULT_PATH)
+    if(DORIAX_RUNTIME_LIB)
+        add_custom_command(TARGET IcePee POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                    "${DORIAX_RUNTIME_LIB}" "$<TARGET_FILE_DIR:IcePee>"
+            COMMENT "Copying the Doriax engine runtime next to the executable")
+    else()
+        message(WARNING "doriax.dll not found in ${DORIAX_LIB_DIR}: the executable will not start outside the editor.")
+    endif()
+endif()
+
+# Optional user build file, never written by the editor: extra include roots,
+# libraries and defines go there so they survive regeneration. Attach to
+# DORIAX_TARGET, not the literal target name, and use DORIAX_SCRIPTS_DIR as the
+# root of script paths; the exported build sets both, so one file serves either.
+set(DORIAX_TARGET IcePee)
+set(DORIAX_SCRIPTS_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+include(${CMAKE_CURRENT_SOURCE_DIR}/ProjectBuild.cmake OPTIONAL)

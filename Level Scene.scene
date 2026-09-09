@@ -34,13 +34,21 @@ maxValues:
   maxTilemapTiles: 0
   maxExternalBuffers: 0
   maxSpriteFrames: 0
+  maxBones: 0
 shaderKeys:
-  - 21474836482
-  - 21474836488
-  - 21474836489
-  - 25769803778
-  - 25769803784
-  - 25769803785
+  - type: gbuffer
+    properties: 2
+  - type: gbuffer
+    properties: 8
+  - type: gbuffer
+    properties: 9
+  - type: ui
+    properties: 2
+  - type: ui
+    properties: 8
+  - type: ui
+    properties: 9
+  - type: blit
 cppScripts:
   - path: LevelScript.cpp
     headerPath: LevelScript.h
@@ -101,7 +109,7 @@ entities:
         cylindricalBillboard: false
       uilayout:
         width: 1280
-        height: 608
+        height: 700
         anchorPointLeft: 0
         anchorPointTop: 0
         anchorPointRight: 1
@@ -129,14 +137,14 @@ entities:
         name: Text
         components:
           transform:
-            position: [198, 80, 0]
+            position: [199, 103, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [198, 80, 0]
+            worldPosition: [199, 103, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [198, 80, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [198, 80, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [199, 103, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [199, 103, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -169,7 +177,7 @@ entities:
                   count: 68
                   normalized: true
                   perInstance: false
-              data: AACAQAAAyEEAAAAAAECuPgAAgj0AAIpCAADIQQAAAAAAgL4+AACCPQAAikIAAOhCAAAAAACAvj4AAN09AACAQAAA6EIAAAAAAECuPgAA3T0AAJxCAAA8QgAAAAAAYFo/AACCPQAABkMAADxCAAAAAABgYT8AAII9AAAGQwAA6EIAAAAAAGBhPwAAxz0AAJxCAADoQgAAAAAAYFo/AADHPQAAE0MAAKhBAAAAAAAA5DwAAPo9AAAfQwAAqEEAAAAAAAAKPQAA+j0AAB9DAADkQgAAAAAAAAo9AIArPgAAE0MAAORCAAAAAAAA5DwAgCs+AAAtQwAAPEIAAAAAAGBaPwAAgj0AAGVDAAA8QgAAAAAAYGE/AACCPQAAZUMAAOhCAAAAAABgYT8AAMc9AAAtQwAA6EIAAAAAAGBaPwAAxz0AAG5DAAA8QgAAAAAAIEw/AACCPQAAk0MAADxCAAAAAAAgUz8AAII9AACTQwAA6EIAAAAAACBTPwAAxz0AAG5DAADoQgAAAAAAIEw/AADHPQCAlEMAAARCAAAAAAAAbz4AAPo9AICmQwAABEIAAAAAAICAPgAA+j0AgKZDAADoQgAAAAAAgIA+AIAmPgCAlEMAAOhCAAAAAAAAbz4AgCY+AICoQwAA5EIAAAAAAAAAOgAAADoAgKhDAADkQgAAAAAAAAA6AAAAOgCAqEMAAORCAAAAAAAAADoAAAA6AICoQwAA5EIAAAAAAAAAOgAAADoAgLhDAABEQgAAAAAAQME+AAD6PQCA1EMAAERCAAAAAABAzz4AAPo9AIDUQwAADUMAAAAAAEDPPgAAKz4AgLhDAAANQwAAAAAAQME+AAArPgCA10MAADxCAAAAAAAA2D0AAPo9AID1QwAAPEIAAAAAAAAKPgAA+j0AgPVDAADoQgAAAAAAAAo+AIAfPgCA10MAAOhCAAAAAAAA2D0AgB8+AAD8QwAAREIAAAAAAMCAPgAA+j0AAAtEAABEQgAAAAAAwI0+AAD6PQAAC0QAAOhCAAAAAADAjT4AgB4+AAD8QwAA6EIAAAAAAMCAPgCAHj4AAA9EAAA8QgAAAAAAgEM+AAD6PQAAF0QAADxCAAAAAACAUz4AAPo9AAAXRAAA5EIAAAAAAIBTPgCAHj4AAA9EAADkQgAAAAAAgEM+AIAePgBAF0QAAORCAAAAAAAAADoAAAA6AEAXRAAA5EIAAAAAAAAAOgAAADoAQBdEAADkQgAAAAAAAAA6AAAAOgBAF0QAAORCAAAAAAAAADoAAAA6AEAhRAAAqEEAAAAAAADkPAAA+j0AQCREAACoQQAAAAAAAAo9AAD6PQBAJEQAAORCAAAAAAAACj0AgCs+AEAhRAAA5EIAAAAAAADkPACAKz4AwCdEAAA8QgAAAAAAYFo/AACCPQDANUQAADxCAAAAAABgYT8AAII9AMA1RAAA6EIAAAAAAGBhPwAAxz0AwCdEAADoQgAAAAAAYFo/AADHPQAAN0QAAERCAAAAAAAAjj4AAPo9AEBFRAAAREIAAAAAAECcPgAA+j0AQEVEAADkQgAAAAAAQJw+AIAdPgAAN0QAAORCAAAAAAAAjj4AgB0+AMBGRAAAPEIAAAAAAGBaPwAAgj0AwFREAAA8QgAAAAAAYGE/AACCPQDAVEQAAOhCAAAAAABgYT8AAMc9AMBGRAAA6EIAAAAAAGBaPwAAxz0AAFhEAACoQQAAAAAAAOQ8AAD6PQAAW0QAAKhBAAAAAAAACj0AAPo9AABbRAAA5EIAAAAAAAAKPQCAKz4AAFhEAADkQgAAAAAAAOQ8AIArPg==
+              data: AACAQAAAyEEAAAAAAAAAAAAAAAAAAIpCAADIQQAAAAAAAAI+AAAAAAAAikIAAOhCAAAAAAAAAj4AADY+AACAQAAA6EIAAAAAAAAAAAAANj4AAJxCAAA8QgAAAAAAAAQ+AAAAAAAABkMAADxCAAAAAAAAdD4AAAAAAAAGQwAA6EIAAAAAAAB0PgAACj4AAJxCAADoQgAAAAAAAAQ+AAAKPgAAE0MAAKhBAAAAAAAAAAAAADg+AAAfQwAAqEEAAAAAAADAPAAAOD4AAB9DAADkQgAAAAAAAMA8AAC5PgAAE0MAAORCAAAAAAAAAAAAALk+AAAtQwAAPEIAAAAAAAAEPgAAAAAAAGVDAAA8QgAAAAAAAHQ+AAAAAAAAZUMAAOhCAAAAAAAAdD4AAAo+AAAtQwAA6EIAAAAAAAAEPgAACj4AAG5DAAA8QgAAAAAAAHY+AAAAAAAAk0MAADxCAAAAAAAAsz4AAAAAAACTQwAA6EIAAAAAAACzPgAACj4AAG5DAADoQgAAAAAAAHY+AAAKPgCAlEMAAARCAAAAAAAAtD4AAAAAAICmQwAABEIAAAAAAADYPgAAAAAAgKZDAADoQgAAAAAAANg+AAAmPgCAlEMAAOhCAAAAAAAAtD4AACY+AACpQwAA5EIAAAAAAAAAAAAAAAAAAKlDAADkQgAAAAAAAAAAAAAAAAAAqUMAAORCAAAAAAAAAAAAAAAAAACpQwAA5EIAAAAAAAAAAAAAAAAAgLhDAABEQgAAAAAAANA8AAA4PgCA1EMAAERCAAAAAAAACj4AADg+AIDUQwAADUMAAAAAAAAKPgAAuD4AgLhDAAANQwAAAAAAANA8AAC4PgAA10MAADxCAAAAAAAA2T4AAAAAAAD1QwAAPEIAAAAAAIAKPwAAAAAAAPVDAADoQgAAAAAAgAo/AAAKPgAA10MAAOhCAAAAAAAA2T4AAAo+AID7QwAAREIAAAAAAAALPwAAAAAAwApEAABEQgAAAAAAACU/AAAAAADACkQAAOhCAAAAAAAAJT8AAAY+AID7QwAA6EIAAAAAAAALPwAABj4AwA5EAAA8QgAAAAAAgCU/AAAAAADAFkQAADxCAAAAAACANT8AAAAAAMAWRAAA5EIAAAAAAIA1PwAABj4AwA5EAADkQgAAAAAAgCU/AAAGPgBAF0QAAORCAAAAAAAAAAAAAAAAAEAXRAAA5EIAAAAAAAAAAAAAAAAAQBdEAADkQgAAAAAAAAAAAAAAAABAF0QAAORCAAAAAAAAAAAAAAAAAAAhRAAAqEEAAAAAAAAAAAAAOD4AACREAACoQQAAAAAAAMA8AAA4PgAAJEQAAORCAAAAAAAAwDwAALk+AAAhRAAA5EIAAAAAAAAAAAAAuT4AgCdEAAA8QgAAAAAAAAQ+AAAAAACANUQAADxCAAAAAAAAdD4AAAAAAIA1RAAA6EIAAAAAAAB0PgAACj4AgCdEAADoQgAAAAAAAAQ+AAAKPgDANkQAAERCAAAAAAAANj8AAAAAAABFRAAAREIAAAAAAIBSPwAAAAAAAEVEAADkQgAAAAAAgFI/AAACPgDANkQAAORCAAAAAAAANj8AAAI+AEBGRAAAPEIAAAAAAAAEPgAAAAAAQFREAAA8QgAAAAAAAHQ+AAAAAABAVEQAAOhCAAAAAAAAdD4AAAo+AEBGRAAA6EIAAAAAAAAEPgAACj4AwFdEAACoQQAAAAAAAAAAAAA4PgDAWkQAAKhBAAAAAAAAwDwAADg+AMBaRAAA5EIAAAAAAADAPAAAuT4AwFdEAADkQgAAAAAAAAAAAAC5Pg==
             indices:
               type: index_buffer
               usage: dynamic
@@ -194,26 +202,34 @@ entities:
             vertexCount: 102
             aabb:
               min: [0, 0, 0]
-              max: [876, 141, 0]
+              max: [875, 141, 0]
             worldAABB:
-              min: [198, 80, 0]
-              max: [1074, 221, 0]
-            texture: ~
+              min: [199, 103, 0]
+              max: [1074, 244, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: font|144#12
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
             color: [0.7443985, 0.71591896, 0.44779158, 1]
             automaticFlipY: true
             flipY: false
             pointerMoved: false
             focused: false
           uilayout:
-            width: 885
+            width: 883
             height: 144
             anchorPointLeft: 0.5
             anchorPointTop: 0.5
             anchorPointRight: 0.5
             anchorPointBottom: 0.5
-            anchorOffsetLeft: -442
+            anchorOffsetLeft: -441
             anchorOffsetTop: -72
-            anchorOffsetRight: 443
+            anchorOffsetRight: 442
             anchorOffsetBottom: 72
             positionOffset: [0, 0]
             anchorPreset: CENTER
@@ -224,7 +240,7 @@ entities:
             ignoreScissor: false
             ignoreEvents: false
           text:
-            font: ""
+            font: []
             text: Select your level
             fontSize: 144
             multiline: true
@@ -238,14 +254,14 @@ entities:
         name: Container 2
         components:
           transform:
-            position: [0, 304, 0]
+            position: [0, 350, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [0, 304, 0]
+            worldPosition: [0, 350, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 304, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 304, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 350, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 350, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -254,7 +270,7 @@ entities:
             cylindricalBillboard: false
           uilayout:
             width: 1280
-            height: 304
+            height: 350
             anchorPointLeft: 0
             anchorPointTop: 0
             anchorPointRight: 1
@@ -285,11 +301,11 @@ entities:
                 position: [0, 0, 0]
                 rotation: [1, 0, 0, 0]
                 scale: [1, 1, 1]
-                worldPosition: [0, 304, 0]
+                worldPosition: [0, 350, 0]
                 worldRotation: [1, 0, 0, 0]
                 worldScale: [1, 1, 1]
                 localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 304, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 350, 0, 1]]
                 normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                 visible: true
                 billboardRotation: [1, 0, 0, 0]
@@ -298,7 +314,7 @@ entities:
                 cylindricalBillboard: false
               uilayout:
                 width: 640
-                height: 304
+                height: 350
                 anchorPointLeft: 0
                 anchorPointTop: 0
                 anchorPointRight: 1
@@ -329,11 +345,11 @@ entities:
                     position: [219, 0, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [219, 304, 0]
+                    worldPosition: [219, 350, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
                     localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [219, 0, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [219, 304, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [219, 350, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -401,8 +417,8 @@ entities:
                       min: [0, 0, 0]
                       max: [203, 300, 0]
                     worldAABB:
-                      min: [219, 304, 0]
-                      max: [422, 604, 0]
+                      min: [219, 350, 0]
+                      max: [422, 650, 0]
                     texture:
                       textureType: 2D
                       source: path
@@ -415,7 +431,7 @@ entities:
                     color: [1, 1, 1, 1]
                     automaticFlipY: true
                     flipY: false
-                    pointerMoved: false
+                    pointerMoved: true
                     focused: false
                   button:
                     label: 1004
@@ -452,7 +468,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [206.16797, 286.5, 191.10547, 282.73026]
+                    scissor: [194.7047, 311.5, 180.47972, 267]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -463,7 +479,7 @@ entities:
                     textureScaleFactor: 0
                   script:
                     scripts:
-                      - type: subclass
+                      - type: cpp
                         path: LevelScript.cpp
                         headerPath: LevelScript.h
                         className: LevelScript
@@ -499,11 +515,11 @@ entities:
                     position: [284, 300, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [284, 604, 0]
+                    worldPosition: [284, 650, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
                     localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 300, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 604, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 650, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -536,7 +552,7 @@ entities:
                           count: 16
                           normalized: true
                           perInstance: false
-                      data: AAAAQFhV1UAAAAAAAAD0PQAAmD0AAJhBWFXVQAAAAAAAABw+AACYPQAAmEFWVf1BAAAAAAAAHD4AAPw9AAAAQFZV/UEAAAAAAAD0PQAA/D0AAKBBrKpKQQAAAAAAABA+AAAKPgAAEEKsqkpBAAAAAAAAMD4AAAo+AAAQQquqAkIAAAAAAAAwPgAAMj4AAKBBq6oCQgAAAAAAABA+AAAyPgAAHEKsqkpBAAAAAACALD8AAAo+AABYQqyqSkEAAAAAAAA0PwAACj4AAFhCq6oCQgAAAAAAADQ/AAAyPgAAHEKrqgJCAAAAAACALD8AADI+AABgQqyqSkEAAAAAAIBgPwAACj4AAJBCrKpKQQAAAAAAgGg/AAAKPgAAkEKrqh5CAAAAAACAaD8AAEA+AABgQquqHkIAAAAAAIBgPwAAQD4=
+                      data: AAAAQFhV1UAAAAAAAADEPQAAAAAAAJhBWFXVQAAAAAAAAAQ+AAAAAAAAmEFWVf1BAAAAAAAABD4AAEg9AAAAQFZV/UEAAAAAAADEPQAASD0AAKBBrKpKQQAAAAAAACg9AAAAAAAAEEKsqkpBAAAAAAAAlD0AAAAAAAAQQquqAkIAAAAAAACUPQAAID0AAKBBq6oCQgAAAAAAACg9AAAgPQAAHEKsqkpBAAAAAAAABj4AAAAAAABYQqyqSkEAAAAAAAAkPgAAAAAAAFhCq6oCQgAAAAAAACQ+AAAgPQAAHEKrqgJCAAAAAAAABj4AACA9AABgQqyqSkEAAAAAAAAIPQAAUD0AAJBCrKpKQQAAAAAAAIQ9AABQPQAAkEKrqh5CAAAAAAAAhD0AANQ9AABgQquqHkIAAAAAAAAIPQAA1D0=
                     indices:
                       type: index_buffer
                       usage: dynamic
@@ -563,9 +579,17 @@ entities:
                       min: [0, 0, 0]
                       max: [72, 39.666668, 0]
                     worldAABB:
-                      min: [284, 604, 0]
-                      max: [356, 643.6667, 0]
-                    texture: ~
+                      min: [284, 650, 0]
+                      max: [356, 689.6667, 0]
+                    texture:
+                      textureType: 2D
+                      source: id
+                      id: font|40#8
+                      minFilter: linear
+                      magFilter: linear
+                      wrapU: repeat
+                      wrapV: repeat
+                      releaseDataAfterLoad: false
                     color: [1, 1, 1, 1]
                     automaticFlipY: true
                     flipY: false
@@ -591,7 +615,7 @@ entities:
                     ignoreScissor: false
                     ignoreEvents: false
                   text:
-                    font: ""
+                    font: []
                     text: Easy
                     fontSize: 40
                     multiline: true
@@ -608,11 +632,11 @@ entities:
                 position: [640, 0, 0]
                 rotation: [1, 0, 0, 0]
                 scale: [1, 1, 1]
-                worldPosition: [640, 304, 0]
+                worldPosition: [640, 350, 0]
                 worldRotation: [1, 0, 0, 0]
                 worldScale: [1, 1, 1]
                 localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [640, 0, 0, 1]]
-                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [640, 304, 0, 1]]
+                modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [640, 350, 0, 1]]
                 normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                 visible: true
                 billboardRotation: [1, 0, 0, 0]
@@ -621,7 +645,7 @@ entities:
                 cylindricalBillboard: false
               uilayout:
                 width: 640
-                height: 304
+                height: 350
                 anchorPointLeft: 0
                 anchorPointTop: 0
                 anchorPointRight: 1
@@ -652,11 +676,11 @@ entities:
                     position: [201, 0, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1.1, 1.1, 1.1]
-                    worldPosition: [841, 304, 0]
+                    worldPosition: [841, 350, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1.1, 1.1, 1.1]
                     localMatrix: [[1.1, 0, 0, 0], [0, 1.1, 0, 0], [0, 0, 1.1, 0], [201, 0, 0, 1]]
-                    modelMatrix: [[1.1, 0, 0, 0], [0, 1.1, 0, 0], [0, 0, 1.1, 0], [841, 304, 0, 1]]
+                    modelMatrix: [[1.1, 0, 0, 0], [0, 1.1, 0, 0], [0, 0, 1.1, 0], [841, 350, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -724,8 +748,8 @@ entities:
                       min: [0, 0, 0]
                       max: [239, 302, 0]
                     worldAABB:
-                      min: [841, 304, 0]
-                      max: [1103.9, 636.2, 0]
+                      min: [841, 350, 0]
+                      max: [1103.9, 682.2, 0]
                     texture:
                       textureType: 2D
                       source: path
@@ -775,7 +799,7 @@ entities:
                     usingAnchors: true
                     panel: 0
                     containerBoxIndex: 0
-                    scissor: [791.72266, 286.5, 247.49571, 313.07663]
+                    scissor: [747.70154, 311.5, 233.73456, 295.65802]
                     ignoreScissor: false
                     ignoreEvents: false
                   image:
@@ -786,7 +810,7 @@ entities:
                     textureScaleFactor: 0
                   script:
                     scripts:
-                      - type: subclass
+                      - type: cpp
                         path: LevelScript.cpp
                         headerPath: LevelScript.h
                         className: LevelScript
@@ -822,11 +846,11 @@ entities:
                     position: [284, 302, 0]
                     rotation: [1, 0, 0, 0]
                     scale: [1, 1, 1]
-                    worldPosition: [924, 606, 0]
+                    worldPosition: [924, 652, 0]
                     worldRotation: [1, 0, 0, 0]
                     worldScale: [1, 1, 1]
                     localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [284, 302, 0, 1]]
-                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 606, 0, 1]]
+                    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [924, 652, 0, 1]]
                     normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
                     visible: true
                     billboardRotation: [1, 0, 0, 0]
@@ -859,7 +883,7 @@ entities:
                           count: 16
                           normalized: true
                           perInstance: false
-                      data: AAAAQFhV1UAAAAAAAABoPgAAmD0AALBBWFXVQAAAAAAAAIg+AACYPQAAsEFWVf1BAAAAAAAAiD4AAPw9AAAAQFZV/UEAAAAAAABoPgAA/D0AAMhBrKpKQQAAAAAAABA+AAAKPgAAJEKsqkpBAAAAAAAAMD4AAAo+AAAkQquqAkIAAAAAAAAwPgAAMj4AAMhBq6oCQgAAAAAAABA+AAAyPgAANEKsqkpBAAAAAAAAJz8AAAo+AABcQqyqSkEAAAAAAAAsPwAACj4AAFxCVlX9QQAAAAAAACw/AAAwPgAANEJWVf1BAAAAAAAAJz8AADA+AABcQlhVtUAAAAAAAAB2PgAACj4AAI5CWFW1QAAAAAAAAIs+AAAKPgAAjkKrqgJCAAAAAAAAiz4AAEA+AABcQquqAkIAAAAAAAB2PgAAQD4=
+                      data: AAAAQFhV1UAAAAAAAAAAAAAAAAAAALBBWFXVQAAAAAAAACA9AAAAAAAAsEFWVf1BAAAAAAAAID0AAEg9AAAAQFZV/UEAAAAAAAAAAAAASD0AAMhBrKpKQQAAAAAAACg9AAAAAAAAJEKsqkpBAAAAAAAAlD0AAAAAAAAkQquqAkIAAAAAAACUPQAAID0AAMhBq6oCQgAAAAAAACg9AAAgPQAANEKsqkpBAAAAAAAAmD0AAAAAAABcQqyqSkEAAAAAAADAPQAAAAAAAFxCVlX9QQAAAAAAAMA9AAAYPQAANEJWVf1BAAAAAAAAmD0AABg9AABcQlhVtUAAAAAAAAAAAAAAUD0AAI5CWFW1QAAAAAAAAAA9AABQPQAAjkKrqgJCAAAAAAAAAD0AANQ9AABcQquqAkIAAAAAAAAAAAAA1D0=
                     indices:
                       type: index_buffer
                       usage: dynamic
@@ -886,9 +910,17 @@ entities:
                       min: [0, 0, 0]
                       max: [71, 32.666668, 0]
                     worldAABB:
-                      min: [924, 606, 0]
-                      max: [995, 638.6667, 0]
-                    texture: ~
+                      min: [924, 652, 0]
+                      max: [995, 684.6667, 0]
+                    texture:
+                      textureType: 2D
+                      source: id
+                      id: font|40#8
+                      minFilter: linear
+                      magFilter: linear
+                      wrapU: repeat
+                      wrapV: repeat
+                      releaseDataAfterLoad: false
                     color: [1, 1, 1, 1]
                     automaticFlipY: true
                     flipY: false
@@ -914,7 +946,7 @@ entities:
                     ignoreScissor: false
                     ignoreEvents: false
                   text:
-                    font: ""
+                    font: []
                     text: Hard
                     fontSize: 40
                     multiline: true
